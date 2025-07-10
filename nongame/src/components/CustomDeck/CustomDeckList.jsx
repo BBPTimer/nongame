@@ -5,7 +5,7 @@ import CustomDeckListItem from "./CustomDeckListItem/CustomDeckListItem";
 const CustomDeckList = () => {
   const { customDeck } = useContext(GameContext);
 
-  return customDeck.map((prompt) => <CustomDeckListItem prompt={prompt} />);
+  return customDeck.map((prompt) => <CustomDeckListItem key={prompt.id} prompt={prompt} />);
 };
 
 export default CustomDeckList;

@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router";
 const Header = () => {
   return (
     <header>
-      <img src="src/assets/logo.svg" id="logo" alt="logo" />
+      <img src="src/assets/logo.svg" id="logo" alt="The Nongame! Logo" />
       {useLocation().pathname === "/" ? (
         <div className="heading">The Nongame!</div>
       ) : (

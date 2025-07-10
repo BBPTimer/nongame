@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import { GameContext } from "../../GameContext";
+import QuestionsModal from "./Setup/QuestionsModal";
 import PlayerForms from "./Setup/PlayerForms";
-import { shuffle } from "../../common/utils";
 import NewGameButton from "../common/NewGameButton";
+import { shuffle } from "../../common/utils";
 
 const Setup = () => {
   const {
@@ -90,6 +91,7 @@ const Setup = () => {
             <option value={customDeckName}>{customDeckName}</option>
           )}
         </select>
+        <QuestionsModal />
         <br />
         <br />
         <label htmlFor="numberOfPlayers"># of players: </label>
@@ -106,9 +108,7 @@ const Setup = () => {
         <PlayerForms />
         <br />
         <NewGameButton buttonText={"Reset"} />
-        <button className="shake">
-          Play!
-        </button>
+        <button className="shake">Play!</button>
       </form>
       <h1 className="center">Quick Start</h1>
       <div className="instructions">

@@ -86,6 +86,7 @@ textarea {
 
 textarea {
   resize: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 input:focus,
@@ -97,6 +98,47 @@ textarea:focus {
 input:focus,
 textarea:focus {
   border: 5px solid midnightblue;
+}
+
+/* https://www.w3schools.com/howto/howto_css_modals.asp */
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: white;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 5px solid midnightblue;
+  width: 80%; /* Could be more or less, depending on screen size */
+  white-space: pre-wrap; /* Preserve line breaks */
+  text-align: left;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+/* The Close Button */
+.close-modal {
+  color: lightskyblue;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: midnightblue;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .inline-form {
@@ -206,6 +248,7 @@ textarea:focus {
   text-align: left;
   width: 80%;
   margin: auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 .custom-deck-list {

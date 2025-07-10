@@ -71,7 +71,7 @@ const CustomDeck = () => {
       <b>Deck Name: </b>
       {editing ? (
         <form onSubmit={handleSaveName} className="inline-form">
-          <input type="text" defaultValue={customDeckName} required></input>
+          <input type="text" defaultValue={customDeckName} maxLength={"25"} required></input>
           <button className="shake">Save</button>
         </form>
       ) : (

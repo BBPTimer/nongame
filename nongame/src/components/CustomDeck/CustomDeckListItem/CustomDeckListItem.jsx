@@ -20,12 +20,12 @@ const CustomDeckListItem = ({ prompt }) => {
   };
 
   return (
-    <li key={prompt.id}>
+    <li className="custom-deck-list-item">
       <img
         src="src/assets/trash.svg"
         className="shake"
         onClick={() => handleRemovePrompt(prompt.id)}
-        alt="Remove prompt"
+        alt="Remove Prompt"
         height={"15px"}
       />{" "}
       {prompt.promptText}
