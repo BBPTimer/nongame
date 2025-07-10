@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { GameContext } from "../../GameContext";
 import PlayerForms from "./Setup/PlayerForms";
 import { shuffle } from "../../common/utils";
+import NewGameButton from "../common/NewGameButton";
 
 const Setup = () => {
   const {
@@ -95,7 +96,7 @@ const Setup = () => {
         <select
           name="numberOfPlayers"
           onChange={handleNumberOfPlayersChange}
-          defaultValue={numberOfPlayers}
+          value={numberOfPlayers}
           required
         >
           {numberOfPlayerOptions}
@@ -104,7 +105,8 @@ const Setup = () => {
         <br />
         <PlayerForms />
         <br />
-        <button type="submit" className="shake">
+        <NewGameButton buttonText={"Reset"} />
+        <button className="shake">
           Play!
         </button>
       </form>
