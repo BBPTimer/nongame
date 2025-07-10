@@ -22,8 +22,8 @@ const Instructions = () => {
           The game begins with the Setup form. First, choose which prompts you
           would like to appear in the game. Select a prompt deck category (All
           Ages, Families, Kids, Teens or Seniors) and depth (Lighthearted or
-          Deep). Lighthearted questions make great icebreakers, while deep
-          questions promote serious discussion.
+          Deep). Lighthearted prompts make great icebreakers, while deep
+          prompts promote serious discussion.
         </p>
         <p>
           Next, select your number of players, and type in their names! The game

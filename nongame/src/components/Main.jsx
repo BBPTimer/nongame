@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../GameContext";
-import Play from "./Main/Play";
 import Setup from "./Main/Setup";
+import Play from "./Main/Play";
 
 const Main = () => {
   const { isSetupComplete } = useContext(GameContext);

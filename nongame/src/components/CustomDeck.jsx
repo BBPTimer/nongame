@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { GameContext } from "../GameContext";
 import { resetDeck } from "../common/utils";
+import Modal from "./common/Modal";
 import CustomDeckList from "./CustomDeck/CustomDeckList";
 
 const CustomDeck = () => {
@@ -68,16 +69,39 @@ const CustomDeck = () => {
 
   return (
     <>
+      <h1>Custom Deck</h1>{" "}
+      <Modal
+        modalContent={
+          <>
+            <p>
+              As long as your custom deck has at least 1 prompt, it will show up
+              as a deck option in the Game Setup form! We recommend adding 20-30
+              prompts to your custom deck.
+            </p>
+            <p>
+              The Nongame stores your custom deck in your browser's cache.
+              Please be aware that if you clear your browser's cache, you will
+              lose your custom deck!
+            </p>
+          </>
+        }
+      />
+      <br />
       <b>Deck Name: </b>
       {editing ? (
         <form onSubmit={handleSaveName} className="inline-form">
-          <input type="text" defaultValue={customDeckName} maxLength={"25"} required></input>
-          <button className="shake">Save</button>
+          <input
+            type="text"
+            defaultValue={customDeckName}
+            maxLength={"25"}
+            required
+          ></input>
+          <button>Save</button>
         </form>
       ) : (
         <>
           {customDeckName}{" "}
-          <button className="shake" onClick={() => setEditing(true)}>
+          <button onClick={() => setEditing(true)}>
             Edit
           </button>
         </>
@@ -96,21 +120,12 @@ const CustomDeck = () => {
           required
         ></textarea>
         <br />
-        <button className="shake">Add</button>
+        <button>Add</button>
       </form>
       <ul className="custom-deck-list">
         <CustomDeckList />
       </ul>
       <br />
-      <p className="custom-deck-instructions">
-        As long as your custom deck has at least 1 prompt, it will show up as a
-        deck option in the Game Setup form! We recommend adding 20-30 prompts to
-        your custom deck.
-        <br />
-        The Nongame stores your custom deck in your browser's cache. Please be
-        aware that if you clear your browser's cache, you will lose your custom
-        deck!
-      </p>
       <button onClick={handleReset}>Reset Custom Deck</button>
     </>
   );

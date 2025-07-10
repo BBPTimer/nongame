@@ -1,4 +1,211 @@
-#root {
-  margin: auto;
+/* Body */
+
+.mansalva-regular {
+  font-family: "Mansalva", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  font-family: "Mansalva", sans-serif;
   text-align: center;
+  color: midnightblue;
+  margin: 2%;
+  background-size: 750px 240px;
+  background-image: url("src/assets/background.svg");
+}
+
+/* Buttons */
+
+button {
+  font-family: "Mansalva", sans-serif;
+  padding: 10px;
+  margin: 10px;
+  background-color: midnightblue;
+  color: white;
+  border: 5px solid lightskyblue;
+  border-radius: 10px;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: lightskyblue;
+  color: midnightblue;
+  border: 5px solid midnightblue;
+}
+
+/* Header */
+
+header {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 10px);
+  background-color: midnightblue;
+  border: 5px solid lightskyblue;
+  border-radius: 20px 20px 0 0;
+  font-size: 3vw;
+  padding: 5px 0px;
+}
+
+header a,
+.heading {
+  color: white;
+  text-decoration: none;
+  margin: auto;
+  padding: 0px 10px;
+}
+
+header a:hover {
+  color: lightskyblue;
+}
+
+.heading {
+  cursor: default;
+}
+
+#logo {
+  height: 5vw;
+  margin: auto;
+}
+
+/* Form */
+
+select,
+input,
+textarea {
+  background-color: white;
+  color: midnightblue;
+  border: 2px solid midnightblue;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 3px;
+}
+
+select,
+input {
+  font-family: "Mansalva", sans-serif;
+}
+
+textarea {
+  resize: none;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border: 5px solid midnightblue;
+}
+
+.inline-form {
+  display: inline;
+}
+
+/* h1 */
+
+h1,
+.modal-img {
+  display: inline-block;
+}
+
+/* PlayerCards */
+
+.player-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  width: 100%;
+}
+
+.player-card {
+  margin: 1%;
+  border-radius: 10px;
+}
+
+/* CustomDeckList */
+
+.custom-deck-list {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  list-style-type: none;
+}
+
+/* Instructions */
+
+.instructions {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  text-align: left;
+  width: 90%;
+  margin: auto;
+}
+
+/* Shake Animation */
+/* https://www.w3schools.com/howto/howto_css_shake_image.asp */
+
+.shake:hover {
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 440px) {
+  #logo {
+    height: 10vw;
+  }
+
+  .shake:hover {
+    animation: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .emoji {
+    font-size: 2vw;
+  }
 }

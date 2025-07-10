@@ -1,6 +1,6 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../../GameContext";
-import QuestionsModal from "./Setup/QuestionsModal";
+import Modal from "../common/Modal";
 import PlayerForms from "./Setup/PlayerForms";
 import NewGameButton from "../common/NewGameButton";
 import { shuffle } from "../../common/utils";
@@ -16,19 +16,30 @@ const Setup = () => {
     customDeckName,
   } = useContext(GameContext);
 
-  const handleSubmit = (event) => {
-    // Prevent page reload
-    event.preventDefault();
+  // useState to re-render Modal component when deck changes
+  const [promptModalText, setPromptModalText] = useState("");
 
-    // Pass only active players to Play component, and shuffle the array
-    setPlayers(shuffle(players.filter((player) => player.isActive)));
-
-    setIsSetupComplete(true);
+  // Function to get modal content
+  const getPromptModalText = () => {
+    // If user chose custom deck, setModalContent with customDeck array
+    if (localStorage.getItem("deck") === customDeckName) {
+      setPromptModalText(customDeck.map((prompt) => prompt.promptText).join("\n"));
+      // Otherwise fetch deck
+    } else {
+      fetch("/decks/" + localStorage.getItem("deck") + ".txt")
+        .then((response) => response.text())
+        .then((data) => setPromptModalText(data));
+    }
   };
+
+  // Get modal content upon first render
+  useEffect(getPromptModalText, []);
 
   const handleDeckChange = (event) => {
     // Save deck to local storage
     localStorage.setItem("deck", event.target.value);
+    // Get modal content when deck option changes
+    getPromptModalText();
   };
 
   const handleNumberOfPlayersChange = (event) => {
@@ -75,10 +86,57 @@ const Setup = () => {
     );
   }
 
+  const handleSubmit = (event) => {
+    // Prevent page reload
+    event.preventDefault();
+
+    // Pass only active players to Play component, and shuffle the array
+    setPlayers(shuffle(players.filter((player) => player.isActive)));
+
+    setIsSetupComplete(true);
+  };
+
   return (
-    <div id="setup">
+    <>
       <form onSubmit={handleSubmit}>
-        <h1>Game Setup</h1>
+        <h1>Game Setup</h1>{" "}
+        <Modal
+          modalContent={
+            <>
+              <p>
+                Welcome to The Nongame, a communication game! "Compete" to
+                complete laps around the board by answering prompts.
+              </p>
+              <p>
+                The game begins with this Setup form. First, choose which
+                prompts you would like to appear in the game. Next, select your
+                number of players, and type in their names! Click the Play!
+                button to begin the game.
+              </p>
+              <p>
+                <i>
+                  Tip: if you have more than 6 players, we recommend choosing 1
+                  player and competing as a group to complete laps around the
+                  board.
+                </i>
+              </p>
+              <p>
+                The first player will begin the game by clicking the dice. That
+                player's emoji pawn moves to the appropriate space, and a prompt
+                appears in the center of the board. Other players should remain
+                quiet when a player responds to a prompt! After a player
+                responds, the next player rolls the dice, and play continues.
+              </p>
+              <p>
+                As players make their way around the board, each player's lap
+                counter will increase. 45 minutes to 1 hour makes for a great
+                game length. See which player completes the most laps by the end
+                of the game!
+              </p>
+            </>
+          }
+        />
+        <br />
         <label htmlFor="deck">Prompt deck: </label>
         <select
           name="deck"
@@ -90,8 +148,8 @@ const Setup = () => {
           {customDeck.length > 0 && (
             <option value={customDeckName}>{customDeckName}</option>
           )}
-        </select>
-        <QuestionsModal />
+        </select>{" "}
+        <Modal modalContent={promptModalText} />
         <br />
         <br />
         <label htmlFor="numberOfPlayers"># of players: </label>
@@ -110,37 +168,7 @@ const Setup = () => {
         <NewGameButton buttonText={"Reset"} />
         <button className="shake">Play!</button>
       </form>
-      <h1 className="center">Quick Start</h1>
-      <div className="instructions">
-        <p>
-          Welcome to The Nongame, a communication game! "Compete" to complete
-          laps around the board by answering prompts.
-        </p>
-        <p>
-          The game begins with this Setup form. First, choose which prompts you
-          would like to appear in the game. Next, select your number of players,
-          and type in their names! Click the Play! button to begin the game.
-        </p>
-        <p>
-          <i>
-            Tip: if you have more than 6 players, we recommend choosing 1 player
-            and competing as a group to complete laps around the board.
-          </i>
-        </p>
-        <p>
-          The first player will begin the game by clicking the dice. That
-          player's emoji pawn moves to the appropriate space, and a prompt
-          appears in the center of the board. Other players should remain quiet
-          when a player responds to a prompt! After a player responds, the next
-          player rolls the dice, and play continues.
-        </p>
-        <p>
-          As players make their way around the board, each player's lap counter
-          will increase. 45 minutes to 1 hour makes for a great game length. See
-          which player completes the most laps by the end of the game!
-        </p>
-      </div>
-    </div>
+    </>
   );
 };
 

@@ -13,7 +13,7 @@ const Dice = () => {
     setTotalTurns,
   } = useContext(GameContext);
 
-  const handleClick = () => {
+  const handleDiceClick = () => {
     // Play dice roll sound
     new Audio("/src/assets/dice/roll.mp3").play();
 
@@ -30,7 +30,7 @@ const Dice = () => {
           // Set active space
           setActiveSpace(nextSumOfRolls % 16);
 
-          // Update active player's sumOfRolls
+          // Update active player's sumOfRolls, space, and laps
           return {
             ...player,
             sumOfRolls: nextSumOfRolls,
@@ -50,7 +50,7 @@ const Dice = () => {
   return (
     <div>
       <img
-        onClick={handleClick}
+        onClick={handleDiceClick}
         src={"/src/assets/dice/" + roll + ".svg"}
         alt={"Dice roll: " + roll}
         width="64px"

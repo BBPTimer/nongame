@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { GameContext } from "./GameContext";
 import { BrowserRouter as Router, Route, Routes } from "react-router";
+import { GameContext } from "./GameContext";
 import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
@@ -9,11 +9,12 @@ import CustomDeck from "./components/CustomDeck";
 import { shuffle, resetDeck } from "./common/utils";
 
 function App() {
+  // Initialize state variables
   const [isNewGame, setIsNewGame] = useState(true);
   const [players, setPlayers] = useState([]);
   const [numberOfPlayers, setNumberOfPlayers] = useState(null);
   const [isSetupComplete, setIsSetupComplete] = useState();
-  const [questions, setQuestions] = useState([]);
+  const [prompts, setPrompts] = useState([]);
   const [prompt, setPrompt] = useState("");
   const [roll, setRoll] = useState(null);
   const [activeSpace, setActiveSpace] = useState(null);
@@ -21,8 +22,9 @@ function App() {
   const [customDeck, setCustomDeck] = useState([]);
   const [customDeckName, setCustomDeckName] = useState("");
 
+  // Initialize new game
   const initializeGame = () => {
-    // Set up players
+    // Define Player class
     class Player {
       constructor(id, name, emoji) {
         this.id = id;
@@ -35,9 +37,12 @@ function App() {
       }
     }
 
+    // Define emojis
     const emojis = ["🐻", "🐲", "🦊", "🐸", "🦁", "🐵"];
+    // Randomize emoji order
     shuffle(emojis);
 
+    // Create empty array to store Player objects
     let playersArray = [];
 
     // Populate players array
@@ -57,7 +62,7 @@ function App() {
     if (!localStorage.getItem("deck")) {
       resetDeck();
     }
-    setQuestions([]);
+    setPrompts([]);
     setPrompt("");
     setRoll(1);
     setActiveSpace(0);
@@ -89,8 +94,8 @@ function App() {
         setNumberOfPlayers,
         isSetupComplete,
         setIsSetupComplete,
-        questions,
-        setQuestions,
+        prompts,
+        setPrompts,
         prompt,
         setPrompt,
         roll,

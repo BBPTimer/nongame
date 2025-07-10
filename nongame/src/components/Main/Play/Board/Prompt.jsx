@@ -5,8 +5,8 @@ const Prompt = () => {
   const {
     players,
     isSetupComplete,
-    questions,
-    setQuestions,
+    prompts,
+    setPrompts,
     prompt,
     setPrompt,
     activeSpace,
@@ -17,16 +17,16 @@ const Prompt = () => {
 
   const isFirstRender = useRef(true);
 
-  // When isSetupComplete changes, set questions
+  // When isSetupComplete changes, set prompts
   useEffect(() => {
-    // If user chose custom deck, set questions from customDeck array
+    // If user chose custom deck, set prompts from customDeck array
     if (localStorage.getItem("deck") === customDeckName) {
-      setQuestions(customDeck.map((prompt) => prompt.promptText));
+      setPrompts(customDeck.map((prompt) => prompt.promptText));
       // Otherwise fetch deck
     } else {
       fetch("/decks/" + localStorage.getItem("deck") + ".txt")
         .then((response) => response.text())
-        .then((data) => setQuestions(data.split("\n")));
+        .then((data) => setPrompts(data.split("\n")));
     }
   }, [isSetupComplete]);
 
@@ -60,7 +60,7 @@ const Prompt = () => {
     );
     background = "white";
   } else if (activeSpace % 2 === 0) {
-    promptText = questions[Math.floor(Math.random() * questions.length)];
+    promptText = prompts[Math.floor(Math.random() * prompts.length)];
     background = "lightskyblue";
   } else if (activeSpace % 4 === 1) {
     promptText = (
