@@ -40,25 +40,25 @@ header {
   padding: 5px 0px;
 }
 
-a,
-#heading {
+header a,
+.heading {
   color: white;
   text-decoration: none;
-  padding: 0px 50px;
   margin: auto;
+  padding: 0px 10px;
 }
 
-a:hover {
+header a:hover {
   color: lightskyblue;
 }
 
-#heading {
+.heading {
   cursor: default;
 }
 
 #logo {
   height: 5vw;
-  padding: 0px 50px;
+  margin: auto;
 }
 
 .instructions {
@@ -73,7 +73,8 @@ a:hover {
 }
 
 select,
-input {
+input,
+textarea {
   font-family: "Mansalva", sans-serif;
   background-color: white;
   color: midnightblue;
@@ -83,13 +84,23 @@ input {
   margin: 3px;
 }
 
+textarea {
+  resize: none;
+}
+
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   outline: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
   border: 5px solid midnightblue;
+}
+
+.inline-form {
+  display: inline;
 }
 
 .player-cards {
@@ -178,9 +189,9 @@ input:focus {
   grid-area: 2 / 2 / 5 / 5;
 }
 
-#prompt {
+.prompt {
   padding: 10px;
-  border: 5px solid midnightblue;
+  border: 5px solid midnightblue !important;
   border-radius: 10px;
   font-size: 3vw;
 }
@@ -188,6 +199,17 @@ input:focus {
 .shake:hover {
   animation: shake 0.5s;
   animation-iteration-count: infinite;
+}
+
+.custom-deck-list,
+.custom-deck-instructions {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+}
+
+.custom-deck-list {
+  list-style-type: none;
 }
 
 /* https://www.w3schools.com/howto/howto_css_shake_image.asp */
@@ -235,7 +257,6 @@ input:focus {
 
 @media screen and (max-width: 440px) {
   #logo {
-    margin: auto;
     height: 10vw;
   }
 

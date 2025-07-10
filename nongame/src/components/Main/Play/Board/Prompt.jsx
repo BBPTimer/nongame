@@ -11,15 +11,23 @@ const Prompt = () => {
     setPrompt,
     activeSpace,
     totalTurns,
+    customDeck,
+    customDeckName,
   } = useContext(GameContext);
 
   const isFirstRender = useRef(true);
 
-  // Fetch deck when isSetupComplete changes
+  // When isSetupComplete changes, set questions
   useEffect(() => {
-    fetch("/decks/" + localStorage.getItem("deck") + ".txt")
-      .then((response) => response.text())
-      .then((data) => setQuestions(data.split("\n")));
+    // If user chose custom deck, set questions from customDeck array
+    if (localStorage.getItem("deck") === customDeckName) {
+      setQuestions(customDeck.map((prompt) => prompt.promptText));
+      // Otherwise fetch deck
+    } else {
+      fetch("/decks/" + localStorage.getItem("deck") + ".txt")
+        .then((response) => response.text())
+        .then((data) => setQuestions(data.split("\n")));
+    }
   }, [isSetupComplete]);
 
   const feelings = [
@@ -47,7 +55,9 @@ const Prompt = () => {
   let background = "";
 
   if (totalTurns === 0) {
-    promptText = <>{players[0].name}, roll the dice and then respond to the prompt!</>;
+    promptText = (
+      <>{players[0].name}, roll the dice and then respond to the prompt!</>
+    );
     background = "white";
   } else if (activeSpace % 2 === 0) {
     promptText = questions[Math.floor(Math.random() * questions.length)];
@@ -85,7 +95,7 @@ const Prompt = () => {
   }, [totalTurns]);
 
   return (
-    <div id="prompt" style={{ backgroundColor: background }}>
+    <div className="prompt" style={{ backgroundColor: background }}>
       {prompt}
     </div>
   );

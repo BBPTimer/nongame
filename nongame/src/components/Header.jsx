@@ -3,17 +3,22 @@ import { Link, useLocation } from "react-router";
 const Header = () => {
   return (
     <header>
+      <img src="src/assets/logo.svg" id="logo" alt="logo" />
       {useLocation().pathname === "/" ? (
-        <div id="heading">The Nongame!</div>
+        <div className="heading">The Nongame!</div>
       ) : (
         <Link to="/">The Nongame!</Link>
       )}
-      <img src="src/assets/logo.svg" id="logo" alt="logo" />
       {useLocation().pathname === "/instructions" ? (
-        <div id="heading">How to Play</div>
+        <div className="heading">How to Play</div>
       ) : (
         <Link to="/instructions">How to Play</Link>
       )}
+      {useLocation().pathname === "/custom" ? (
+        <div className="heading">Custom Deck</div>
+      ) : (
+        <Link to="/custom">Custom Deck</Link>
+      )}      
     </header>
   );
 };

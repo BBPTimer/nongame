@@ -6,11 +6,11 @@ const PlayerCards = () => {
   const { players } = useContext(GameContext);
 
   // Render player cards
-  const renderPlayerCards = players.map((player, index) => (
+  const playerCards = players.map((player, index) => (
     <PlayerCard key={player.id} player={player} index={index} />
   ));
 
-  return <div className="player-cards">{renderPlayerCards}</div>;
+  return <div className="player-cards">{playerCards}</div>;
 };
 
 export default PlayerCards;

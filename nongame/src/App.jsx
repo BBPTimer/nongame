@@ -5,7 +5,8 @@ import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Instructions from "./components/Instructions";
-import shuffle from "./common/utils";
+import CustomDeck from "./components/CustomDeck";
+import { shuffle, resetDeck } from "./common/utils";
 
 function App() {
   const [isNewGame, setIsNewGame] = useState(true);
@@ -17,6 +18,8 @@ function App() {
   const [roll, setRoll] = useState(null);
   const [activeSpace, setActiveSpace] = useState(null);
   const [totalTurns, setTotalTurns] = useState(null);
+  const [customDeck, setCustomDeck] = useState([]);
+  const [customDeckName, setCustomDeckName] = useState("");
 
   const initializeGame = () => {
     // Set up players
@@ -50,11 +53,26 @@ function App() {
     setPlayers(playersArray);
     setNumberOfPlayers(1);
     setIsSetupComplete(false);
+    // Set default LS deck
+    if (!localStorage.getItem("deck")) {
+      resetDeck();
+    }
     setQuestions([]);
     setPrompt("");
     setRoll(1);
     setActiveSpace(0);
     setTotalTurns(0);
+    // Set state customDeck to LS value
+    if (localStorage.getItem("customDeck")) {
+      // Parse LS JSON string back into array
+      setCustomDeck(JSON.parse(localStorage.getItem("customDeck")));
+    }
+    // Set state customDeckName to LS value or "Custom Deck" if no LS value
+    setCustomDeckName(localStorage.getItem("customDeckName") || "Custom Deck");
+    // Set LS customDeckName to "Custom Deck" if no LS value
+    if (!localStorage.getItem("customDeckName")) {
+      localStorage.setItem("customDeckName", "Custom Deck");
+    }
   };
 
   // Call newGame function if isNewGame is true
@@ -81,12 +99,17 @@ function App() {
         setActiveSpace,
         totalTurns,
         setTotalTurns,
+        customDeck,
+        setCustomDeck,
+        customDeckName,
+        setCustomDeckName,
       }}
     >
       <Router>
         <Header />
         <Routes>
           <Route path="/instructions" element={<Instructions />} />
+          <Route path="/custom" element={<CustomDeck />} />
           <Route path="*" element={<Main />} />
         </Routes>
       </Router>

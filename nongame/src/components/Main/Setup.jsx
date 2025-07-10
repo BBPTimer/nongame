@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../GameContext";
 import PlayerForms from "./Setup/PlayerForms";
-import shuffle from "../../common/utils";
+import { shuffle } from "../../common/utils";
 
 const Setup = () => {
   const {
@@ -10,6 +10,8 @@ const Setup = () => {
     numberOfPlayers,
     setNumberOfPlayers,
     setIsSetupComplete,
+    customDeck,
+    customDeckName,
   } = useContext(GameContext);
 
   const handleSubmit = (event) => {
@@ -83,6 +85,9 @@ const Setup = () => {
           required
         >
           {deckOptionDivs}
+          {customDeck.length > 0 && (
+            <option value={customDeckName}>{customDeckName}</option>
+          )}
         </select>
         <br />
         <br />
