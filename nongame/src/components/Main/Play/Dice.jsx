@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GameContext } from "../../../GameContext";
 
 const Dice = () => {
@@ -13,9 +13,21 @@ const Dice = () => {
     setTotalTurns,
   } = useContext(GameContext);
 
+  const [isAudioEnabled, setIsAudioEnabled] = useState(
+    localStorage.getItem("isAudioEnabled") === null
+      ? true
+      : // Convert LS string to Boolean
+        JSON.parse(localStorage.getItem("isAudioEnabled"))
+  );
+
+  const handleAudioClick = () => {
+    localStorage.setItem("isAudioEnabled", !isAudioEnabled);
+    setIsAudioEnabled(!isAudioEnabled);
+  };
+
   const handleDiceClick = () => {
     // Play dice roll sound
-    new Audio("/src/assets/dice/roll.mp3").play();
+    isAudioEnabled && new Audio("/src/assets/dice/roll.mp3").play();
 
     // Set roll to random number between 1 and 6
     let randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -48,15 +60,24 @@ const Dice = () => {
   };
 
   return (
-    <div>
+    <>
       <img
-        onClick={handleDiceClick}
         src={"/src/assets/dice/" + roll + ".svg"}
+        onClick={handleDiceClick}
         alt={"Dice roll: " + roll}
         width="64px"
         className="shake"
       />
-    </div>
+      <br />
+      <img
+        src={"src/assets/audio.svg"}
+        onClick={handleAudioClick}
+        style={{ opacity: !isAudioEnabled && "0.5" }}
+        alt={isAudioEnabled ? "Mute" : "Turn on dice audio"}
+        height="15px"
+        className="shake"
+      />
+    </>
   );
 };
 

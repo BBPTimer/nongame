@@ -23,7 +23,9 @@ const Setup = () => {
   const getPromptModalText = () => {
     // If user chose custom deck, setModalContent with customDeck array
     if (localStorage.getItem("deck") === customDeckName) {
-      setPromptModalText(customDeck.map((prompt) => prompt.promptText).join("\n"));
+      setPromptModalText(
+        customDeck.map((prompt) => prompt.promptText).join("\n")
+      );
       // Otherwise fetch deck
     } else {
       fetch("/decks/" + localStorage.getItem("deck") + ".txt")
@@ -68,6 +70,7 @@ const Setup = () => {
     "Seniors (Deep)",
     "Teens  (Lighthearted)",
     "Teens (Deep)",
+    "Veterans",
   ];
 
   const deckOptionDivs = deckOptions.map((deckOption, index) => (

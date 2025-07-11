@@ -74,14 +74,24 @@ const CustomDeck = () => {
         modalContent={
           <>
             <p>
+              Create your custom deck! First, give your custom deck a name. Deck
+              names are limited to 25 characters to keep the Game Setup form
+              from stretching too far.
+            </p>
+            <p>
+              Next, add in your prompts! Prompts are limited to 130 characters
+              to avoid the game board stretching too far.
+            </p>
+            <p>
               As long as your custom deck has at least 1 prompt, it will show up
-              as a deck option in the Game Setup form! We recommend adding 20-30
+              as a deck option in the Game Setup form. We recommend adding 20-30
               prompts to your custom deck.
             </p>
             <p>
-              The Nongame stores your custom deck in your browser's cache.
-              Please be aware that if you clear your browser's cache, you will
-              lose your custom deck!
+              The Nongame stores your custom deck in your browser's cache. The
+              Reset Custom Deck button will clear your custom deck from your
+              browser's cache. Please be aware that if you manually clear your
+              browser's cache, that action will also reset your custom deck!
             </p>
           </>
         }
@@ -101,9 +111,7 @@ const CustomDeck = () => {
       ) : (
         <>
           {customDeckName}{" "}
-          <button onClick={() => setEditing(true)}>
-            Edit
-          </button>
+          <button onClick={() => setEditing(true)}>Edit</button>
         </>
       )}
       <br />

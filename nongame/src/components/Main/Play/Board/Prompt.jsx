@@ -4,7 +4,6 @@ import { GameContext } from "../../../../GameContext";
 const Prompt = () => {
   const {
     players,
-    isSetupComplete,
     prompts,
     setPrompts,
     prompt,
@@ -15,9 +14,14 @@ const Prompt = () => {
     customDeckName,
   } = useContext(GameContext);
 
-  const isFirstRender = useRef(true);
+  const isFirstRender = useRef();
 
-  // When isSetupComplete changes, set prompts
+  // Set isFirstRender = true on first render;
+  useEffect(() => {
+    isFirstRender.current = true;
+  }, []);
+
+  // When isFirstRender changes, fetch prompts
   useEffect(() => {
     // If user chose custom deck, set prompts from customDeck array
     if (localStorage.getItem("deck") === customDeckName) {
@@ -28,7 +32,15 @@ const Prompt = () => {
         .then((response) => response.text())
         .then((data) => setPrompts(data.split("\n")));
     }
-  }, [isSetupComplete]);
+  }, [isFirstRender]);
+
+  useEffect(() => {
+    // Update prompt if this is not the first render (does not update prompt if component unmounts and re-mounts) OR if this is the first turn (prevents blank prompt)
+    (!isFirstRender.current || totalTurns === 0) && setPrompt(promptText);
+    // Sets isFirstRender to false
+    isFirstRender.current = false;
+    // Only update prompt when totalTurns changes
+  }, [totalTurns]);
 
   const feelings = [
     "Accepting/Open",
@@ -80,19 +92,6 @@ const Prompt = () => {
       ".";
     background = "lightpink";
   }
-
-  // Set isFirstRender = true on first render;
-  useEffect(() => {
-    isFirstRender.current = true;
-  }, []);
-
-  useEffect(() => {
-    // Update prompt if this is not the first render (does not update prompt if component unmounts and re-mounts) OR if this is the first turn (prevents blank prompt)
-    (!isFirstRender.current || totalTurns === 0) && setPrompt(promptText);
-    // Sets isFirstRender to false
-    isFirstRender.current = false;
-    // Only update prompt when totalTurns changes
-  }, [totalTurns]);
 
   return (
     <div className="prompt" style={{ backgroundColor: background }}>
