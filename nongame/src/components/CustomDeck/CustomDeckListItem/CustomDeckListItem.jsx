@@ -3,8 +3,7 @@ import { GameContext } from "../../../GameContext";
 import { resetDeck } from "../../../common/utils";
 
 const CustomDeckListItem = ({ prompt }) => {
-  const { customDeck, setCustomDeck, customDeckName } =
-    useContext(GameContext);
+  const { customDeck, setCustomDeck, customDeckName } = useContext(GameContext);
 
   const handleRemovePrompt = (id) => {
     // Create new array that filters out element with Id matching Id sent by map
@@ -21,13 +20,12 @@ const CustomDeckListItem = ({ prompt }) => {
 
   return (
     <li className="custom-deck-list-item">
-      <img
-        src="src/assets/trash.svg"
-        className="shake"
+      <span
+        className="material-symbols-outlined shake"
         onClick={() => handleRemovePrompt(prompt.id)}
-        alt="Remove Prompt"
-        height={"15px"}
-      />{" "}
+      >
+        delete
+      </span>{" "}
       {prompt.promptText}
     </li>
   );

@@ -97,25 +97,27 @@ const CustomDeck = () => {
         }
       />
       <br />
-      <b>Deck Name: </b>
-      {editing ? (
-        <form onSubmit={handleSaveName} className="inline-form">
-          <input
-            type="text"
-            defaultValue={customDeckName}
-            maxLength={"25"}
-            required
-          ></input>
-          <button>Save</button>
-        </form>
-      ) : (
-        <>
-          {customDeckName}{" "}
-          <button onClick={() => setEditing(true)}>Edit</button>
-        </>
-      )}
+      <div className="white-bg gray-hover">
+        <b>Deck Name: </b>
+        {editing ? (
+          <form onSubmit={handleSaveName} className="inline-form">
+            <input
+              type="text"
+              defaultValue={customDeckName}
+              maxLength={"25"}
+              required
+            ></input>
+            <button>Save</button>
+          </form>
+        ) : (
+          <>
+            {customDeckName}{" "}
+            <button onClick={() => setEditing(true)}>Edit</button>
+          </>
+        )}
+      </div>
       <br />
-      <form onSubmit={handleAddPrompt}>
+      <form onSubmit={handleAddPrompt} className="white-bg gray-hover">
         <label htmlFor="custom-prompt">Prompt:</label>
         <br />
         <textarea
@@ -123,18 +125,20 @@ const CustomDeck = () => {
           value={textareaValue}
           onChange={(event) => setTextareaValue(event.target.value)}
           rows="4"
-          cols="50"
+          cols="40"
           maxLength="130"
           required
         ></textarea>
         <br />
         <button>Add</button>
       </form>
-      <ul className="custom-deck-list">
+      <br />
+      <ul className="custom-deck-list white-bg">
         <CustomDeckList />
       </ul>
       <br />
       <button onClick={handleReset}>Reset Custom Deck</button>
+      <br />
     </>
   );
 };

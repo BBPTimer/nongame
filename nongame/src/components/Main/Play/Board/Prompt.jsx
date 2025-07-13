@@ -70,10 +70,10 @@ const Prompt = () => {
     promptText = (
       <>{players[0].name}, roll the dice and then respond to the prompt!</>
     );
-    background = "white";
+    background = "White";
   } else if (activeSpace % 2 === 0) {
     promptText = prompts[Math.floor(Math.random() * prompts.length)];
-    background = "lightskyblue";
+    background = "LightSkyBlue";
   } else if (activeSpace % 4 === 1) {
     promptText = (
       <>
@@ -84,13 +84,13 @@ const Prompt = () => {
         Comment on any subject
       </>
     );
-    background = "lightgreen";
+    background = "LightGreen";
   } else if (activeSpace % 4 === 3) {
     promptText =
       "Talk about a time that you felt " +
       feelings[Math.floor(Math.random() * feelings.length)].toLowerCase() +
       ".";
-    background = "lightpink";
+    background = "LightPink";
   }
 
   return (

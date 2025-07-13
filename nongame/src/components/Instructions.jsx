@@ -2,7 +2,7 @@ const Instructions = () => {
   return (
     <>
       <h1>How to Play</h1>
-      <div className="instructions">
+      <div id="instructions" className="white-bg">
         <p>
           Welcome to The Nongame, a communication game! Players "compete" to
           complete laps around the board by answering prompts. The Nongame is
@@ -22,8 +22,8 @@ const Instructions = () => {
           The game begins with the Setup form. First, choose which prompts you
           would like to appear in the game. Select a prompt deck category (All
           Ages, Families, Kids, Teens or Seniors) and depth (Lighthearted or
-          Deep). Lighthearted prompts make great icebreakers, while deep
-          prompts promote serious discussion.
+          Deep). Lighthearted prompts make great icebreakers, while deep prompts
+          promote serious discussion.
         </p>
         <p>
           Next, select your number of players, and type in their names! The game
@@ -37,23 +37,24 @@ const Instructions = () => {
           appropriate space, and a prompt appears in the center of the board.
           Prompts fall into 3 categories:
         </p>
-        <ul>
+        <ol>
           <li>
-            <i>Draw from the Deck!</i>: A random prompt is displayed from the
-            previously-selected prompt deck.
+            <span className="material-symbols-outlined">playing_cards</span>: A
+            random prompt is displayed from the previously-selected prompt deck.
           </li>
           <br />
           <li>
-            <i>Question or Comment</i>: Ask someone a question OR comment on any
-            subject. This gives players an opportunity to engage with each other
-            and discuss any subject!
+            <span className="material-symbols-outlined">question_exchange</span>
+            : Ask someone a question OR comment on any subject. This gives
+            players an opportunity to engage with each other and discuss
+            whatever's on the mind!
           </li>
           <br />
           <li>
-            <i>Talk About a Time...</i>: Players will talk about a time when
-            they felt a certain emotion.
+            <span className="material-symbols-outlined">comedy_mask</span>:
+            Players will talk about a time when they felt a certain emotion.
           </li>
-        </ul>
+        </ol>
         <p>
           Other players should remain quiet when a player responds to a prompt!
           After a player responds, the next player rolls the dice, and play

@@ -6,7 +6,7 @@ const PlayerCard = ({ player, index }) => {
 
   return (
     <div
-      className="player-card"
+      className="white-bg gray-hover"
       style={{
         border:
           (totalTurns - 1) % numberOfPlayers === index &&

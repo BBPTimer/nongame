@@ -18,7 +18,7 @@ const Header = () => {
         <div className="heading">Custom Deck</div>
       ) : (
         <Link to="/custom">Custom Deck</Link>
-      )}      
+      )}
     </header>
   );
 };

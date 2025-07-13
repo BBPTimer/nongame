@@ -118,7 +118,8 @@ function App() {
           <Route path="*" element={<Main />} />
         </Routes>
       </Router>
-      <footer>&copy; {new Date().getFullYear()} Greg Weseloh</footer>
+      <br />
+      <footer className="white-bg gray-hover">&copy; {new Date().getFullYear()} Greg Weseloh LLC</footer>
     </GameContext.Provider>
   );
 }

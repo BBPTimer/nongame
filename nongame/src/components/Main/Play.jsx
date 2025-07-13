@@ -9,12 +9,23 @@ const Play = () => {
     <>
       <Board />
       <br />
-      <Dice />
-      <em><UpNext /></em>
+      <div className="flexbox">
+        <div className="white-bg gray-hover">
+          <Dice />
+        </div>
+        <div id="up-next" className="white-bg gray-hover">
+          <em>
+            <UpNext />
+          </em>
+        </div>
+      </div>
       <br />
-      <PlayerCards />
+      <div className="flexbox">
+        <PlayerCards />
+      </div>
       <br />
       <NewGameButton buttonText={"New Game"} />
+      <br />
     </>
   );
 };

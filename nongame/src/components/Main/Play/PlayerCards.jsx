@@ -10,7 +10,7 @@ const PlayerCards = () => {
     <PlayerCard key={player.id} player={player} index={index} />
   ));
 
-  return <div className="player-cards">{playerCards}</div>;
+  return <>{playerCards}</>;
 };
 
 export default PlayerCards;

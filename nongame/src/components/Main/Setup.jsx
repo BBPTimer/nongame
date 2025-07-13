@@ -139,34 +139,37 @@ const Setup = () => {
             </>
           }
         />
+        <div className="white-bg gray-hover">
+          <label htmlFor="deck">Prompt deck: </label>
+          <select
+            name="deck"
+            onChange={handleDeckChange}
+            defaultValue={localStorage.getItem("deck")}
+            required
+          >
+            {deckOptionDivs}
+            {customDeck.length > 0 && (
+              <option value={customDeckName}>{customDeckName}</option>
+            )}
+          </select>{" "}
+          <Modal modalContent={promptModalText} />
+        </div>
         <br />
-        <label htmlFor="deck">Prompt deck: </label>
-        <select
-          name="deck"
-          onChange={handleDeckChange}
-          defaultValue={localStorage.getItem("deck")}
-          required
-        >
-          {deckOptionDivs}
-          {customDeck.length > 0 && (
-            <option value={customDeckName}>{customDeckName}</option>
-          )}
-        </select>{" "}
-        <Modal modalContent={promptModalText} />
+        <div className="white-bg gray-hover">
+          <label htmlFor="numberOfPlayers"># of players: </label>
+          <select
+            name="numberOfPlayers"
+            onChange={handleNumberOfPlayersChange}
+            value={numberOfPlayers}
+            required
+          >
+            {numberOfPlayerOptions}
+          </select>
+        </div>
         <br />
-        <br />
-        <label htmlFor="numberOfPlayers"># of players: </label>
-        <select
-          name="numberOfPlayers"
-          onChange={handleNumberOfPlayersChange}
-          value={numberOfPlayers}
-          required
-        >
-          {numberOfPlayerOptions}
-        </select>
-        <br />
-        <br />
-        <PlayerForms />
+        <div id="player-forms" className="white-bg gray-hover">
+          <PlayerForms />
+        </div>
         <br />
         <NewGameButton buttonText={"Reset"} />
         <button className="shake">Play!</button>

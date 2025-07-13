@@ -1,18 +1,17 @@
 import { useState } from "react";
-import './Modal.css';
+import "./Modal.css";
 
 const Modal = ({ modalContent }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
     <>
-      <img
-        src="src/assets/info.svg"
-        className={"modal-img shake"}
+      <span
+        className="material-symbols-outlined shake"
         onClick={() => setIsModalOpen(true)}
-        alt="Open Modal"
-        height={"15px"}
-      />
+      >
+        info
+      </span>
       <div
         className="modal"
         style={{ display: isModalOpen ? "block" : "none" }}

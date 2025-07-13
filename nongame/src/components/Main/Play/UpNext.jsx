@@ -10,10 +10,10 @@ const UpNext = () => {
     return <p>{players[0].name}, just keep rolling and responding!</p>;
   } else {
     return (
-      <p>
+      <>
         After {players[(totalTurns - 1) % numberOfPlayers].name} responds to the
         prompt, {players[totalTurns % numberOfPlayers].name} will roll.
-      </p>
+      </>
     );
   }
 };

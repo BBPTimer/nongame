@@ -14,19 +14,28 @@ const Spaces = () => {
 
     // Set up div format and content
     if (i % 2 === 0) {
-      promptText = "Draw from the Deck!";
-      background = "lightskyblue";
+      promptText = (
+        <span className="material-symbols-outlined">playing_cards</span>
+      );
+      background = "LightSkyBlue";
     } else if (i % 4 === 1) {
-      promptText = "Question or Comment";
-      background = "lightgreen";
+      promptText = (
+        <span className="material-symbols-outlined">question_exchange</span>
+      );
+      background = "LightGreen";
     } else if (i % 4 === 3) {
-      promptText = "Talk About a Time...";
-      background = "lightpink";
+      promptText = (
+        <span className="material-symbols-outlined">comedy_mask</span>
+      );
+      background = "LightPink";
     }
 
     // Place emojis
     for (let player of players) {
+      // Insert line break if greater than 3 emojis
+      emojis.length === 3 && emojis.push(<br />);
       player.space == i && emojis.push(player.emoji);
+      console.log(emojis);
     }
 
     // Create space divs

@@ -1,37 +1,43 @@
 /* Body */
 
-.mansalva-regular {
-  font-family: "Mansalva", sans-serif;
+.sigmar-regular {
+  font-family: "Sigmar", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
 body {
-  font-family: "Mansalva", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   text-align: center;
-  color: midnightblue;
+  color: MidnightBlue;
   margin: 2%;
   background-size: 750px 240px;
   background-image: url("src/assets/background.svg");
+  cursor: default;
+}
+
+/* Google Icons */
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 15;
 }
 
 /* Buttons */
 
 button {
-  font-family: "Mansalva", sans-serif;
   padding: 10px;
-  margin: 10px;
-  background-color: midnightblue;
-  color: white;
-  border: 5px solid lightskyblue;
+  margin: 5px;
+  background-color: MidnightBlue;
+  color: White;
+  border: 5px solid Coral;
   border-radius: 10px;
-  font-size: 1em;
+  font-family: "Sigmar", sans-serif;
 }
 
 button:hover {
-  background-color: lightskyblue;
-  color: midnightblue;
-  border: 5px solid midnightblue;
+  background-color: Coral;
+  color: MidnightBlue;
+  border: 5px solid MidnightBlue;
 }
 
 /* Header */
@@ -40,8 +46,8 @@ header {
   display: flex;
   justify-content: center;
   width: calc(100% - 10px);
-  background-color: midnightblue;
-  border: 5px solid lightskyblue;
+  background-color: MidnightBlue;
+  border: 5px solid Coral;
   border-radius: 20px 20px 0 0;
   font-size: 3vw;
   padding: 5px 0px;
@@ -49,17 +55,18 @@ header {
 
 header a,
 .heading {
-  color: white;
+  font-family: "Sigmar", sans-serif;
+  color: White;
   text-decoration: none;
   margin: auto;
-  padding: 0px 10px;
 }
 
 header a:hover {
-  color: lightskyblue;
+  color: Coral;
 }
 
 .heading {
+  color: coral;
   cursor: default;
 }
 
@@ -73,17 +80,16 @@ header a:hover {
 select,
 input,
 textarea {
-  background-color: white;
-  color: midnightblue;
-  border: 2px solid midnightblue;
+  color: MidnightBlue;
+  border: 2px solid MidnightBlue;
   border-radius: 10px;
   padding: 5px;
-  margin: 3px;
+  margin: 5px;
 }
 
 select,
 input {
-  font-family: "Mansalva", sans-serif;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
 textarea {
@@ -99,50 +105,69 @@ textarea:focus {
 
 input:focus,
 textarea:focus {
-  border: 5px solid midnightblue;
+  border: 5px solid MidnightBlue;
 }
 
 .inline-form {
   display: inline;
 }
 
+/* Divs */
+
+.white-bg {
+  background-color: White;
+  padding: 10px;
+  border: 1px solid DarkGray;
+  border-radius: 10px;
+  width: 80%;
+  margin: auto;
+}
+
+.gray-hover:hover {
+  background-color: #e8e8e8;
+}
+
 /* h1 */
+
+h1 {
+  font-family: "Sigmar", sans-serif;
+}
 
 h1,
 .modal-img {
   display: inline-block;
 }
 
-/* PlayerCards */
+/* Game info */
 
-.player-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
-  width: 100%;
+.flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.player-card {
-  margin: 1%;
-  border-radius: 10px;
+.flexbox div {
+  flex-basis: 70px;
+}
+
+#up-next {
+  flex-grow: 0.8;
 }
 
 /* CustomDeckList */
 
 .custom-deck-list {
   text-align: left;
-  width: 80%;
-  margin: auto;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   list-style-type: none;
+}
+
+.custom-deck-list-item {
+  padding: 5px 0px;
 }
 
 /* Instructions */
 
-.instructions {
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+#instructions {
   text-align: left;
   width: 90%;
   margin: auto;
@@ -195,17 +220,7 @@ h1,
 /* Media Queries */
 
 @media screen and (max-width: 440px) {
-  #logo {
-    height: 10vw;
-  }
-
   .shake:hover {
     animation: none;
-  }
-}
-
-@media screen and (min-width: 992px) {
-  .emoji {
-    font-size: 2vw;
   }
 }

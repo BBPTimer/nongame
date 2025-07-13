@@ -69,14 +69,13 @@ const Dice = () => {
         className="shake"
       />
       <br />
-      <img
-        src={"src/assets/audio.svg"}
+      <span
+        className="material-symbols-outlined shake"
         onClick={handleAudioClick}
         style={{ opacity: !isAudioEnabled && "0.5" }}
-        alt={isAudioEnabled ? "Mute" : "Turn on dice audio"}
-        height="15px"
-        className="shake"
-      />
+      >
+        brand_awareness
+      </span>
     </>
   );
 };
