@@ -98,7 +98,7 @@ const CustomDeck = () => {
       />
       <br />
       <div className="white-bg gray-hover">
-        <b>Deck Name: </b>
+        <b>Deck name: </b>
         {editing ? (
           <form onSubmit={handleSaveName} className="inline-form">
             <input

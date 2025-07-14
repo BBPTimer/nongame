@@ -12,8 +12,11 @@ body {
   color: MidnightBlue;
   margin: 2%;
   background-size: 750px 240px;
-  background-image: url("src/assets/background.svg");
+  background: url(src/assets/background.svg) White;
   cursor: default;
+
+  font-weight: 100;
+  letter-spacing: 4%;
 }
 
 /* Google Icons */
@@ -66,7 +69,7 @@ header a:hover {
 }
 
 .heading {
-  color: coral;
+  color: Coral;
   cursor: default;
 }
 
@@ -117,14 +120,15 @@ textarea:focus {
 .white-bg {
   background-color: White;
   padding: 10px;
-  border: 1px solid DarkGray;
+  border: 1px solid Darkgray;
   border-radius: 10px;
-  width: 80%;
+  min-width: 325px;
+  width: 50%;
   margin: auto;
 }
 
 .gray-hover:hover {
-  background-color: #e8e8e8;
+  background-color: Lightgray;
 }
 
 /* h1 */
@@ -148,6 +152,7 @@ h1,
 
 .flexbox div {
   flex-basis: 70px;
+  min-width: auto;
 }
 
 #up-next {
@@ -170,7 +175,6 @@ h1,
 #instructions {
   text-align: left;
   width: 90%;
-  margin: auto;
 }
 
 /* Shake Animation */

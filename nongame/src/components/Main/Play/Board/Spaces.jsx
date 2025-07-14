@@ -45,7 +45,7 @@ const Spaces = () => {
         className={"space" + i}
         style={{
           backgroundColor: background,
-          border: activeSpace == i && "5px solid midnightblue",
+          border: activeSpace == i && "5px solid MidnightBlue",
         }}
       >
         {promptText}

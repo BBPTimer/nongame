@@ -6,14 +6,14 @@
   grid-template-rows: repeat(5, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
-  border: 2px solid midnightblue;
+  border: 2px solid MidnightBlue;
   border-radius: 0 0 22px 22px;
   font-size: calc(7px + 1vw);
 }
 
 .board div {
   padding: 10px;
-  border: 1px solid midnightblue;
+  border: 1px solid MidnightBlue;
 }
 
 .space0 {
@@ -72,8 +72,8 @@
 }
 
 .prompt {
-  border: 5px solid midnightblue !important;
+  border: 5px solid MidnightBlue !important;
   border-radius: 10px;
   font-family: "Sigmar", sans-serif;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
