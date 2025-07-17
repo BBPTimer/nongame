@@ -9,7 +9,7 @@ const NewGameButton = ({ buttonText }) => {
     setIsNewGame(true);
   };
 
-  return <button onClick={handleClick}>{buttonText}</button>;
+  return <button type="button" onClick={handleClick}>{buttonText}</button>;
 };
 
 export default NewGameButton;

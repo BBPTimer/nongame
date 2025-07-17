@@ -8,7 +8,7 @@
   grid-row-gap: 0px;
   border: 2px solid MidnightBlue;
   border-radius: 0 0 22px 22px;
-  font-size: calc(7px + 1vw);
+  font-size: clamp(0.5rem, calc(0.5rem + ((1vw - 0.234375rem) * 1.3445)), 2rem);
 }
 
 .board div {
@@ -75,5 +75,5 @@
   border: 5px solid MidnightBlue !important;
   border-radius: 10px;
   font-family: "Sigmar", sans-serif;
-  font-size: 2.5vw;
+  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.8964)), 2rem);
 }

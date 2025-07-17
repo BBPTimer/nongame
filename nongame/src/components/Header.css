@@ -1,0 +1,32 @@
+header {
+  display: flex;
+  justify-content: center;
+  width: calc(100% - 10px);
+  background-color: MidnightBlue;
+  border: 5px solid Coral;
+  border-radius: 20px 20px 0 0;
+  font-size: 3vw;
+  padding: 5px 0px;
+}
+
+header a,
+.heading {
+  font-family: "Sigmar", sans-serif;
+  color: White;
+  text-decoration: none;
+  margin: auto;
+}
+
+header a:hover {
+  color: Coral;
+}
+
+.heading {
+  color: Coral;
+  cursor: default;
+}
+
+#logo {
+  height: 5vw;
+  margin: auto;
+}

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router";
 import { GameContext } from "./GameContext";
-import "./App.css";
 import Header from "./components/Header";
 import Main from "./components/Main";
 import Instructions from "./components/Instructions";

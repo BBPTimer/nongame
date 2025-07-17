@@ -9,7 +9,8 @@ const Spaces = () => {
   for (let i = 0; i < 16; i++) {
     // Initialize div format and content
     let promptText = "";
-    let background = "white";
+    let background = "";
+    let backgroundImageURL = "";
     let emojis = [];
 
     // Set up div format and content
@@ -18,16 +19,19 @@ const Spaces = () => {
         <span className="material-symbols-outlined">playing_cards</span>
       );
       background = "LightSkyBlue";
+      backgroundImageURL = "src/assets/nature/water.svg";
     } else if (i % 4 === 1) {
       promptText = (
         <span className="material-symbols-outlined">question_exchange</span>
       );
       background = "LightGreen";
+      backgroundImageURL = "src/assets/nature/tree.svg";
     } else if (i % 4 === 3) {
       promptText = (
         <span className="material-symbols-outlined">comedy_mask</span>
       );
       background = "LightPink";
+      backgroundImageURL = "src/assets/nature/volcano.svg";
     }
 
     // Place emojis
@@ -45,6 +49,8 @@ const Spaces = () => {
         className={"space" + i}
         style={{
           backgroundColor: background,
+          backgroundImage: "url(" + backgroundImageURL + ")",
+          backgroundRepeat: "repeat",
           border: activeSpace == i && "5px solid MidnightBlue",
         }}
       >

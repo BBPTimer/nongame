@@ -72,7 +72,7 @@ const Dice = () => {
       <span
         className="material-symbols-outlined shake"
         onClick={handleAudioClick}
-        style={{ opacity: !isAudioEnabled && "0.5" }}
+        style={{ opacity: !isAudioEnabled && "0.3" }}
       >
         brand_awareness
       </span>

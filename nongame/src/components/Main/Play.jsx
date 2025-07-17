@@ -10,10 +10,10 @@ const Play = () => {
       <Board />
       <br />
       <div className="flexbox">
-        <div className="white-bg gray-hover">
+        <div className="gray-hover">
           <Dice />
         </div>
-        <div id="up-next" className="white-bg gray-hover">
+        <div id="up-next" className="gray-hover">
           <em>
             <UpNext />
           </em>

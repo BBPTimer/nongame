@@ -13,10 +13,19 @@ body {
   margin: 2%;
   background-size: 750px 240px;
   background: url(src/assets/background.svg) White;
+  background-attachment: fixed;
   cursor: default;
 
   font-weight: 100;
   letter-spacing: 4%;
+}
+
+body,
+select,
+input,
+textarea {
+  /* https://websemantics.uk/tools/fluid-responsive-property-calculator/ */
+  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.8964)), 2rem);
 }
 
 /* Google Icons */
@@ -35,6 +44,7 @@ button {
   border: 5px solid Coral;
   border-radius: 10px;
   font-family: "Sigmar", sans-serif;
+  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.2241)), 1.25rem);
 }
 
 button:hover {
@@ -43,42 +53,7 @@ button:hover {
   border: 5px solid MidnightBlue;
 }
 
-/* Header */
-
-header {
-  display: flex;
-  justify-content: center;
-  width: calc(100% - 10px);
-  background-color: MidnightBlue;
-  border: 5px solid Coral;
-  border-radius: 20px 20px 0 0;
-  font-size: 3vw;
-  padding: 5px 0px;
-}
-
-header a,
-.heading {
-  font-family: "Sigmar", sans-serif;
-  color: White;
-  text-decoration: none;
-  margin: auto;
-}
-
-header a:hover {
-  color: Coral;
-}
-
-.heading {
-  color: Coral;
-  cursor: default;
-}
-
-#logo {
-  height: 5vw;
-  margin: auto;
-}
-
-/* Form */
+/* Forms */
 
 select,
 input,
@@ -117,18 +92,22 @@ textarea:focus {
 
 /* Divs */
 
-.white-bg {
+.white-bg,
+.flexbox div {
   background-color: White;
   padding: 10px;
-  border: 1px solid Darkgray;
+  border: 1px solid #d1d1e2;
   border-radius: 10px;
-  min-width: 325px;
-  width: 50%;
   margin: auto;
 }
 
+.white-bg {
+  min-width: 340px;
+  width: 50%;
+}
+
 .gray-hover:hover {
-  background-color: Lightgray;
+  background-color: #f4f4f8;
 }
 
 /* h1 */
@@ -150,13 +129,8 @@ h1,
   gap: 1rem;
 }
 
-.flexbox div {
-  flex-basis: 70px;
-  min-width: auto;
-}
-
 #up-next {
-  flex-grow: 0.8;
+  width: calc(75% - 85px);
 }
 
 /* CustomDeckList */
@@ -180,9 +154,13 @@ h1,
 /* Shake Animation */
 /* https://www.w3schools.com/howto/howto_css_shake_image.asp */
 
-.shake:hover {
-  animation: shake 0.5s;
-  animation-iteration-count: infinite;
+/* Media query to enable shake effect only if device supports hover */
+
+@media (hover: hover) {
+  .shake:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+  }
 }
 
 @keyframes shake {
@@ -218,13 +196,5 @@ h1,
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
-  }
-}
-
-/* Media Queries */
-
-@media screen and (max-width: 440px) {
-  .shake:hover {
-    animation: none;
   }
 }

@@ -67,6 +67,13 @@ const Instructions = () => {
           fun!
         </p>
       </div>
+      <h1>Disclaimer</h1>
+      <div id="instructions" className="white-bg">
+        <p>
+          The web game The Nongame! has no association with the card game The
+          Ungame.
+        </p>
+      </div>
     </>
   );
 };

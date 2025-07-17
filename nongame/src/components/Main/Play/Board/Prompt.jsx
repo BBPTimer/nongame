@@ -65,6 +65,7 @@ const Prompt = () => {
 
   let promptText = "";
   let background = "";
+  let backgroundImageURL = "";
 
   if (totalTurns === 0) {
     promptText = (
@@ -74,6 +75,7 @@ const Prompt = () => {
   } else if (activeSpace % 2 === 0) {
     promptText = prompts[Math.floor(Math.random() * prompts.length)];
     background = "LightSkyBlue";
+    backgroundImageURL = "src/assets/nature/water.svg";
   } else if (activeSpace % 4 === 1) {
     promptText = (
       <>
@@ -85,16 +87,25 @@ const Prompt = () => {
       </>
     );
     background = "LightGreen";
+    backgroundImageURL = "src/assets/nature/tree.svg";
   } else if (activeSpace % 4 === 3) {
     promptText =
       "Talk about a time that you felt " +
       feelings[Math.floor(Math.random() * feelings.length)].toLowerCase() +
       ".";
     background = "LightPink";
+    backgroundImageURL = "src/assets/nature/volcano.svg";
   }
 
   return (
-    <div className="prompt" style={{ backgroundColor: background }}>
+    <div
+      className="prompt"
+      style={{
+        backgroundColor: background,
+        backgroundImage: "url(" + backgroundImageURL + ")",
+        backgroundRepeat: "repeat",
+      }}
+    >
       {prompt}
     </div>
   );

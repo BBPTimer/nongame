@@ -5,16 +5,19 @@ const PlayerCard = ({ player, index }) => {
   const { players, numberOfPlayers, totalTurns } = useContext(GameContext);
 
   const style = {
+    // Set border to blue if active player
     border:
       (totalTurns - 1) % numberOfPlayers === index && "5px solid MidnightBlue",
+    // Set background color to gold if player has highest sum of rolls
     backgroundColor:
-      player.laps > 0 && player.laps === Math.max(...players.map((i) => i.laps))
-        ? "LightGoldenRodYellow"
-        : "White",
+      players.length > 1 &&
+      player.sumOfRolls > 0 &&
+      player.sumOfRolls === Math.max(...players.map((p) => p.sumOfRolls)) &&
+      "LightGoldenRodYellow",
   };
 
   return (
-    <div className="white-bg gray-hover" style={style}>
+    <div className="gray-hover" style={style}>
       <span className="emoji">{player.emoji}</span>
       <br />
       {player.name}
