@@ -39,7 +39,6 @@ const Spaces = () => {
       // Insert line break if greater than 3 emojis
       emojis.length === 3 && emojis.push(<br />);
       player.space == i && emojis.push(player.emoji);
-      console.log(emojis);
     }
 
     // Create space divs

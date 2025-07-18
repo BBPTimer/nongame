@@ -4,8 +4,8 @@ const Instructions = () => {
       <h1>How to Play</h1>
       <div id="instructions" className="white-bg">
         <p>
-          Welcome to The Nongame, a communication game! Players "compete" to
-          complete laps around the board by answering prompts. The Nongame is
+          Welcome to The Nongame!, a conversation game! Players "compete" to
+          complete laps around the board by answering prompts. The Nongame! is
           great for:
         </p>
         <ul>
@@ -23,7 +23,8 @@ const Instructions = () => {
           would like to appear in the game. Select a prompt deck category (All
           Ages, Families, Kids, Teens or Seniors) and depth (Lighthearted or
           Deep). Lighthearted prompts make great icebreakers, while deep prompts
-          promote serious discussion.
+          promote serious discussion. Click the info icon to preview prompts
+          from the selected deck.
         </p>
         <p>
           Next, select your number of players, and type in their names! The game

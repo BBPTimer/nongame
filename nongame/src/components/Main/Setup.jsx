@@ -62,6 +62,8 @@ const Setup = () => {
   let deckOptions = [
     "All Ages (Deep)",
     "All Ages (Lighthearted)",
+    "Couples (Deep)",
+    "Couples (Lighthearted)",
     "Families (Deep)",
     "Families (Lighthearted)",
     "Kids (Deep)",
@@ -107,13 +109,14 @@ const Setup = () => {
           modalContent={
             <>
               <p>
-                Welcome to The Nongame, a communication game! "Compete" to
+                Welcome to The Nongame!, a conversation game! "Compete" to
                 complete laps around the board by answering prompts.
               </p>
               <p>
                 The game begins with this Setup form. First, choose which
-                prompts you would like to appear in the game. Next, select your
-                number of players, and type in their names! Click the Play!
+                prompts you would like to appear in the game. Click the info
+                icon to preview prompts from the selected deck. Next, select
+                your number of players, and type in their names! Click the Play!
                 button to begin the game.
               </p>
               <p>
@@ -174,6 +177,11 @@ const Setup = () => {
         <NewGameButton buttonText={"Reset"} />
         <button className="shake">Play!</button>
       </form>
+      <div id="eight-k">
+        <br />
+        Nice monitor!
+        <br />
+      </div>
     </>
   );
 };

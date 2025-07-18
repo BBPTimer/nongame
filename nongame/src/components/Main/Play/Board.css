@@ -8,7 +8,12 @@
   grid-row-gap: 0px;
   border: 2px solid MidnightBlue;
   border-radius: 0 0 22px 22px;
-  font-size: clamp(0.5rem, calc(0.5rem + ((1vw - 0.234375rem) * 1.3445)), 2rem);
+  /* https://websemantics.uk/tools/responsive-font-calculator/ */
+  font-size: clamp(
+    0.75rem,
+    calc(0.75rem + ((1vw - 0.234375rem) * 1.7021)),
+    1.5rem
+  );
 }
 
 .board div {
@@ -75,5 +80,6 @@
   border: 5px solid MidnightBlue !important;
   border-radius: 10px;
   font-family: "Sigmar", sans-serif;
-  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.8964)), 2rem);
+  /* https://websemantics.uk/tools/responsive-font-calculator/ */
+  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 2.2695)), 2rem);
 }

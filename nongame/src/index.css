@@ -12,20 +12,11 @@ body {
   color: MidnightBlue;
   margin: 2%;
   background-size: 750px 240px;
-  background: url(src/assets/background.svg) White;
+  background-image: url(src/assets/background.svg);
   background-attachment: fixed;
   cursor: default;
-
   font-weight: 100;
   letter-spacing: 4%;
-}
-
-body,
-select,
-input,
-textarea {
-  /* https://websemantics.uk/tools/fluid-responsive-property-calculator/ */
-  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.8964)), 2rem);
 }
 
 /* Google Icons */
@@ -44,7 +35,6 @@ button {
   border: 5px solid Coral;
   border-radius: 10px;
   font-family: "Sigmar", sans-serif;
-  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 0.2241)), 1.25rem);
 }
 
 button:hover {
@@ -196,5 +186,11 @@ h1,
   }
   100% {
     transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
+@media (max-width: 7680px) and (max-height: 7680px) {
+  #eight-k {
+    display: none;
   }
 }

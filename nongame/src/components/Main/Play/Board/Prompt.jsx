@@ -15,6 +15,31 @@ const Prompt = () => {
   } = useContext(GameContext);
 
   const isFirstRender = useRef();
+  const promptsCopy = useRef([]);
+  const feelings = useRef([]);
+
+  const initializeFeelings = () => {
+    feelings.current = [
+      "Accepting or Open",
+      "Aliveness or Joy",
+      "Angry or Annoyed",
+      "Courageous or Powerful",
+      "Connected or Loving",
+      "Curious",
+      "Despair or Sad",
+      "Disconnected or Numb",
+      "Embarrassed or Shame",
+      "Fear",
+      "Fragile",
+      "Grateful",
+      "Guilt",
+      "Hopeful",
+      "Powerless",
+      "Tender",
+      "Stressed or Tense",
+      "Unsettled or Doubt",
+    ];
+  };
 
   // Set isFirstRender = true on first render;
   useEffect(() => {
@@ -32,67 +57,69 @@ const Prompt = () => {
         .then((response) => response.text())
         .then((data) => setPrompts(data.split("\n")));
     }
+    // Make copy of original prompts array to prevent need to re-fetch
+    promptsCopy.current = prompts.slice();
   }, [isFirstRender]);
 
+  // Set prompt when totalTurns changes
   useEffect(() => {
     // Update prompt if this is not the first render (does not update prompt if component unmounts and re-mounts) OR if this is the first turn (prevents blank prompt)
-    (!isFirstRender.current || totalTurns === 0) && setPrompt(promptText);
+    if (!isFirstRender.current || totalTurns === 0) {
+      if (totalTurns === 0) {
+        setPrompt(
+          <>{players[0].name}, roll the dice and then respond to the prompt!</>
+        );
+      } else if (activeSpace % 2 === 0) {
+        // If promptsCopy array is empty, re-copy from original prompts array
+        if (promptsCopy.current.length === 0) {
+          promptsCopy.current = prompts.slice();
+        }
+        let randomIndex = Math.floor(
+          Math.random() * promptsCopy.current.length
+        );
+        setPrompt(promptsCopy.current[randomIndex]);
+        // Remove prompt from array
+        promptsCopy.current.splice(randomIndex, 1);
+      } else if (activeSpace % 4 === 1) {
+        setPrompt(
+          <>
+            Ask someone a question
+            <br />
+            OR
+            <br />
+            Comment on any subject
+          </>
+        );
+      } else if (activeSpace % 4 === 3) {
+        // If feelings array is empty, re-populate
+        feelings.current.length === 0 && initializeFeelings();
+        let randomIndex = Math.floor(Math.random() * feelings.current.length);
+        setPrompt(
+          "Talk about a time that you felt " +
+            feelings.current[randomIndex].toLowerCase() +
+            "."
+        );
+        // Remove feeling from array
+        feelings.current.splice(randomIndex, 1);
+      }
+    }
     // Sets isFirstRender to false
     isFirstRender.current = false;
-    // Only update prompt when totalTurns changes
   }, [totalTurns]);
 
-  const feelings = [
-    "Accepting/Open",
-    "Aliveness/Joy",
-    "Angry/Annoyed",
-    "Courageous/Powerful",
-    "Connected/Loving",
-    "Curious",
-    "Despair/Sad",
-    "Disconnected/Numb",
-    "Embarrassed/Shame",
-    "Fear",
-    "Fragile",
-    "Grateful",
-    "Guilt",
-    "Hopeful",
-    "Powerless",
-    "Tender",
-    "Stressed/Tense",
-    "Unsettled/Doubt",
-  ];
-
-  let promptText = "";
+  // Set prompt style
   let background = "";
   let backgroundImageURL = "";
 
   if (totalTurns === 0) {
-    promptText = (
-      <>{players[0].name}, roll the dice and then respond to the prompt!</>
-    );
     background = "White";
   } else if (activeSpace % 2 === 0) {
-    promptText = prompts[Math.floor(Math.random() * prompts.length)];
     background = "LightSkyBlue";
     backgroundImageURL = "src/assets/nature/water.svg";
   } else if (activeSpace % 4 === 1) {
-    promptText = (
-      <>
-        Ask someone a question
-        <br />
-        OR
-        <br />
-        Comment on any subject
-      </>
-    );
     background = "LightGreen";
     backgroundImageURL = "src/assets/nature/tree.svg";
   } else if (activeSpace % 4 === 3) {
-    promptText =
-      "Talk about a time that you felt " +
-      feelings[Math.floor(Math.random() * feelings.length)].toLowerCase() +
-      ".";
     background = "LightPink";
     backgroundImageURL = "src/assets/nature/volcano.svg";
   }

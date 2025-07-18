@@ -88,7 +88,7 @@ const CustomDeck = () => {
               prompts to your custom deck.
             </p>
             <p>
-              The Nongame stores your custom deck in your browser's cache. The
+              The Nongame! stores your custom deck in your browser's cache. The
               Reset Custom Deck button will clear your custom deck from your
               browser's cache. Please be aware that if you manually clear your
               browser's cache, that action will also reset your custom deck!

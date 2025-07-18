@@ -22,7 +22,7 @@ const PlayerForm = ({ player }) => {
         id={player.id}
         value={player.name}
         onChange={handleChange}
-        maxLength="10"
+        maxLength="20"
         required
       ></input>
     </div>
