@@ -12,11 +12,11 @@ const Prompt = () => {
     totalTurns,
     customDeck,
     customDeckName,
+    unusedPrompts,
+    feelings,
   } = useContext(GameContext);
 
   const isFirstRender = useRef();
-  const promptsCopy = useRef([]);
-  const feelings = useRef([]);
 
   const initializeFeelings = () => {
     feelings.current = [
@@ -41,12 +41,12 @@ const Prompt = () => {
     ];
   };
 
-  // Set isFirstRender = true on first render;
+  // Set isFirstRender = true on first render
   useEffect(() => {
     isFirstRender.current = true;
   }, []);
 
-  // When isFirstRender changes, fetch prompts
+  // Fetch prompts
   useEffect(() => {
     // If user chose custom deck, set prompts from customDeck array
     if (localStorage.getItem("deck") === customDeckName) {
@@ -58,8 +58,8 @@ const Prompt = () => {
         .then((data) => setPrompts(data.split("\n")));
     }
     // Make copy of original prompts array to prevent need to re-fetch
-    promptsCopy.current = prompts.slice();
-  }, [isFirstRender]);
+    unusedPrompts.current = prompts.slice();
+  }, []);
 
   // Set prompt when totalTurns changes
   useEffect(() => {
@@ -70,26 +70,18 @@ const Prompt = () => {
           <>{players[0].name}, roll the dice and then respond to the prompt!</>
         );
       } else if (activeSpace % 2 === 0) {
-        // If promptsCopy array is empty, re-copy from original prompts array
-        if (promptsCopy.current.length === 0) {
-          promptsCopy.current = prompts.slice();
+        // If unusedPrompts array is empty, re-copy from original prompts array
+        if (unusedPrompts.current.length === 0) {
+          unusedPrompts.current = prompts.slice();
         }
         let randomIndex = Math.floor(
-          Math.random() * promptsCopy.current.length
+          Math.random() * unusedPrompts.current.length
         );
-        setPrompt(promptsCopy.current[randomIndex]);
+        setPrompt(unusedPrompts.current[randomIndex]);
         // Remove prompt from array
-        promptsCopy.current.splice(randomIndex, 1);
+        unusedPrompts.current.splice(randomIndex, 1);
       } else if (activeSpace % 4 === 1) {
-        setPrompt(
-          <>
-            Ask someone a question
-            <br />
-            OR
-            <br />
-            Comment on any subject
-          </>
-        );
+        setPrompt("Ask someone a question OR comment on any subject.");
       } else if (activeSpace % 4 === 3) {
         // If feelings array is empty, re-populate
         feelings.current.length === 0 && initializeFeelings();
@@ -115,13 +107,13 @@ const Prompt = () => {
     background = "White";
   } else if (activeSpace % 2 === 0) {
     background = "LightSkyBlue";
-    backgroundImageURL = "src/assets/nature/water.svg";
+    backgroundImageURL = "src/assets/categories/deck.svg";
   } else if (activeSpace % 4 === 1) {
     background = "LightGreen";
-    backgroundImageURL = "src/assets/nature/tree.svg";
+    backgroundImageURL = "src/assets/categories/questioncomment.svg";
   } else if (activeSpace % 4 === 3) {
     background = "LightPink";
-    backgroundImageURL = "src/assets/nature/volcano.svg";
+    backgroundImageURL = "src/assets/categories/feelings.svg";
   }
 
   return (

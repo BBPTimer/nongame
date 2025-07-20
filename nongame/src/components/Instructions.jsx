@@ -40,19 +40,19 @@ const Instructions = () => {
         </p>
         <ol>
           <li>
-            <span className="material-symbols-outlined">playing_cards</span>: A
+            <span className="material-symbols-outlined" style={{color: "LightSkyBlue"}}>playing_cards</span>: A
             random prompt is displayed from the previously-selected prompt deck.
           </li>
           <br />
           <li>
-            <span className="material-symbols-outlined">question_exchange</span>
+            <span className="material-symbols-outlined" style={{color: "LightGreen"}}>question_exchange</span>
             : Ask someone a question OR comment on any subject. This gives
             players an opportunity to engage with each other and discuss
             whatever's on the mind!
           </li>
           <br />
           <li>
-            <span className="material-symbols-outlined">comedy_mask</span>:
+            <span className="material-symbols-outlined" style={{color: "LightPink"}}>comedy_mask</span>:
             Players will talk about a time when they felt a certain emotion.
           </li>
         </ol>

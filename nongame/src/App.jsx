@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router";
 import { GameContext } from "./GameContext";
 import Header from "./components/Header";
@@ -20,6 +20,9 @@ function App() {
   const [totalTurns, setTotalTurns] = useState(null);
   const [customDeck, setCustomDeck] = useState([]);
   const [customDeckName, setCustomDeckName] = useState("");
+
+  const unusedPrompts = useRef([]);
+  const feelings = useRef([]);
 
   // Initialize new game
   const initializeGame = () => {
@@ -107,6 +110,8 @@ function App() {
         setCustomDeck,
         customDeckName,
         setCustomDeckName,
+        unusedPrompts,
+        feelings,
       }}
     >
       <Router>
@@ -118,7 +123,9 @@ function App() {
         </Routes>
       </Router>
       <br />
-      <footer className="white-bg gray-hover">&copy; {new Date().getFullYear()} Greg Weseloh LLC</footer>
+      <footer className="white-bg gray-hover">
+        &copy; {new Date().getFullYear()} Greg Weseloh LLC
+      </footer>
     </GameContext.Provider>
   );
 }

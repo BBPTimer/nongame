@@ -19,7 +19,7 @@
   padding: 20px;
   border: 5px solid MidnightBlue;
   border-radius: 10px;
-  width: 80%; /* Could be more or less, depending on screen size */
+  width: 80%;
   white-space: pre-wrap; /* Preserve line breaks */
   text-align: left;
 }

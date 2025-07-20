@@ -40,14 +40,14 @@ const Dice = () => {
           let nextSumOfRolls = player.sumOfRolls + randomNumber;
 
           // Set active space
-          setActiveSpace(nextSumOfRolls % 16);
+          setActiveSpace(nextSumOfRolls % 12);
 
           // Update active player's sumOfRolls, space, and laps
           return {
             ...player,
             sumOfRolls: nextSumOfRolls,
-            space: nextSumOfRolls % 16,
-            laps: Math.floor(nextSumOfRolls / 16),
+            space: nextSumOfRolls % 12,
+            laps: Math.floor(nextSumOfRolls / 12),
           };
         } else {
           return { ...player };

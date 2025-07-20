@@ -2,23 +2,19 @@
 
 .board {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-column-gap: 0px;
   grid-row-gap: 0px;
+
   border: 2px solid MidnightBlue;
   border-radius: 0 0 22px 22px;
-  /* https://websemantics.uk/tools/responsive-font-calculator/ */
-  font-size: clamp(
-    0.75rem,
-    calc(0.75rem + ((1vw - 0.234375rem) * 1.7021)),
-    1.5rem
-  );
 }
 
 .board div {
-  padding: 10px;
   border: 1px solid MidnightBlue;
+
+  padding: 10px;
 }
 
 .space0 {
@@ -34,52 +30,44 @@
   grid-area: 1 / 4 / 2 / 5;
 }
 .space4 {
-  grid-area: 1 / 5 / 2 / 6;
+  grid-area: 2 / 4 / 3 / 5;
 }
 .space5 {
-  grid-area: 2 / 5 / 3 / 6;
+  grid-area: 3 / 4 / 4 / 5;
 }
 .space6 {
-  grid-area: 3 / 5 / 4 / 6;
-}
-.space7 {
-  grid-area: 4 / 5 / 5 / 6;
-}
-.space8 {
-  grid-area: 5 / 5 / 6 / 6;
+  grid-area: 4 / 4 / 5 / 5;
   border-radius: 0 0 20px 0;
 }
+.space7 {
+  grid-area: 4 / 3 / 5 / 4;
+}
+.space8 {
+  grid-area: 4 / 2 / 5 / 3;
+}
 .space9 {
-  grid-area: 5 / 4 / 6 / 5;
-}
-.space10 {
-  grid-area: 5 / 3 / 6 / 4;
-}
-.space11 {
-  grid-area: 5 / 2 / 6 / 3;
-}
-.space12 {
-  grid-area: 5 / 1 / 6 / 2;
+  grid-area: 4 / 1 / 5 / 2;
   border-radius: 0 0 0 20px;
 }
-.space13 {
-  grid-area: 4 / 1 / 5 / 2;
-}
-.space14 {
+.space10 {
   grid-area: 3 / 1 / 4 / 2;
 }
-.space15 {
+.space11 {
   grid-area: 2 / 1 / 3 / 2;
 }
-
-.space16 {
-  grid-area: 2 / 2 / 5 / 5;
+.space12 {
+  grid-area: 2 / 2 / 4 / 4;
 }
 
 .prompt {
+  font-size: clamp(
+    0.75rem,
+    0.285rem + 1.986vw,
+    1.625rem
+  ); /* Scale between 12px at 375px and 26px at 1080px */
+  font-weight: 600; /* Bold */
+  letter-spacing: 0; /* Narrow */
+
   border: 5px solid MidnightBlue !important;
   border-radius: 10px;
-  font-family: "Sigmar", sans-serif;
-  /* https://websemantics.uk/tools/responsive-font-calculator/ */
-  font-size: clamp(1rem, calc(1rem + ((1vw - 0.234375rem) * 2.2695)), 2rem);
 }
