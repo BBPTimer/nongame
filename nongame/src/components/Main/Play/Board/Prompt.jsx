@@ -1,4 +1,5 @@
 import { useContext, useEffect, useRef } from "react";
+import { Textfit } from "react-textfit";
 import { GameContext } from "../../../../GameContext";
 
 const Prompt = () => {
@@ -48,17 +49,20 @@ const Prompt = () => {
 
   // Fetch prompts
   useEffect(() => {
-    // If user chose custom deck, set prompts from customDeck array
-    if (localStorage.getItem("deck") === customDeckName) {
-      setPrompts(customDeck.map((prompt) => prompt.promptText));
-      // Otherwise fetch deck
-    } else {
-      fetch("/decks/" + localStorage.getItem("deck") + ".txt")
-        .then((response) => response.text())
-        .then((data) => setPrompts(data.split("\n")));
+    // Fetches prompts if this is not the first render (does not re-fetch if component unmounts and re-mounts) OR if this is the first turn
+    if (!isFirstRender.current || totalTurns === 0) {
+      // If user chose custom deck, set prompts from customDeck array
+      if (localStorage.getItem("deck") === customDeckName) {
+        setPrompts(customDeck.map((prompt) => prompt.promptText));
+        // Otherwise fetch deck
+      } else {
+        fetch("/decks/" + localStorage.getItem("deck") + ".txt")
+          .then((response) => response.text())
+          .then((data) => setPrompts(data.split("\n")));
+      }
+      // Make copy of original prompts array to prevent need to re-fetch
+      unusedPrompts.current = prompts.slice();
     }
-    // Make copy of original prompts array to prevent need to re-fetch
-    unusedPrompts.current = prompts.slice();
   }, []);
 
   // Set prompt when totalTurns changes
@@ -81,7 +85,15 @@ const Prompt = () => {
         // Remove prompt from array
         unusedPrompts.current.splice(randomIndex, 1);
       } else if (activeSpace % 4 === 1) {
-        setPrompt("Ask someone a question OR comment on any subject.");
+        setPrompt(
+          <>
+            Ask someone a question
+            <br />
+            OR
+            <br />
+            comment on any subject!
+          </>
+        );
       } else if (activeSpace % 4 === 3) {
         // If feelings array is empty, re-populate
         feelings.current.length === 0 && initializeFeelings();
@@ -116,17 +128,26 @@ const Prompt = () => {
     backgroundImageURL = "src/assets/categories/feelings.svg";
   }
 
+  // Prompt card style
+  const promptStyle = {
+    height: "15vh",
+
+    fontFamily: "Sigmar",
+
+    border: "5px solid MidnightBlue",
+    borderRadius: "10px",
+
+    backgroundColor: background,
+    backgroundImage: "url(" + backgroundImageURL + ")",
+    backgroundRepeat: "repeat",
+
+    padding: "10px",
+  };
+
   return (
-    <div
-      className="prompt"
-      style={{
-        backgroundColor: background,
-        backgroundImage: "url(" + backgroundImageURL + ")",
-        backgroundRepeat: "repeat",
-      }}
-    >
+    <Textfit min={8} style={promptStyle}>
       {prompt}
-    </div>
+    </Textfit>
   );
 };
 

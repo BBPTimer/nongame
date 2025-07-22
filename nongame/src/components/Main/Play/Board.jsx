@@ -6,7 +6,7 @@ const Board = () => {
   return (
     <div className="board">
       <Spaces />
-      <div className="space12">
+      <div className="space space12">
         <Prompt />
       </div>
     </div>

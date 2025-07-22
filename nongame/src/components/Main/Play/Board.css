@@ -11,7 +11,7 @@
   border-radius: 0 0 22px 22px;
 }
 
-.board div {
+.space {
   border: 1px solid MidnightBlue;
 
   padding: 10px;
@@ -57,17 +57,4 @@
 }
 .space12 {
   grid-area: 2 / 2 / 4 / 4;
-}
-
-.prompt {
-  font-size: clamp(
-    0.75rem,
-    0.285rem + 1.986vw,
-    1.625rem
-  ); /* Scale between 12px at 375px and 26px at 1080px */
-  font-weight: 600; /* Bold */
-  letter-spacing: 0; /* Narrow */
-
-  border: 5px solid MidnightBlue !important;
-  border-radius: 10px;
 }

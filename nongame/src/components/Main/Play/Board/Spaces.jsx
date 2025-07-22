@@ -33,7 +33,7 @@ const Spaces = () => {
     spaces.push(
       <div
         key={i}
-        className={"space" + i}
+        className={"space space" + i}
         style={{
           backgroundColor: background,
           backgroundImage: "url(" + backgroundImageURL + ")",

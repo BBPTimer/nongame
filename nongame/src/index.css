@@ -154,6 +154,15 @@ h1,
   width: 90%;
 }
 
+#issues, issues:visited {
+  color: MidnightBlue;
+  text-decoration: none;
+}
+
+#issues:hover {
+  color: Coral;
+}
+
 /* Shake Animation */
 /* https://www.w3schools.com/howto/howto_css_shake_image.asp */
 

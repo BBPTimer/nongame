@@ -40,20 +40,36 @@ const Instructions = () => {
         </p>
         <ol>
           <li>
-            <span className="material-symbols-outlined" style={{color: "LightSkyBlue"}}>playing_cards</span>: A
-            random prompt is displayed from the previously-selected prompt deck.
+            <span
+              className="material-symbols-outlined"
+              style={{ color: "LightSkyBlue" }}
+            >
+              playing_cards
+            </span>
+            : A random prompt is displayed from the previously-selected prompt
+            deck.
           </li>
           <br />
           <li>
-            <span className="material-symbols-outlined" style={{color: "LightGreen"}}>question_exchange</span>
+            <span
+              className="material-symbols-outlined"
+              style={{ color: "LightGreen" }}
+            >
+              question_exchange
+            </span>
             : Ask someone a question OR comment on any subject. This gives
             players an opportunity to engage with each other and discuss
             whatever's on the mind!
           </li>
           <br />
           <li>
-            <span className="material-symbols-outlined" style={{color: "LightPink"}}>comedy_mask</span>:
-            Players will talk about a time when they felt a certain emotion.
+            <span
+              className="material-symbols-outlined"
+              style={{ color: "LightPink" }}
+            >
+              comedy_mask
+            </span>
+            : Players will talk about a time when they felt a certain emotion.
           </li>
         </ol>
         <p>
@@ -68,6 +84,12 @@ const Instructions = () => {
           fun!
         </p>
       </div>
+      <h1>
+        <a id="issues" href="https://github.com/BBPTimer/nongame/issues" target="top">
+          Issues or feature requests?
+        </a>
+      </h1>
+      <br />
       <h1>Disclaimer</h1>
       <div id="instructions" className="white-bg">
         <p>
