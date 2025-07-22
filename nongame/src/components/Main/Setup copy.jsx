@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { GameContext } from "../../GameContext";
 import Modal from "../common/Modal";
 import PlayerForms from "./Setup/PlayerForms";
@@ -21,7 +21,6 @@ const Setup = () => {
 
   // Function to get modal content
   const getPromptModalText = () => {
-    setPromptModalText("Loading list of prompts!");
     // If user chose custom deck, setModalContent with customDeck array
     if (localStorage.getItem("deck") === customDeckName) {
       setPromptModalText(
@@ -33,6 +32,16 @@ const Setup = () => {
         .then((response) => response.text())
         .then((data) => setPromptModalText(data));
     }
+  };
+
+  // Get modal content upon first render
+  useEffect(getPromptModalText, []);
+
+  const handleDeckChange = (event) => {
+    // Save deck to local storage
+    localStorage.setItem("deck", event.target.value);
+    // Get modal content when deck option changes
+    getPromptModalText();
   };
 
   const handleNumberOfPlayersChange = (event) => {
@@ -49,6 +58,7 @@ const Setup = () => {
     );
   };
 
+  // Render deck option divs
   let deckOptions = [
     "All Ages (Deep)",
     "All Ages (Lighthearted)",
@@ -65,7 +75,6 @@ const Setup = () => {
     "Veterans",
   ];
 
-  // Render deck option divs
   const deckOptionDivs = deckOptions.map((deckOption, index) => (
     <option key={index} value={deckOption}>
       {deckOption}
@@ -137,9 +146,7 @@ const Setup = () => {
           <label htmlFor="deck">Prompt deck: </label>
           <select
             name="deck"
-            onChange={(event) => {
-              localStorage.setItem("deck", event.target.value);
-            }}
+            onChange={handleDeckChange}
             defaultValue={localStorage.getItem("deck")}
             required
           >
@@ -148,10 +155,7 @@ const Setup = () => {
               <option value={customDeckName}>{customDeckName}</option>
             )}
           </select>{" "}
-          <Modal
-            modalContent={promptModalText}
-            modalFunction={getPromptModalText}
-          />
+          <Modal modalContent={promptModalText} />
         </div>
         <br />
         <div className="white-bg gray-hover">

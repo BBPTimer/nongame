@@ -135,17 +135,17 @@ const Prompt = () => {
     fontFamily: "Sigmar",
 
     border: "5px solid MidnightBlue",
-    borderRadius: "10px",
+    borderRadius: 10,
 
     backgroundColor: background,
     backgroundImage: "url(" + backgroundImageURL + ")",
     backgroundRepeat: "repeat",
 
-    padding: "10px",
+    padding: 10,
   };
 
   return (
-    <Textfit min={8} style={promptStyle}>
+    <Textfit style={promptStyle}>
       {prompt}
     </Textfit>
   );

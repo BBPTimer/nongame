@@ -1,19 +1,15 @@
 import { useState } from "react";
 import "./Modal.css";
 
-const Modal = ({ modalContent, modalFunction }) => {
+const Modal = ({ modalContent }) => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const handleClick = () => {
-    // If modalFunction is passed in, run it
-    modalFunction && modalFunction();
-
-    setIsModalOpen(true);
-  };
 
   return (
     <>
-      <span className="material-symbols-outlined shake" onClick={handleClick}>
+      <span
+        className="material-symbols-outlined shake"
+        onClick={() => setIsModalOpen(true)}
+      >
         info
       </span>
       <div
