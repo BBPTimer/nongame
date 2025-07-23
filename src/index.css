@@ -154,7 +154,8 @@ h1,
   width: 90%;
 }
 
-#issues, issues:visited {
+#issues,
+issues:visited {
   color: MidnightBlue;
   text-decoration: none;
 }
@@ -211,7 +212,19 @@ h1,
   }
 }
 
-@media (max-width: 7680px) and (max-height: 7680px) {
+@media (min-width: 375px) {
+  #low-res {
+    display: none;
+  }
+}
+
+@media (max-width: 3840px) {
+  #four-k {
+    display: none;
+  }
+}
+
+@media (max-width: 7680px) {
   #eight-k {
     display: none;
   }

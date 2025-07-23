@@ -49,8 +49,8 @@ const Prompt = () => {
 
   // Fetch prompts
   useEffect(() => {
-    // Fetches prompts if this is not the first render (does not re-fetch if component unmounts and re-mounts) OR if this is the first turn
-    if (!isFirstRender.current || totalTurns === 0) {
+    // Only fetches prompts if this is the first turn
+    if (totalTurns === 0) {
       // If user chose custom deck, set prompts from customDeck array
       if (localStorage.getItem("deck") === customDeckName) {
         setPrompts(customDeck.map((prompt) => prompt.promptText));
@@ -144,11 +144,7 @@ const Prompt = () => {
     padding: 10,
   };
 
-  return (
-    <Textfit style={promptStyle}>
-      {prompt}
-    </Textfit>
-  );
+  return <Textfit style={promptStyle}>{prompt}</Textfit>;
 };
 
 export default Prompt;

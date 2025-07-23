@@ -85,7 +85,11 @@ const Instructions = () => {
         </p>
       </div>
       <h1>
-        <a id="issues" href="https://github.com/BBPTimer/nongame/issues" target="top">
+        <a
+          id="issues"
+          href="https://github.com/BBPTimer/nongame/issues"
+          target="top"
+        >
           Issues or feature requests?
         </a>
       </h1>
@@ -96,6 +100,21 @@ const Instructions = () => {
           The web game The Nongame! has no association with the card game The
           Ungame.
         </p>
+      </div>
+      <div id="low-res">
+        <br />
+        The Nongame! plays best on displays greater than 375 pixels wide.
+        <br />
+      </div>
+      <div id="four-k">
+        <br />
+        Nice monitor!
+        <br />
+      </div>
+      <div id="eight-k">
+        <br />
+        Seriously, nice monitor!
+        <br />
       </div>
     </>
   );
