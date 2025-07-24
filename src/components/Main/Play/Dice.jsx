@@ -25,9 +25,11 @@ const Dice = () => {
     setIsAudioEnabled(!isAudioEnabled);
   };
 
+  const diceAudio = new Audio("/src/assets/dice/roll.mp3");
+
   const handleDiceClick = () => {
     // Play dice roll sound
-    isAudioEnabled && new Audio("/src/assets/dice/roll.mp3").play();
+    isAudioEnabled && diceAudio.play();
 
     // Set roll to random number between 1 and 6
     let randomNumber = Math.floor(Math.random() * 6) + 1;
