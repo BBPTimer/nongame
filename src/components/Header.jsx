@@ -4,7 +4,7 @@ import "./Header.css";
 const Header = () => {
   return (
     <header>
-      <img src="src/assets/logo.svg" id="logo" alt="The Nongame! Logo" />
+      <img src="/logo.svg" id="logo" alt="The Nongame! Logo" />
       {useLocation().pathname === "/" ? (
         <div className="heading">The Nongame!</div>
       ) : (

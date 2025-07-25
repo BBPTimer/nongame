@@ -8,7 +8,7 @@ body {
   letter-spacing: 4%;
 
   background-size: 750px 240px;
-  background-image: url(src/assets/background.svg);
+  background-image: url(/background.svg);
   background-attachment: fixed;
 
   margin: 2%;

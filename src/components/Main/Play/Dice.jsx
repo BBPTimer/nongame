@@ -25,7 +25,7 @@ const Dice = () => {
     setIsAudioEnabled(!isAudioEnabled);
   };
 
-  const diceAudio = new Audio("/src/assets/dice/roll.mp3");
+  const diceAudio = new Audio("/dice/roll.mp3");
 
   const handleDiceClick = () => {
     // Play dice roll sound
@@ -64,7 +64,7 @@ const Dice = () => {
   return (
     <>
       <img
-        src={"/src/assets/dice/" + roll + ".svg"}
+        src={"/dice/" + roll + ".svg"}
         onClick={handleDiceClick}
         alt={"Dice roll: " + roll}
         width="64px"

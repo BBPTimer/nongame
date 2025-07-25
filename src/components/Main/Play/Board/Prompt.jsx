@@ -119,13 +119,13 @@ const Prompt = () => {
     background = "White";
   } else if (activeSpace % 2 === 0) {
     background = "LightSkyBlue";
-    backgroundImageURL = "src/assets/categories/deck.svg";
+    backgroundImageURL = "/categories/deck.svg";
   } else if (activeSpace % 4 === 1) {
     background = "LightGreen";
-    backgroundImageURL = "src/assets/categories/questioncomment.svg";
+    backgroundImageURL = "/categories/questioncomment.svg";
   } else if (activeSpace % 4 === 3) {
     background = "LightPink";
-    backgroundImageURL = "src/assets/categories/feelings.svg";
+    backgroundImageURL = "/categories/feelings.svg";
   }
 
   // Prompt card style
