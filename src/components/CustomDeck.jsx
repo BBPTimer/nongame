@@ -3,6 +3,7 @@ import { GameContext } from "../GameContext";
 import { resetDeck } from "../common/utils";
 import Modal from "./common/Modal";
 import CustomDeckList from "./CustomDeck/CustomDeckList";
+import UploadDeck from "./CustomDeck/CustomDeckListItem/UploadDeck";
 
 const CustomDeck = () => {
   const { customDeck, setCustomDeck, customDeckName, setCustomDeckName } =
@@ -10,6 +11,9 @@ const CustomDeck = () => {
 
   const [editing, setEditing] = useState(false);
   const [textareaValue, setTextareaValue] = useState("");
+
+  // Get LS nextId or start at 1
+  let nextId = localStorage.getItem("nextId") || 1;
 
   const handleSaveName = (event) => {
     // Prevent form submission
@@ -25,9 +29,6 @@ const CustomDeck = () => {
     // Close editing
     setEditing(false);
   };
-
-  // Get LS nextId or start at 1
-  let nextId = localStorage.getItem("nextId") || 1;
 
   const handleAddPrompt = (event) => {
     // Prevent form submission
@@ -93,6 +94,11 @@ const CustomDeck = () => {
               browser's cache. Please be aware that if you manually clear your
               browser's cache, that action will also reset your custom deck!
             </p>
+            <p>
+              If you want to archive or share your custom deck, use the Download
+              and Upload buttons! Uploaded decks are limited to 1000 prompts to
+              ensure snappy deck validation.
+            </p>
           </>
         }
       />
@@ -137,7 +143,18 @@ const CustomDeck = () => {
         <CustomDeckList />
       </ul>
       <br />
-      <button onClick={handleReset}>Reset Custom Deck</button>
+      <a
+        href={URL.createObjectURL(
+          new Blob([JSON.stringify(customDeck)], {
+            type: "application/json",
+          })
+        )}
+        download={customDeckName}
+      >
+        <button>Download</button>
+      </a>
+      <UploadDeck />
+      <button onClick={handleReset}>Reset</button>
       <br />
     </>
   );

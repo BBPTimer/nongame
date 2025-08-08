@@ -79,7 +79,8 @@ const Instructions = () => {
         </p>
         <p>
           As players make their way around the board, each player's lap counter
-          will increase. 45 minutes to 1 hour makes for a great game length. See
+          will increase. A player's card will take on a gold background if they
+          take the lead! 45 minutes to 1 hour makes for a great game length. See
           which player completes the most laps by the end of the game, and have
           fun!
         </p>
@@ -93,21 +94,6 @@ const Instructions = () => {
           Issues or feature requests?
         </a>
       </h1>
-      <div id="low-res">
-        <br />
-        The Nongame! plays best on displays greater than 375 pixels wide.
-        <br />
-      </div>
-      <div id="four-k">
-        <br />
-        Nice monitor!
-        <br />
-      </div>
-      <div id="eight-k">
-        <br />
-        Seriously, nice monitor!
-        <br />
-      </div>
     </>
   );
 };
