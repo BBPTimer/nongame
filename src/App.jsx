@@ -8,6 +8,11 @@ import CustomDeck from "./components/CustomDeck";
 import { shuffle, resetDeck } from "./common/utils";
 
 function App() {
+  // Set up service worker
+  if (typeof navigator.serviceWorker !== "undefined") {
+    navigator.serviceWorker.register("sw.js");
+  }
+
   // Initialize state variables
   const [isNewGame, setIsNewGame] = useState(true);
   const [players, setPlayers] = useState([]);
