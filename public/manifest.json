@@ -16,6 +16,7 @@
   "display": "standalone",
   "description": "Welcome to The Nongame!, a conversation game! Players \"compete\" to complete laps around the board by answering prompts.",
   "name": "The Nongame!",
+  "short_name": "The Nongame!",
   "start_url": "/",
   "lang": "en",
   "shortcuts": [
