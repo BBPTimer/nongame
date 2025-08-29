@@ -7,6 +7,8 @@ import { shuffle } from "../../common/utils";
 
 const Setup = () => {
   const {
+    promptTypes,
+    setPromptTypes,
     players,
     setPlayers,
     numberOfPlayers,
@@ -151,6 +153,96 @@ const Setup = () => {
           <Modal
             modalContent={promptModalText}
             modalFunction={getPromptModalText}
+          />
+        </div>
+        <br />
+        <div className="white-bg gray-hover">
+          <label>Prompt types: </label>
+          <input type="checkbox" id="deck" checked disabled />
+          <label htmlFor="deck">
+            <span
+              className="material-symbols-outlined"
+              style={{ color: "LightSkyBlue" }}
+            >
+              playing_cards
+            </span>
+          </label>{" "}
+          <input
+            type="checkbox"
+            id="questionComment"
+            checked={promptTypes.questionComment}
+            onClick={() =>
+              setPromptTypes({
+                ...promptTypes,
+                questionComment: !promptTypes.questionComment,
+              })
+            }
+          />
+          <label htmlFor="questionComment">
+            <span
+              className="material-symbols-outlined"
+              style={{ color: "LightGreen" }}
+            >
+              question_exchange
+            </span>
+          </label>{" "}
+          <input
+            type="checkbox"
+            id="feelings"
+            checked={promptTypes.feelings}
+            onClick={() =>
+              setPromptTypes({
+                ...promptTypes,
+                feelings: !promptTypes.feelings,
+              })
+            }
+          />
+          <label htmlFor="feelings">
+            <span
+              className="material-symbols-outlined"
+              style={{ color: "LightPink" }}
+            >
+              comedy_mask
+            </span>
+          </label>{" "}
+          <Modal
+            modalContent={
+              <ol>
+                <li>
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ color: "LightSkyBlue" }}
+                  >
+                    playing_cards
+                  </span>
+                  : A random prompt is displayed from the previously-selected
+                  prompt deck.
+                </li>
+                <br />
+                <li>
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ color: "LightGreen" }}
+                  >
+                    question_exchange
+                  </span>
+                  : Ask someone a question OR comment on any subject. This gives
+                  players an opportunity to engage with each other and discuss
+                  whatever's on the mind!
+                </li>
+                <br />
+                <li>
+                  <span
+                    className="material-symbols-outlined"
+                    style={{ color: "LightPink" }}
+                  >
+                    comedy_mask
+                  </span>
+                  : Players will talk about a time when they felt a certain
+                  emotion.
+                </li>
+              </ol>
+            }
           />
         </div>
         <br />

@@ -4,6 +4,7 @@ import { GameContext } from "../../../../GameContext";
 
 const Prompt = () => {
   const {
+    promptTypes,
     players,
     prompts,
     setPrompts,
@@ -73,18 +74,7 @@ const Prompt = () => {
         setPrompt(
           <>{players[0].name}, roll the dice and then respond to the prompt!</>
         );
-      } else if (activeSpace % 2 === 0) {
-        // If unusedPrompts array is empty, re-copy from original prompts array
-        if (unusedPrompts.current.length === 0) {
-          unusedPrompts.current = prompts.slice();
-        }
-        let randomIndex = Math.floor(
-          Math.random() * unusedPrompts.current.length
-        );
-        setPrompt(unusedPrompts.current[randomIndex]);
-        // Remove prompt from array
-        unusedPrompts.current.splice(randomIndex, 1);
-      } else if (activeSpace % 4 === 1) {
+      } else if (activeSpace % 4 === 1 && promptTypes.questionComment) {
         setPrompt(
           <>
             Ask someone a question
@@ -94,7 +84,7 @@ const Prompt = () => {
             comment on any subject!
           </>
         );
-      } else if (activeSpace % 4 === 3) {
+      } else if (activeSpace % 4 === 3 && promptTypes.feelings) {
         // If feelings array is empty, re-populate
         feelings.current.length === 0 && initializeFeelings();
         let randomIndex = Math.floor(Math.random() * feelings.current.length);
@@ -105,6 +95,17 @@ const Prompt = () => {
         );
         // Remove feeling from array
         feelings.current.splice(randomIndex, 1);
+      } else {
+        // If unusedPrompts array is empty, re-copy from original prompts array
+        if (unusedPrompts.current.length === 0) {
+          unusedPrompts.current = prompts.slice();
+        }
+        let randomIndex = Math.floor(
+          Math.random() * unusedPrompts.current.length
+        );
+        setPrompt(unusedPrompts.current[randomIndex]);
+        // Remove prompt from array
+        unusedPrompts.current.splice(randomIndex, 1);
       }
     }
     // Sets isFirstRender to false
@@ -117,15 +118,15 @@ const Prompt = () => {
 
   if (totalTurns === 0) {
     background = "White";
-  } else if (activeSpace % 2 === 0) {
-    background = "LightSkyBlue";
-    backgroundImageURL = "/categories/deck.svg";
-  } else if (activeSpace % 4 === 1) {
+  } else if (activeSpace % 4 === 1 && promptTypes.questionComment) {
     background = "LightGreen";
     backgroundImageURL = "/categories/questioncomment.svg";
-  } else if (activeSpace % 4 === 3) {
+  } else if (activeSpace % 4 === 3 && promptTypes.feelings) {
     background = "LightPink";
     backgroundImageURL = "/categories/feelings.svg";
+  } else {
+    background = "LightSkyBlue";
+    backgroundImageURL = "/categories/deck.svg";
   }
 
   // Prompt card style

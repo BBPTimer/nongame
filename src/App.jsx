@@ -10,6 +10,7 @@ import { shuffle, resetDeck } from "./common/utils";
 function App() {
   // Initialize state variables
   const [isNewGame, setIsNewGame] = useState(true);
+  const [promptTypes, setPromptTypes] = useState({});
   const [players, setPlayers] = useState([]);
   const [numberOfPlayers, setNumberOfPlayers] = useState(null);
   const [isSetupComplete, setIsSetupComplete] = useState();
@@ -57,6 +58,10 @@ function App() {
 
     // Initialize state variables with default values
     setIsNewGame(false);
+    setPromptTypes({
+      feelings: true,
+      questionComment: true,
+    });
     setPlayers(playersArray);
     setNumberOfPlayers(1);
     setIsSetupComplete(false);
@@ -90,6 +95,8 @@ function App() {
       value={{
         isNewGame,
         setIsNewGame,
+        promptTypes,
+        setPromptTypes,
         players,
         setPlayers,
         numberOfPlayers,
