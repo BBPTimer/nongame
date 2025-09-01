@@ -20,14 +20,14 @@ const Instructions = () => {
         </ul>
         <p>
           The game begins with the Setup form. First, choose which prompts you
-          would like to appear in the game. Select a prompt deck category (All
-          Ages, Families, Kids, Teens or Seniors) and depth (Lighthearted or
-          Deep). Lighthearted prompts make great icebreakers, while deep prompts
-          promote serious discussion. Click the info icon to preview prompts
-          from the selected deck.
+          would like to appear in the game. Select a prompt deck category and
+          depth (Lighthearted or Deep). Lighthearted prompts make great
+          icebreakers, while deep prompts promote serious discussion. Click the
+          info icon to preview prompts from the selected deck.
         </p>
         <p>
-          Next, select your desired prompt types. Prompts fall into 3 categories:
+          Next, select your desired prompt types. Prompts fall into 3
+          categories:
           <ol>
             <li>
               <span
