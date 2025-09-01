@@ -1,10 +1,13 @@
+import { useContext } from "react";
+import { GameContext } from "../../GameContext";
 import Board from "./Play/Board";
 import Dice from "./Play/Dice";
 import UpNext from "./Play/UpNext";
 import PlayerCards from "./Play/PlayerCards";
-import NewGameButton from "../common/NewGameButton";
 
 const Play = () => {
+  const { setIsGameComplete } = useContext(GameContext);
+
   return (
     <>
       <Board />
@@ -24,7 +27,7 @@ const Play = () => {
         <PlayerCards />
       </div>
       <br />
-      <NewGameButton buttonText={"New Game"} />
+      <button onClick={() => setIsGameComplete(true)}>End Game</button>
       <br />
     </>
   );

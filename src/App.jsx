@@ -14,6 +14,7 @@ function App() {
   const [players, setPlayers] = useState([]);
   const [numberOfPlayers, setNumberOfPlayers] = useState(null);
   const [isSetupComplete, setIsSetupComplete] = useState();
+  const [isGameComplete, setIsGameComplete] = useState();
   const [prompts, setPrompts] = useState([]);
   const [prompt, setPrompt] = useState("");
   const [roll, setRoll] = useState(null);
@@ -65,6 +66,7 @@ function App() {
     setPlayers(playersArray);
     setNumberOfPlayers(1);
     setIsSetupComplete(false);
+    setIsGameComplete(false);
     // Set default LS deck
     if (!localStorage.getItem("deck")) {
       resetDeck();
@@ -103,6 +105,8 @@ function App() {
         setNumberOfPlayers,
         isSetupComplete,
         setIsSetupComplete,
+        isGameComplete,
+        setIsGameComplete,
         prompts,
         setPrompts,
         prompt,

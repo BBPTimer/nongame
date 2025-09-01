@@ -171,7 +171,7 @@ const Setup = () => {
             type="checkbox"
             id="questionComment"
             checked={promptTypes.questionComment}
-            onClick={() =>
+            onChange={() =>
               setPromptTypes({
                 ...promptTypes,
                 questionComment: !promptTypes.questionComment,
@@ -190,7 +190,7 @@ const Setup = () => {
             type="checkbox"
             id="feelings"
             checked={promptTypes.feelings}
-            onClick={() =>
+            onChange={() =>
               setPromptTypes({
                 ...promptTypes,
                 feelings: !promptTypes.feelings,

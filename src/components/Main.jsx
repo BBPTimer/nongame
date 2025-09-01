@@ -2,11 +2,18 @@ import { useContext } from "react";
 import { GameContext } from "../GameContext";
 import Setup from "./Main/Setup";
 import Play from "./Main/Play";
+import Results from "./Main/Results";
 
 const Main = () => {
-  const { isSetupComplete } = useContext(GameContext);
+  const { isSetupComplete, isGameComplete } = useContext(GameContext);
 
-  return <>{isSetupComplete ? <Play /> : <Setup />}</>;
+  if (!isSetupComplete) {
+    return <Setup />;
+  } else if (isGameComplete) {
+    return <Results />;
+  } else {
+    return <Play />;
+  }
 };
 
 export default Main;

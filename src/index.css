@@ -140,6 +140,13 @@ h1,
   width: calc(75% - 85px);
 }
 
+/* Results */
+hr {
+  border: none;
+  height: 1px;
+  background-color: #d1d1e2;
+}
+
 /* CustomDeckList */
 
 .custom-deck-list {

@@ -27,7 +27,44 @@ const Instructions = () => {
           from the selected deck.
         </p>
         <p>
-          Next, select your number of players, and type in their names! The game
+          Next, select your desired prompt types. Prompts fall into 3 categories:
+          <ol>
+            <li>
+              <span
+                className="material-symbols-outlined"
+                style={{ color: "LightSkyBlue" }}
+              >
+                playing_cards
+              </span>
+              : A random prompt is displayed from the previously-selected prompt
+              deck.
+            </li>
+            <br />
+            <li>
+              <span
+                className="material-symbols-outlined"
+                style={{ color: "LightGreen" }}
+              >
+                question_exchange
+              </span>
+              : Ask someone a question OR comment on any subject. This gives
+              players an opportunity to engage with each other and discuss
+              whatever's on the mind!
+            </li>
+            <br />
+            <li>
+              <span
+                className="material-symbols-outlined"
+                style={{ color: "LightPink" }}
+              >
+                comedy_mask
+              </span>
+              : Players will talk about a time when they felt a certain emotion.
+            </li>
+          </ol>
+        </p>
+        <p>
+          Select your number of players, and type in their names! The game
           supports 2-6 players. If you have more than 6 players, we recommend
           choosing 1 player and competing as a group to complete laps around the
           board. Click the Play! button to begin the game.
@@ -36,42 +73,7 @@ const Instructions = () => {
           Player order is selected randomly. The first player will begin the
           game by clicking the dice. That player's emoji pawn moves to the
           appropriate space, and a prompt appears in the center of the board.
-          Prompts fall into 3 categories:
         </p>
-        <ol>
-          <li>
-            <span
-              className="material-symbols-outlined"
-              style={{ color: "LightSkyBlue" }}
-            >
-              playing_cards
-            </span>
-            : A random prompt is displayed from the previously-selected prompt
-            deck.
-          </li>
-          <br />
-          <li>
-            <span
-              className="material-symbols-outlined"
-              style={{ color: "LightGreen" }}
-            >
-              question_exchange
-            </span>
-            : Ask someone a question OR comment on any subject. This gives
-            players an opportunity to engage with each other and discuss
-            whatever's on the mind!
-          </li>
-          <br />
-          <li>
-            <span
-              className="material-symbols-outlined"
-              style={{ color: "LightPink" }}
-            >
-              comedy_mask
-            </span>
-            : Players will talk about a time when they felt a certain emotion.
-          </li>
-        </ol>
         <p>
           Other players should remain quiet when a player responds to a prompt!
           After a player responds, the next player rolls the dice, and play
