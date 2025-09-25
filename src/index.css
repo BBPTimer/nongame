@@ -222,3 +222,21 @@ issues:visited {
     transform: translate(1px, -2px) rotate(-1deg);
   }
 }
+
+/* Pulsate Animation */
+
+.pulsate {
+  animation: pulsate 0.5s ease-in-out infinite both;
+}
+
+@keyframes pulsate {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

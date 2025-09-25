@@ -55,7 +55,7 @@ const Results = () => {
         ))}
       </div>
       <br />
-      <NewGameButton buttonText={"Play Again"} />
+      <NewGameButton buttonText="Play Again" className="pulsate" />
       <br />
     </>
   );

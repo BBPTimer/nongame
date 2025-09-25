@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { GameContext } from "../../GameContext";
 
-const NewGameButton = ({ buttonText }) => {
+const NewGameButton = ({ buttonText, className }) => {
   const { setIsNewGame } = useContext(GameContext);
 
   const handleClick = (event) => {
@@ -9,7 +9,11 @@ const NewGameButton = ({ buttonText }) => {
     setIsNewGame(true);
   };
 
-  return <button type="button" onClick={handleClick}>{buttonText}</button>;
+  return (
+    <button type="button" onClick={handleClick} className={className}>
+      {buttonText}
+    </button>
+  );
 };
 
 export default NewGameButton;
