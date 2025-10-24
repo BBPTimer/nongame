@@ -31,9 +31,13 @@ const CustomDeck = () => {
     setEditingDeckName(false);
   };
 
-  const handleAddPrompt = (event) => {
-    // Prevent form submission
-    event.preventDefault();
+  const handleAddPrompt = () => {
+    // Alert and return if empty textarea
+    if (!textareaValue) {
+      alert("Prompt must contain at least 1 character.");
+      return;
+    }
+
     // Make copy of customDeck array and add new element with next Id and textarea value
     let newDeck = [...customDeck, { id: nextId++, promptText: textareaValue }];
     // Set state customDeck to new array
@@ -159,44 +163,55 @@ const CustomDeck = () => {
           </span>
         </h2>
       )}
-      {addingPrompt && (
-        <>
-          <form onSubmit={handleAddPrompt} className="white-bg gray-hover">
-            <label htmlFor="custom-prompt">Prompt:</label>
-            <br />
-            <textarea
-              id="custom-prompt"
-              value={textareaValue}
-              onChange={(event) => setTextareaValue(event.target.value)}
-              rows="4"
-              cols="40"
-              maxLength="130"
-              required
-            ></textarea>
-            <br />
-            <button className="pulsate">Add</button>
-            <button onClick={handleCancelPromptClick}>Exit</button>
-          </form>
-          <br />
-        </>
-      )}
       <div className="white-bg">
         <table className="left-align">
           <tbody>
-            <tr>
-              <td width={"100%"}>
-                <i>Add a new prompt!</i>
-              </td>
-              <td>
-                <span
-                  className="material-symbols-outlined shake"
-                  onClick={() => setAddingPrompt(true)}
-                  title="Add Prompt"
-                >
-                  add_comment
-                </span>
-              </td>
-            </tr>
+            {addingPrompt ? (
+              <tr>
+                <td>
+                  <textarea
+                    value={textareaValue}
+                    onChange={(event) => setTextareaValue(event.target.value)}
+                    rows="4"
+                    cols="40"
+                    maxLength="130"
+                  ></textarea>
+                </td>
+                <td>
+                  <span
+                    className="material-symbols-outlined pulsate"
+                    onClick={handleAddPrompt}
+                    title="Save Prompt"
+                  >
+                    save
+                  </span>
+                </td>
+                <td>
+                  <span
+                    className="material-symbols-outlined shake"
+                    onClick={handleCancelPromptClick}
+                    title="Cancel"
+                  >
+                    cancel
+                  </span>
+                </td>
+              </tr>
+            ) : (
+              <tr>
+                <td width={"100%"}>
+                  <i>Add a new prompt!</i>
+                </td>
+                <td>
+                  <span
+                    className="material-symbols-outlined shake"
+                    onClick={() => setAddingPrompt(true)}
+                    title="Add Prompt"
+                  >
+                    add_comment
+                  </span>
+                </td>
+              </tr>
+            )}
             <CustomDeckList />
           </tbody>
         </table>
