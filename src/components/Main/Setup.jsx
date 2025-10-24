@@ -262,8 +262,8 @@ const Setup = () => {
           <PlayerForms />
         </div>
         <br />
-        <NewGameButton buttonText="Reset" />
         <button className="pulsate">Play!</button>
+        <NewGameButton buttonText="Reset" />
       </form>
     </>
   );
