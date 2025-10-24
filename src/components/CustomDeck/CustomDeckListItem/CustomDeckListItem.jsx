@@ -33,9 +33,11 @@ const CustomDeckListItem = ({ prompt }) => {
     // Update customDeck
     setCustomDeck(updatedDeck);
 
+    // Store new LS customDeck; LS cannot store array of objects so we must convert it to JSON string
+    localStorage.setItem("customDeck", JSON.stringify(updatedDeck));
+
     // Hide form
     setEditingPrompt(false);
-    return;
   };
 
   const handleRemovePrompt = (id) => {
