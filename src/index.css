@@ -16,6 +16,10 @@ body {
   cursor: default;
 }
 
+.left-align {
+  text-align: left;
+}
+
 /* Google Icons */
 
 .material-symbols-outlined {
@@ -119,8 +123,10 @@ textarea:focus {
 
 /* h1 */
 
-h1 {
+h1,
+h2 {
   font-family: "Sigmar", sans-serif;
+  margin: 7px;
 }
 
 h1,

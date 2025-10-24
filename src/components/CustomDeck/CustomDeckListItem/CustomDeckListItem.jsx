@@ -6,6 +6,9 @@ const CustomDeckListItem = ({ prompt }) => {
   const { customDeck, setCustomDeck, customDeckName } = useContext(GameContext);
 
   const handleRemovePrompt = (id) => {
+    if (!confirm("Are you sure you want to delete this prompt?")) {
+      return;
+    }
     // Create new array that filters out element with Id matching Id sent by map
     const newDeck = customDeck.filter((prompt) => prompt.id !== id);
     // Set state customDeck to new array
@@ -19,15 +22,18 @@ const CustomDeckListItem = ({ prompt }) => {
   };
 
   return (
-    <li className="custom-deck-list-item">
-      <span
-        className="material-symbols-outlined shake"
-        onClick={() => handleRemovePrompt(prompt.id)}
-      >
-        delete
-      </span>{" "}
-      {prompt.promptText}
-    </li>
+    <tr>
+      <td width={"100%"}>{prompt.promptText}</td>
+      <td className="custom-deck-list-item">
+        <span
+          className="material-symbols-outlined shake"
+          onClick={() => handleRemovePrompt(prompt.id)}
+          title="Delete Prompt"
+        >
+          delete
+        </span>
+      </td>
+    </tr>
   );
 };
 

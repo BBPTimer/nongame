@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
-import { GameContext } from "../GameContext";
 import { resetDeck } from "../common/utils";
+import { GameContext } from "../GameContext";
 import Modal from "./common/Modal";
 import CustomDeckList from "./CustomDeck/CustomDeckList";
 import UploadDeck from "./CustomDeck/CustomDeckListItem/UploadDeck";
@@ -9,7 +9,8 @@ const CustomDeck = () => {
   const { customDeck, setCustomDeck, customDeckName, setCustomDeckName } =
     useContext(GameContext);
 
-  const [editing, setEditing] = useState(false);
+  const [editingDeckName, setEditingDeckName] = useState(false);
+  const [addingPrompt, setAddingPrompt] = useState(false);
   const [textareaValue, setTextareaValue] = useState("");
 
   // Get LS nextId or start at 1
@@ -27,7 +28,7 @@ const CustomDeck = () => {
       localStorage.setItem("deck", event.target.elements[0].value);
     }
     // Close editing
-    setEditing(false);
+    setEditingDeckName(false);
   };
 
   const handleAddPrompt = (event) => {
@@ -45,9 +46,14 @@ const CustomDeck = () => {
     setTextareaValue("");
   };
 
+  const handleCancelPromptClick = () => {
+    setAddingPrompt(false);
+    setTextareaValue(null);
+  };
+
   const handleReset = () => {
     // Confirm before proceeding; early return if cancel
-    if (!confirm("Are you sure you want to reset your list?")) {
+    if (!confirm("Are you sure you want to reset your deck?")) {
       return;
     }
     // If user's LS deck choice is their custom deck, change LS deck to default
@@ -63,7 +69,7 @@ const CustomDeck = () => {
     // Remove LS custom deck
     localStorage.removeItem("customDeck");
     // Close editing
-    setEditing(false);
+    setEditingDeckName(false);
     // Clear textarea
     setTextareaValue("");
   };
@@ -75,13 +81,23 @@ const CustomDeck = () => {
         modalContent={
           <>
             <p>
-              Create your custom deck! First, give your custom deck a name. Deck
-              names are limited to 25 characters to keep the Game Setup form
-              from stretching too far.
+              Create your custom deck! First, click{" "}
+              <span
+                className="material-symbols-outlined"
+                title="Edit Deck Name"
+              >
+                edit
+              </span>{" "}
+              to give your custom deck a name. Deck names are limited to 25
+              characters to keep the Game Setup form from stretching too far.
             </p>
             <p>
-              Next, add in your prompts! Prompts are limited to 130 characters
-              to avoid the game board stretching too far.
+              Next, click{" "}
+              <span className="material-symbols-outlined" title="Add Prompt">
+                add_comment
+              </span>{" "}
+              to add in your prompts! Prompts are limited to 130 characters to
+              avoid the game board stretching too far.
             </p>
             <p>
               As long as your custom deck has at least 1 prompt, it will show up
@@ -89,10 +105,14 @@ const CustomDeck = () => {
               prompts to your custom deck.
             </p>
             <p>
-              The Nongame! stores your custom deck in your browser's cache. The
-              Reset Custom Deck button will clear your custom deck from your
-              browser's cache. Please be aware that if you manually clear your
-              browser's cache, that action will also reset your custom deck!
+              The Nongame! stores your custom deck in your browser's cache.
+              Click{" "}
+              <span className="material-symbols-outlined" title="Reset Deck">
+                delete
+              </span>{" "}
+              to clear your custom deck from your browser's cache. Please be
+              aware that if you manually clear your browser's cache, that action
+              will also reset your custom deck!
             </p>
             <p>
               If you want to archive or share your custom deck, use the Download
@@ -102,10 +122,9 @@ const CustomDeck = () => {
           </>
         }
       />
-      <br />
-      <div className="white-bg gray-hover">
-        <b>Deck name: </b>
-        {editing ? (
+      {editingDeckName ? (
+        <>
+          <br />
           <form onSubmit={handleSaveName} className="inline-form">
             <input
               type="text"
@@ -113,35 +132,71 @@ const CustomDeck = () => {
               maxLength={"25"}
               required
             ></input>
-            <button>Save</button>
+            <button className="pulsate">Save</button>
+            <button onClick={() => setEditingDeckName(false)}>Cancel</button>
           </form>
-        ) : (
-          <>
-            {customDeckName}{" "}
-            <button onClick={() => setEditing(true)}>Edit</button>
-          </>
-        )}
+          <br />
+          <br />
+        </>
+      ) : (
+        <h2>
+          {customDeckName}{" "}
+          <span
+            onClick={() => setEditingDeckName(true)}
+            className="material-symbols-outlined shake"
+            title="Edit Deck Name"
+          >
+            edit
+          </span>
+          <span
+            onClick={handleReset}
+            className="material-symbols-outlined shake"
+            title="Reset Deck"
+          >
+            delete
+          </span>
+        </h2>
+      )}
+      {addingPrompt && (
+        <>
+          <form onSubmit={handleAddPrompt} className="white-bg gray-hover">
+            <label htmlFor="custom-prompt">Prompt:</label>
+            <br />
+            <textarea
+              id="custom-prompt"
+              value={textareaValue}
+              onChange={(event) => setTextareaValue(event.target.value)}
+              rows="4"
+              cols="40"
+              maxLength="130"
+              required
+            ></textarea>
+            <br />
+            <button className="pulsate">Add</button>
+            <button onClick={handleCancelPromptClick}>Exit</button>
+          </form>
+          <br />
+        </>
+      )}
+      <div className="white-bg">
+        <table className="left-align">
+          <tbody>
+            <tr>
+              <td width={"100%"}>Add a new prompt!</td>
+              <td>
+                <span
+                  className="material-symbols-outlined shake"
+                  onClick={() => setAddingPrompt(true)}
+                  title="Add Prompt"
+                >
+                  add_comment
+                </span>
+              </td>
+            </tr>
+            <CustomDeckList />
+          </tbody>
+        </table>
       </div>
-      <br />
-      <form onSubmit={handleAddPrompt} className="white-bg gray-hover">
-        <label htmlFor="custom-prompt">Prompt:</label>
-        <br />
-        <textarea
-          id="custom-prompt"
-          value={textareaValue}
-          onChange={(event) => setTextareaValue(event.target.value)}
-          rows="4"
-          cols="40"
-          maxLength="130"
-          required
-        ></textarea>
-        <br />
-        <button>Add</button>
-      </form>
-      <br />
-      <ul className="custom-deck-list white-bg">
-        <CustomDeckList />
-      </ul>
       <br />
       <a
         href={URL.createObjectURL(
@@ -154,7 +209,6 @@ const CustomDeck = () => {
         <button>Download</button>
       </a>
       <UploadDeck />
-      <button onClick={handleReset}>Reset</button>
       <br />
     </>
   );
