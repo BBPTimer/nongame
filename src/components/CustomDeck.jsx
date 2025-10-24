@@ -126,7 +126,9 @@ const CustomDeck = () => {
         <>
           <br />
           <form onSubmit={handleSaveName} className="inline-form">
+            <label htmlFor="save-name">Deck: </label>
             <input
+              id="save-name"
               type="text"
               defaultValue={customDeckName}
               maxLength={"25"}

@@ -18,7 +18,7 @@ const CustomDeckListItem = ({ prompt }) => {
   const handleEditPromptSave = (id) => {
     // Alert and return if empty textarea
     if (!textareaValue) {
-      alert("Prompt must contain at least 1 character");
+      alert("Prompt must contain at least 1 character.");
       return;
     }
 
@@ -64,13 +64,13 @@ const CustomDeckListItem = ({ prompt }) => {
               value={textareaValue}
               onChange={(event) => setTextareaValue(event.target.value)}
               rows="4"
-              cols="90"
+              cols="40"
               maxLength="130"
             ></textarea>
           </td>
           <td>
             <span
-              className="material-symbols-outlined shake"
+              className="material-symbols-outlined pulsate"
               onClick={() => handleEditPromptSave(prompt.id)}
               title="Save Prompt"
             >
