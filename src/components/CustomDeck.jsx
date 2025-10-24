@@ -192,7 +192,7 @@ const CustomDeck = () => {
                     onClick={handleCancelPromptClick}
                     title="Cancel"
                   >
-                    cancel
+                    close
                   </span>
                 </td>
               </tr>

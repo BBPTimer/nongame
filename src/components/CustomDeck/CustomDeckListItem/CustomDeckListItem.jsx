@@ -83,7 +83,7 @@ const CustomDeckListItem = ({ prompt }) => {
               onClick={() => setEditingPrompt(false)}
               title="Cancel"
             >
-              cancel
+              close
             </span>
           </td>
         </tr>
