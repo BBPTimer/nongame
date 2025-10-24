@@ -1,6 +1,6 @@
 import Ajv from "ajv";
 import { useContext } from "react";
-import { GameContext } from "../../../GameContext";
+import { GameContext } from "../../GameContext";
 
 const UploadDeck = () => {
   const { setCustomDeck, setCustomDeckName } = useContext(GameContext);

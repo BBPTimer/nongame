@@ -81,11 +81,11 @@ function App() {
       // Parse LS JSON string back into array
       setCustomDeck(JSON.parse(localStorage.getItem("customDeck")));
     }
-    // Set state customDeckName to LS value or "Custom Deck" if no LS value
-    setCustomDeckName(localStorage.getItem("customDeckName") || "Custom Deck");
-    // Set LS customDeckName to "Custom Deck" if no LS value
+    // Set state customDeckName to LS value or "My Deck" if no LS value
+    setCustomDeckName(localStorage.getItem("customDeckName") || "My Deck");
+    // Set LS customDeckName to "My Deck" if no LS value
     if (!localStorage.getItem("customDeckName")) {
-      localStorage.setItem("customDeckName", "Custom Deck");
+      localStorage.setItem("customDeckName", "My Deck");
     }
   };
 

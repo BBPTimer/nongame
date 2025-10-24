@@ -3,7 +3,7 @@ import { resetDeck } from "../common/utils";
 import { GameContext } from "../GameContext";
 import Modal from "./common/Modal";
 import CustomDeckList from "./CustomDeck/CustomDeckList";
-import UploadDeck from "./CustomDeck/CustomDeckListItem/UploadDeck";
+import UploadDeck from "./CustomDeck/UploadDeck";
 
 const CustomDeck = () => {
   const { customDeck, setCustomDeck, customDeckName, setCustomDeckName } =
@@ -58,10 +58,10 @@ const CustomDeck = () => {
     }
     // If user's LS deck choice is their custom deck, change LS deck to default
     customDeckName === localStorage.getItem("deck") && resetDeck();
-    // Reset state customDeckName to "Custom Deck"
-    setCustomDeckName("Custom Deck");
-    // Reset LS customDeckName to "Custom Deck"
-    localStorage.setItem("customDeckName", "Custom Deck");
+    // Reset state customDeckName to "My Deck"
+    setCustomDeckName("My Deck");
+    // Reset LS customDeckName to "My Deck"
+    localStorage.setItem("customDeckName", "My Deck");
     // Reset LS nextId to 1
     localStorage.setItem("nextId", 1);
     // Reset state customDeck to empty array
@@ -182,7 +182,9 @@ const CustomDeck = () => {
         <table className="left-align">
           <tbody>
             <tr>
-              <td width={"100%"}>Add a new prompt!</td>
+              <td width={"100%"}>
+                <i>Add a new prompt!</i>
+              </td>
               <td>
                 <span
                   className="material-symbols-outlined shake"

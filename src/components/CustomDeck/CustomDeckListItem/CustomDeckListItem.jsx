@@ -1,11 +1,45 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { GameContext } from "../../../GameContext";
 import { resetDeck } from "../../../common/utils";
 
 const CustomDeckListItem = ({ prompt }) => {
   const { customDeck, setCustomDeck, customDeckName } = useContext(GameContext);
 
+  const [editingPrompt, setEditingPrompt] = useState(false);
+  const [textareaValue, setTextareaValue] = useState("");
+
+  const handleEditPromptClick = () => {
+    // Set textarea default value to existing prompt
+    setTextareaValue(prompt.promptText);
+    // Display form
+    setEditingPrompt(true);
+  };
+
+  const handleEditPromptSave = (id) => {
+    // Alert and return if empty textarea
+    if (!textareaValue) {
+      alert("Prompt must contain at least 1 character");
+      return;
+    }
+
+    // Update prompt text
+    let updatedDeck = customDeck.map((prompt) => {
+      if (prompt.id === id) {
+        prompt.promptText = textareaValue;
+      }
+      return prompt;
+    });
+
+    // Update customDeck
+    setCustomDeck(updatedDeck);
+
+    // Hide form
+    setEditingPrompt(false);
+    return;
+  };
+
   const handleRemovePrompt = (id) => {
+    // Early return if user does not want to delete prompt
     if (!confirm("Are you sure you want to delete this prompt?")) {
       return;
     }
@@ -22,18 +56,61 @@ const CustomDeckListItem = ({ prompt }) => {
   };
 
   return (
-    <tr>
-      <td width={"100%"}>{prompt.promptText}</td>
-      <td className="custom-deck-list-item">
-        <span
-          className="material-symbols-outlined shake"
-          onClick={() => handleRemovePrompt(prompt.id)}
-          title="Delete Prompt"
-        >
-          delete
-        </span>
-      </td>
-    </tr>
+    <>
+      {editingPrompt ? (
+        <tr>
+          <td>
+            <textarea
+              value={textareaValue}
+              onChange={(event) => setTextareaValue(event.target.value)}
+              rows="4"
+              cols="90"
+              maxLength="130"
+            ></textarea>
+          </td>
+          <td>
+            <span
+              className="material-symbols-outlined shake"
+              onClick={() => handleEditPromptSave(prompt.id)}
+              title="Save Prompt"
+            >
+              save
+            </span>
+          </td>
+          <td>
+            <span
+              className="material-symbols-outlined shake"
+              onClick={() => setEditingPrompt(false)}
+              title="Cancel"
+            >
+              cancel
+            </span>
+          </td>
+        </tr>
+      ) : (
+        <tr>
+          <td width={"100%"}>{prompt.promptText}</td>
+          <td>
+            <span
+              className="material-symbols-outlined shake"
+              onClick={handleEditPromptClick}
+              title="Edit Prompt"
+            >
+              edit
+            </span>
+          </td>
+          <td>
+            <span
+              className="material-symbols-outlined shake"
+              onClick={() => handleRemovePrompt(prompt.id)}
+              title="Delete Prompt"
+            >
+              delete
+            </span>
+          </td>
+        </tr>
+      )}
+    </>
   );
 };
 
