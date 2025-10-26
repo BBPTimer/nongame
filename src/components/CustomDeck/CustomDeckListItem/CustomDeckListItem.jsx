@@ -1,9 +1,9 @@
-import { useContext, useState } from "react";
-import { GameContext } from "../../../GameContext";
+import { use, useState } from "react";
 import { resetDeck } from "../../../common/utils";
+import { GameContext } from "../../../contexts/GameContext";
 
 const CustomDeckListItem = ({ prompt }) => {
-  const { customDeck, setCustomDeck, customDeckName } = useContext(GameContext);
+  const { customDeck, setCustomDeck, customDeckName } = use(GameContext);
 
   const [editingPrompt, setEditingPrompt] = useState(false);
   const [textareaValue, setTextareaValue] = useState("");
@@ -52,7 +52,7 @@ const CustomDeckListItem = ({ prompt }) => {
     // Store new LS customDeck; LS cannot store array of objects so we must convert it to JSON string
     localStorage.setItem("customDeck", JSON.stringify(newDeck));
     // If user's LS deck choice is their custom deck AND if new array length equals 0, meaning no prompts exist in custom deck, change LS deck to default
-    customDeckName === localStorage.getItem("deck") &&
+    customDeckName === localStorage.getItem("selectedDeck") &&
       newDeck.length === 0 &&
       resetDeck();
   };

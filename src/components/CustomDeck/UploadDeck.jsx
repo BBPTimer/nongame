@@ -1,9 +1,9 @@
 import Ajv from "ajv";
-import { useContext } from "react";
-import { GameContext } from "../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../contexts/GameContext";
 
 const UploadDeck = () => {
-  const { setCustomDeck, setCustomDeckName } = useContext(GameContext);
+  const { setCustomDeck, setCustomDeckName } = use(GameContext);
 
   // Set up JSON validator
   const ajv = new Ajv({ strict: false });

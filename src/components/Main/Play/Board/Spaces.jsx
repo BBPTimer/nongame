@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { GameContext } from "../../../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../../../contexts/GameContext";
 
 const Spaces = () => {
-  const { promptTypes, players, activeSpace } = useContext(GameContext);
+  const { promptTypes, players, activeSpace } = use(GameContext);
 
   // Initialize divs
   let spaces = [];

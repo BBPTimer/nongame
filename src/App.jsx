@@ -1,11 +1,11 @@
-import { useState, useRef } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router";
-import { GameContext } from "./GameContext";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Instructions from "./components/Instructions";
+import { useRef, useState } from "react";
+import { Route, BrowserRouter as Router, Routes } from "react-router";
+import { resetDeck, shuffle } from "./common/utils";
 import CustomDeck from "./components/CustomDeck";
-import { shuffle, resetDeck } from "./common/utils";
+import Header from "./components/Header";
+import Instructions from "./components/Instructions";
+import Main from "./components/Main";
+import { GameContext } from "./contexts/GameContext";
 
 function App() {
   // Initialize state variables
@@ -68,7 +68,7 @@ function App() {
     setIsSetupComplete(false);
     setIsGameComplete(false);
     // Set default LS deck
-    if (!localStorage.getItem("deck")) {
+    if (!localStorage.getItem("selectedDeck")) {
       resetDeck();
     }
     setPrompts([]);

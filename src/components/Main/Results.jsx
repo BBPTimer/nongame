@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { GameContext } from "../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../contexts/GameContext";
 import NewGameButton from "../common/NewGameButton";
 
 const Results = () => {
-  const { players } = useContext(GameContext);
+  const { players } = use(GameContext);
 
   // Deep copy players array
   let playersRanked = structuredClone(players);

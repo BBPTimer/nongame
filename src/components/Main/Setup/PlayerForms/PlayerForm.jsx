@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { GameContext } from "../../../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../../../contexts/GameContext";
 
 const PlayerForm = ({ player }) => {
-  const { players, setPlayers } = useContext(GameContext);
+  const { players, setPlayers } = use(GameContext);
 
   // Update players array with new name value
   const handleChange = (event) =>

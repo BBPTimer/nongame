@@ -1,7 +1,7 @@
 import { use, useEffect, useRef } from "react";
 import { Textfit } from "react-textfit";
-import { GameContext } from "../../../../GameContext";
 import { DeckContext } from "../../../../contexts/DeckContext";
+import { GameContext } from "../../../../contexts/GameContext";
 
 const Prompt = () => {
   const {
@@ -56,12 +56,12 @@ const Prompt = () => {
     // Only gets prompts if this is the first turn
     if (totalTurns === 0) {
       // If user chose custom deck, set prompts from customDeck array
-      if (localStorage.getItem("deck") === customDeckName) {
+      if (localStorage.getItem("selectedDeck") === customDeckName) {
         setPrompts(customDeck.map((prompt) => prompt.promptText));
         // Otherwise get deck from defaultDecks
       } else {
         for (let deck of defaultDecks) {
-          if (deck.deckName === localStorage.getItem("deck")) {
+          if (deck.deckName === localStorage.getItem("selectedDeck")) {
             setPrompts(deck.prompts.map((prompt) => prompt.promptText));
           }
         }

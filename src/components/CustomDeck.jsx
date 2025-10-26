@@ -1,13 +1,13 @@
-import { useContext, useState } from "react";
+import { use, useState } from "react";
 import { resetDeck } from "../common/utils";
-import { GameContext } from "../GameContext";
+import { GameContext } from "../contexts/GameContext";
 import Modal from "./common/Modal";
 import CustomDeckList from "./CustomDeck/CustomDeckList";
 import UploadDeck from "./CustomDeck/UploadDeck";
 
 const CustomDeck = () => {
   const { customDeck, setCustomDeck, customDeckName, setCustomDeckName } =
-    useContext(GameContext);
+    use(GameContext);
 
   const [editingDeckName, setEditingDeckName] = useState(false);
   const [addingPrompt, setAddingPrompt] = useState(false);
@@ -24,8 +24,8 @@ const CustomDeck = () => {
     // Set LS customDeckName
     localStorage.setItem("customDeckName", event.target.elements[0].value);
     // If user's LS deck choice is their custom deck, update LS deck to match new custom deck name
-    if (customDeckName === localStorage.getItem("deck")) {
-      localStorage.setItem("deck", event.target.elements[0].value);
+    if (customDeckName === localStorage.getItem("selectedDeck")) {
+      localStorage.setItem("selectedDeck", event.target.elements[0].value);
     }
     // Close editing
     setEditingDeckName(false);
@@ -61,7 +61,7 @@ const CustomDeck = () => {
       return;
     }
     // If user's LS deck choice is their custom deck, change LS deck to default
-    customDeckName === localStorage.getItem("deck") && resetDeck();
+    customDeckName === localStorage.getItem("selectedDeck") && resetDeck();
     // Reset state customDeckName to "My Deck"
     setCustomDeckName("My Deck");
     // Reset LS customDeckName to "My Deck"

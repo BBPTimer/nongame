@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { GameContext } from "../../../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../../../contexts/GameContext";
 
 const PlayerCard = ({ player, index }) => {
-  const { players, numberOfPlayers, totalTurns } = useContext(GameContext);
+  const { players, numberOfPlayers, totalTurns } = use(GameContext);
 
   const style = {
     // Set border to blue if active player

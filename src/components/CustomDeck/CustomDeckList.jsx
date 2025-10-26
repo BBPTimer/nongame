@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { GameContext } from "../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../contexts/GameContext";
 import CustomDeckListItem from "./CustomDeckListItem/CustomDeckListItem";
 
 const CustomDeckList = () => {
-  const { customDeck } = useContext(GameContext);
+  const { customDeck } = use(GameContext);
 
   return customDeck.length > 0 && customDeck.map((prompt) => <CustomDeckListItem key={prompt.id} prompt={prompt} />);
 };

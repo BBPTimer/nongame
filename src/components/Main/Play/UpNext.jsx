@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { GameContext } from "../../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../../contexts/GameContext";
 
 const UpNext = () => {
   const { players, numberOfPlayers, roll, totalTurns } =
-    useContext(GameContext);
+    use(GameContext);
 
   const positiveExclamations = [
     "Yay!",

@@ -1,7 +1,7 @@
 import { use, useState } from "react";
 import { shuffle } from "../../common/utils";
 import { DeckContext } from "../../contexts/DeckContext";
-import { GameContext } from "../../GameContext";
+import { GameContext } from "../../contexts/GameContext";
 import Modal from "../common/Modal";
 import NewGameButton from "../common/NewGameButton";
 import PlayerForms from "./Setup/PlayerForms";
@@ -27,14 +27,14 @@ const Setup = () => {
   // Function to get modal content
   const getPromptModalText = () => {
     // If user chose custom deck, setModalContent with customDeck array
-    if (localStorage.getItem("deck") === customDeckName) {
+    if (localStorage.getItem("selectedDeck") === customDeckName) {
       setPromptModalText(
         customDeck.map((prompt) => prompt.promptText).join("\n")
       );
       // Otherwise get deck from defaultDecks
     } else {
       for (let deck of defaultDecks) {
-        if (deck.deckName === localStorage.getItem("deck")) {
+        if (deck.deckName === localStorage.getItem("selectedDeck")) {
           setPromptModalText(
             deck.prompts.map((prompt) => prompt.promptText).join("\n")
           );
@@ -58,7 +58,7 @@ const Setup = () => {
   };
 
   // Render deck option divs
-  const [selectedOption, setSelectedOption] = useState(localStorage.getItem("deck"));
+  const [selectedOption, setSelectedOption] = useState(localStorage.getItem("selectedDeck"));
 
   const deckOptionDivs = defaultDecks.map((deck) => (
     <option key={deck.id} value={deck.deckName}>
@@ -133,7 +133,7 @@ const Setup = () => {
             name="deck"
             onChange={(event) => {
               setSelectedOption(event.target.value)
-              localStorage.setItem("deck", event.target.value);
+              localStorage.setItem("selectedDeck", event.target.value);
             }}
             value={selectedOption}
             required

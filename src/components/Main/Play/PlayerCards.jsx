@@ -1,9 +1,9 @@
-import { useContext } from "react";
-import { GameContext } from "../../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../../contexts/GameContext";
 import PlayerCard from "./PlayerCard/PlayerCard";
 
 const PlayerCards = () => {
-  const { players } = useContext(GameContext);
+  const { players } = use(GameContext);
 
   // Render player cards
   const playerCards = players.map((player, index) => (

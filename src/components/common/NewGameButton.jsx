@@ -1,8 +1,8 @@
-import { useContext } from "react";
-import { GameContext } from "../../GameContext";
+import { use } from "react";
+import { GameContext } from "../../contexts/GameContext";
 
 const NewGameButton = ({ buttonText, className }) => {
-  const { setIsNewGame } = useContext(GameContext);
+  const { setIsNewGame } = use(GameContext);
 
   const handleClick = (event) => {
     event.preventDefault();
