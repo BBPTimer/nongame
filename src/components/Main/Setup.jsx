@@ -1,9 +1,10 @@
-import { useContext, useState } from "react";
+import { use, useState } from "react";
+import { shuffle } from "../../common/utils";
+import { DeckContext } from "../../contexts/DeckContext";
 import { GameContext } from "../../GameContext";
 import Modal from "../common/Modal";
-import PlayerForms from "./Setup/PlayerForms";
 import NewGameButton from "../common/NewGameButton";
-import { shuffle } from "../../common/utils";
+import PlayerForms from "./Setup/PlayerForms";
 
 const Setup = () => {
   const {
@@ -16,24 +17,29 @@ const Setup = () => {
     setIsSetupComplete,
     customDeck,
     customDeckName,
-  } = useContext(GameContext);
+  } = use(GameContext);
+
+  const { defaultDecks } = use(DeckContext);
 
   // useState to re-render Modal component when deck changes
   const [promptModalText, setPromptModalText] = useState("");
 
   // Function to get modal content
   const getPromptModalText = () => {
-    setPromptModalText("Loading list of prompts!");
     // If user chose custom deck, setModalContent with customDeck array
     if (localStorage.getItem("deck") === customDeckName) {
       setPromptModalText(
         customDeck.map((prompt) => prompt.promptText).join("\n")
       );
-      // Otherwise fetch deck
+      // Otherwise get deck from defaultDecks
     } else {
-      fetch("/decks/" + localStorage.getItem("deck") + ".txt")
-        .then((response) => response.text())
-        .then((data) => setPromptModalText(data));
+      for (let deck of defaultDecks) {
+        if (deck.deckName === localStorage.getItem("deck")) {
+          setPromptModalText(
+            deck.prompts.map((prompt) => prompt.promptText).join("\n")
+          );
+        }
+      }
     }
   };
 
@@ -51,26 +57,12 @@ const Setup = () => {
     );
   };
 
-  let deckOptions = [
-    "All Ages (Deep)",
-    "All Ages (Lighthearted)",
-    "Couples (Deep)",
-    "Couples (Lighthearted)",
-    "Families (Deep)",
-    "Families (Lighthearted)",
-    "Kids (Deep)",
-    "Kids (Lighthearted)",
-    "Seniors  (Lighthearted)",
-    "Seniors (Deep)",
-    "Teens  (Lighthearted)",
-    "Teens (Deep)",
-    "Veterans",
-  ];
-
   // Render deck option divs
-  const deckOptionDivs = deckOptions.map((deckOption, index) => (
-    <option key={index} value={deckOption}>
-      {deckOption}
+  const [selectedOption, setSelectedOption] = useState(localStorage.getItem("deck"));
+
+  const deckOptionDivs = defaultDecks.map((deck) => (
+    <option key={deck.id} value={deck.deckName}>
+      {deck.deckName}
     </option>
   ));
 
@@ -140,9 +132,10 @@ const Setup = () => {
           <select
             name="deck"
             onChange={(event) => {
+              setSelectedOption(event.target.value)
               localStorage.setItem("deck", event.target.value);
             }}
-            defaultValue={localStorage.getItem("deck")}
+            value={selectedOption}
             required
           >
             {deckOptionDivs}
