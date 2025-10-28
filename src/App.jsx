@@ -1,16 +1,13 @@
-import { use, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { Route, BrowserRouter as Router, Routes } from "react-router";
 import { shuffle } from "./common/utils";
 import CustomDeck from "./components/CustomDeck";
 import Header from "./components/Header";
 import Instructions from "./components/Instructions";
 import Main from "./components/Main";
-import { DeckContext } from "./contexts/DeckContext";
 import { GameContext } from "./contexts/GameContext";
 
 function App() {
-  const { resetDeck } = use(DeckContext);
-
   // Initialize state variables
   const [isNewGame, setIsNewGame] = useState(true);
   const [promptTypes, setPromptTypes] = useState({});
@@ -70,10 +67,6 @@ function App() {
     setNumberOfPlayers(1);
     setIsSetupComplete(false);
     setIsGameComplete(false);
-    // Set default LS deck
-    if (!localStorage.getItem("selectedDeck")) {
-      resetDeck();
-    }
     setPrompts([]);
     setPrompt("");
     setRoll(1);

@@ -10,11 +10,17 @@ export const DeckContextProvider = ({ children }) => {
 
   const loadDefaultDecks = () => {
     let decks = [];
+    // Sort defaultData by deck name
+    defaultData.sort((a, b) => a.deckName.localeCompare(b.deckName));
     defaultData.forEach((deck) => {
       let newDeck = new Deck(deck.id, deck.deckName, deck.prompts);
       decks.push(newDeck);
     });
     setDefaultDecks(decks);
+    // Set default LS deck
+    if (!localStorage.getItem("selectedDeck")) {
+      localStorage.setItem("selectedDeck", decks[0].deckName);
+    }
   };
 
   // Load default decks on page load
@@ -23,8 +29,7 @@ export const DeckContextProvider = ({ children }) => {
   }, []);
 
   const resetDeck = () => {
-    console.log(defaultData[0].deckName);
-    localStorage.setItem("selectedDeck", defaultData[0].deckName);
+    localStorage.setItem("selectedDeck", defaultDecks[0].deckName);
   };
 
   return (
