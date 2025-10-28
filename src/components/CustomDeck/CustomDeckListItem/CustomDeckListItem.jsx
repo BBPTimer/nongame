@@ -1,9 +1,11 @@
 import { use, useState } from "react";
-import { resetDeck } from "../../../common/utils";
+import { DeckContext } from "../../../contexts/DeckContext";
 import { GameContext } from "../../../contexts/GameContext";
 
 const CustomDeckListItem = ({ prompt }) => {
   const { customDeck, setCustomDeck, customDeckName } = use(GameContext);
+
+  const { resetDeck } = use(DeckContext)
 
   const [editingPrompt, setEditingPrompt] = useState(false);
   const [textareaValue, setTextareaValue] = useState("");

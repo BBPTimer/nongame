@@ -7,8 +7,4 @@ const shuffle = (array) => {
   return array;
 };
 
-const resetDeck = () => {
-  localStorage.setItem("selectedDeck", "All Ages (Deep)");
-}
-
-export { shuffle, resetDeck };
+export { shuffle };

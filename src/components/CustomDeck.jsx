@@ -1,5 +1,5 @@
 import { use, useState } from "react";
-import { resetDeck } from "../common/utils";
+import { DeckContext } from "../contexts/DeckContext";
 import { GameContext } from "../contexts/GameContext";
 import Modal from "./common/Modal";
 import CustomDeckList from "./CustomDeck/CustomDeckList";
@@ -8,6 +8,8 @@ import UploadDeck from "./CustomDeck/UploadDeck";
 const CustomDeck = () => {
   const { customDeck, setCustomDeck, customDeckName, setCustomDeckName } =
     use(GameContext);
+
+  const { resetDeck } = use(DeckContext);
 
   const [editingDeckName, setEditingDeckName] = useState(false);
   const [addingPrompt, setAddingPrompt] = useState(false);

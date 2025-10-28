@@ -22,10 +22,16 @@ export const DeckContextProvider = ({ children }) => {
     loadDefaultDecks();
   }, []);
 
+  const resetDeck = () => {
+    console.log(defaultData[0].deckName);
+    localStorage.setItem("selectedDeck", defaultData[0].deckName);
+  };
+
   return (
     <DeckContext.Provider
       value={{
         defaultDecks,
+        resetDeck,
       }}
     >
       {children}
