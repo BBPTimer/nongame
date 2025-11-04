@@ -2,11 +2,10 @@ import { createTheme, ThemeProvider } from "@mui/material";
 import { use } from "react";
 import { GameContext } from "../../contexts/GameContext";
 import NewGameButton from "../common/NewGameButton";
-import DiceStats from "./Play/Results/DiceStats";
-import PromptStats from "./Play/Results/PromptStats";
+import Graph from "./Play/Results/Graph";
 
 const Results = () => {
-  const { players } = use(GameContext);
+  const { players, promptHistory, rollHistory } = use(GameContext);
 
   // MUI theme
   const theme = createTheme({
@@ -74,9 +73,9 @@ const Results = () => {
       </div>
       <ThemeProvider theme={theme}>
         <h2>Prompt Stats</h2>
-        <PromptStats />
+        <Graph data={promptHistory.current} keyName="promptType" />
         <h2>Dice Stats</h2>
-        <DiceStats />
+        <Graph data={rollHistory.current} keyName="diceValue" />
       </ThemeProvider>
       <br />
       <NewGameButton buttonText="Play Again" className="pulsate" />

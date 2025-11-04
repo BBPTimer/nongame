@@ -103,7 +103,32 @@ function App() {
     ];
 
     // Reset roll history
-    rollHistory.current = [];
+    rollHistory.current = [
+      {
+        diceValue: "One",
+        count: 0,
+      },
+      {
+        diceValue: "Two",
+        count: 0,
+      },
+      {
+        diceValue: "Three",
+        count: 0,
+      },
+      {
+        diceValue: "Four",
+        count: 0,
+      },
+      {
+        diceValue: "Five",
+        count: 0,
+      },
+      {
+        diceValue: "Six",
+        count: 0,
+      },
+    ];
   };
 
   // Call newGame function if isNewGame is true

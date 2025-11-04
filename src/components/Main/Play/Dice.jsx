@@ -81,7 +81,10 @@ const Dice = () => {
     }
 
     // Update rollHistory
-    rollHistory.current.push(randomNumber);
+    rollHistory.current[randomNumber - 1] = {
+      ...rollHistory.current[randomNumber - 1],
+      count: rollHistory.current[randomNumber - 1].count + 1,
+    };
   };
 
   return (
