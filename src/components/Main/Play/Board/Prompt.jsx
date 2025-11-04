@@ -17,6 +17,7 @@ const Prompt = () => {
     customDeckName,
     unusedPrompts,
     feelings,
+    promptHistory,
   } = use(GameContext);
 
   const { defaultDecks } = use(DeckContext);
@@ -44,6 +45,13 @@ const Prompt = () => {
       "Stressed or Tense",
       "Unsettled or Doubt",
     ];
+  };
+
+  const incrementPromptHistory = (index) => {
+    promptHistory.current[index] = {
+      ...promptHistory.current[index],
+      count: promptHistory.current[index].count + 1,
+    };
   };
 
   // Set isFirstRender = true on first render
@@ -89,6 +97,8 @@ const Prompt = () => {
             comment on any subject!
           </>
         );
+        // Increment prompt history
+        incrementPromptHistory(1);
       } else if (activeSpace % 4 === 3 && promptTypes.feelings) {
         // If feelings array is empty, re-populate
         feelings.current.length === 0 && initializeFeelings();
@@ -100,6 +110,8 @@ const Prompt = () => {
         );
         // Remove feeling from array
         feelings.current.splice(randomIndex, 1);
+        // Increment prompt history
+        incrementPromptHistory(2);
       } else {
         // If unusedPrompts array is empty, re-copy from original prompts array
         if (unusedPrompts.current.length === 0) {
@@ -111,6 +123,8 @@ const Prompt = () => {
         setPrompt(unusedPrompts.current[randomIndex]);
         // Remove prompt from array
         unusedPrompts.current.splice(randomIndex, 1);
+        // Increment prompt history
+        incrementPromptHistory(0);
       }
     }
     // Sets isFirstRender to false
