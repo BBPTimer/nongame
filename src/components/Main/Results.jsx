@@ -1,10 +1,26 @@
+import { createTheme, ThemeProvider } from "@mui/material";
 import { use } from "react";
 import { GameContext } from "../../contexts/GameContext";
 import NewGameButton from "../common/NewGameButton";
 import DiceStats from "./Play/Results/DiceStats";
+import PromptStats from "./Play/Results/PromptStats";
 
 const Results = () => {
   const { players } = use(GameContext);
+
+  // MUI theme
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        "Gill Sans",
+        "Gill Sans MT",
+        "Calibri",
+        "Trebuchet MS",
+        "sans-serif",
+      ].join(","),
+      fontWeightRegular: 100,
+    },
+  });
 
   // Deep copy players array
   let playersRanked = structuredClone(players);
@@ -14,6 +30,7 @@ const Results = () => {
   return (
     <>
       <h1>Good game!</h1>
+      <h2>Player Stats</h2>
       <div className="white-bg">
         {playersRanked.map((player, index) => (
           <div key={player.id}>
@@ -55,8 +72,12 @@ const Results = () => {
           </div>
         ))}
       </div>
-      <h2>Dice Stats</h2>
-      <DiceStats />
+      <ThemeProvider theme={theme}>
+        <h2>Prompt Stats</h2>
+        <PromptStats />
+        <h2>Dice Stats</h2>
+        <DiceStats />
+      </ThemeProvider>
       <br />
       <NewGameButton buttonText="Play Again" className="pulsate" />
       <br />

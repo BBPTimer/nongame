@@ -3,14 +3,17 @@ import { GameContext } from "../../../contexts/GameContext";
 
 const Dice = () => {
   const {
+    promptTypes,
     players,
     setPlayers,
     numberOfPlayers,
     roll,
     setRoll,
+    activeSpace,
     setActiveSpace,
     totalTurns,
     setTotalTurns,
+    promptHistory,
     rollHistory,
   } = use(GameContext);
 
@@ -27,6 +30,13 @@ const Dice = () => {
   };
 
   const diceAudio = new Audio("/dice/roll.mp3");
+
+  const incrementPromptHistory = (index) => {
+    promptHistory.current[index] = {
+      ...promptHistory.current[index],
+      count: promptHistory.current[index].count + 1,
+    };
+  };
 
   const handleDiceClick = () => {
     // Play dice roll sound
@@ -61,7 +71,16 @@ const Dice = () => {
     // Increment total rolls by 1
     setTotalTurns(totalTurns + 1);
 
-    // Add roll to rollHistory
+    // Increment promptHistory
+    if ((activeSpace + randomNumber) % 4 === 1 && promptTypes.questionComment) {
+      incrementPromptHistory(1);
+    } else if ((activeSpace + randomNumber) % 4 === 3 && promptTypes.feelings) {
+      incrementPromptHistory(2);
+    } else {
+      incrementPromptHistory(0);
+    }
+
+    // Update rollHistory
     rollHistory.current.push(randomNumber);
   };
 

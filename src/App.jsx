@@ -25,6 +25,7 @@ function App() {
 
   const unusedPrompts = useRef([]);
   const feelings = useRef([]);
+  const promptHistory = useRef([]);
   const rollHistory = useRef([]);
 
   // Initialize new game
@@ -84,6 +85,23 @@ function App() {
     if (!localStorage.getItem("customDeckName")) {
       localStorage.setItem("customDeckName", "My Deck");
     }
+
+    // Reset prompt history
+    promptHistory.current = [
+      {
+        promptType: "Prompt Deck",
+        count: 0,
+      },
+      {
+        promptType: "Question or\n Comment",
+        count: 0,
+      },
+      {
+        promptType: "Emotion",
+        count: 0,
+      },
+    ];
+
     // Reset roll history
     rollHistory.current = [];
   };
@@ -122,6 +140,7 @@ function App() {
         setCustomDeckName,
         unusedPrompts,
         feelings,
+        promptHistory,
         rollHistory,
       }}
     >
