@@ -25,6 +25,7 @@ function App() {
 
   const unusedPrompts = useRef([]);
   const feelings = useRef([]);
+  const rollHistory = useRef([]);
 
   // Initialize new game
   const initializeGame = () => {
@@ -83,6 +84,8 @@ function App() {
     if (!localStorage.getItem("customDeckName")) {
       localStorage.setItem("customDeckName", "My Deck");
     }
+    // Reset roll history
+    rollHistory.current = [];
   };
 
   // Call newGame function if isNewGame is true
@@ -119,6 +122,7 @@ function App() {
         setCustomDeckName,
         unusedPrompts,
         feelings,
+        rollHistory,
       }}
     >
       <Router>

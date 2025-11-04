@@ -11,6 +11,7 @@ const Dice = () => {
     setActiveSpace,
     totalTurns,
     setTotalTurns,
+    rollHistory,
   } = use(GameContext);
 
   const [isAudioEnabled, setIsAudioEnabled] = useState(
@@ -59,6 +60,9 @@ const Dice = () => {
 
     // Increment total rolls by 1
     setTotalTurns(totalTurns + 1);
+
+    // Add roll to rollHistory
+    rollHistory.current.push(randomNumber);
   };
 
   return (

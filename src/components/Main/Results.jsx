@@ -1,6 +1,7 @@
 import { use } from "react";
 import { GameContext } from "../../contexts/GameContext";
 import NewGameButton from "../common/NewGameButton";
+import DiceStats from "./Play/Results/DiceStats";
 
 const Results = () => {
   const { players } = use(GameContext);
@@ -54,6 +55,8 @@ const Results = () => {
           </div>
         ))}
       </div>
+      <h2>Dice Stats</h2>
+      <DiceStats />
       <br />
       <NewGameButton buttonText="Play Again" className="pulsate" />
       <br />
