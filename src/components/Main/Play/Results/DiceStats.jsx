@@ -1,3 +1,4 @@
+import { createTheme, ThemeProvider } from "@mui/material";
 import { BarChart } from "@mui/x-charts/BarChart";
 import { use } from "react";
 import { GameContext } from "../../../../contexts/GameContext";
@@ -15,16 +16,31 @@ const DiceStats = () => {
     }
   }
 
+  const theme = createTheme({
+    typography: {
+      fontFamily: [
+        "Gill Sans",
+        "Gill Sans MT",
+        "Calibri",
+        "Trebuchet MS",
+        "sans-serif",
+      ].join(","),
+      fontWeightRegular: 100,
+    },
+  });
+
   return (
     <div className="white-bg">
-      <BarChart
-        xAxis={[{ data: ["1", "2", "3", "4", "5", "6"] }]}
-        series={[{ data: rollCount, color: "Coral" }]}
-        barLabel={"value"}
-        borderRadius={10}
-        grid={{ horizontal: true }}
-        height={200}
-      />
+      <ThemeProvider theme={theme}>
+        <BarChart
+          xAxis={[{ data: ["One", "Two", "Three", "Four", "Five", "Six"] }]}
+          series={[{ data: rollCount, color: "Coral" }]}
+          barLabel={"value"}
+          borderRadius={10}
+          grid={{ horizontal: true }}
+          height={200}
+        />
+      </ThemeProvider>
     </div>
   );
 };
