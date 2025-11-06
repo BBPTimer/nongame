@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import Deck from "../components/classes/Deck";
+import Deck from "../classes/Deck";
 import defaultData from "../defaultDecks.json";
 
 export const DeckContext = createContext();
