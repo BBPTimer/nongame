@@ -40,14 +40,34 @@ const CustomDeck = () => {
       return;
     }
 
-    // Make copy of customDeck array and add new element with next Id and textarea value
-    let newDeck = [...customDeck, { id: nextId++, promptText: textareaValue }];
+    // Split form data by newline
+    const newPromptArray = textareaValue.split("\n");
+    // Make copy of customDeck array
+    let newDeck = [...customDeck];
+    for (let newPrompt of newPromptArray) {
+      // Skip loop iteration if prompt is empty
+      if (newPrompt.trim().length === 0) {
+        continue;
+      }
+      // Skip loop iteration if prompt is >130 characters
+      if (newPrompt.length > 130) {
+        alert(
+          'Error: Prompt "' + newPrompt + '" is greater than 130 characters.'
+        );
+        continue;
+      }
+      // Add new element with next Id and textarea value
+      newDeck = [...newDeck, { id: nextId++, promptText: newPrompt }];
+    }
+
     // Set state customDeck to new array
     setCustomDeck(newDeck);
     // Store new LS customDeck; LS cannot store array of objects so we must convert it to JSON string
     localStorage.setItem("customDeck", JSON.stringify(newDeck));
     // Store new LS nextId
     localStorage.setItem("nextId", nextId);
+    // Close form
+    setAddingPrompt(false);
     // Clear textarea
     setTextareaValue("");
   };
@@ -103,7 +123,9 @@ const CustomDeck = () => {
                 add_comment
               </span>{" "}
               to add in your prompts! Prompts are limited to 130 characters to
-              avoid the game board stretching too far.
+              avoid the game board stretching too far. To bulk add prompts,
+              simply paste in a list of prompts, with a new line in between each
+              prompt!
             </p>
             <p>
               As long as your custom deck has at least 1 prompt, it will show up
@@ -176,7 +198,6 @@ const CustomDeck = () => {
                     onChange={(event) => setTextareaValue(event.target.value)}
                     rows="4"
                     cols="40"
-                    maxLength="130"
                   ></textarea>
                 </td>
                 <td>
@@ -201,7 +222,7 @@ const CustomDeck = () => {
             ) : (
               <tr>
                 <td width={"100%"}>
-                  <i>Add a new prompt!</i>
+                  <i>Add new prompt(s)!</i>
                 </td>
                 <td>
                   <span
