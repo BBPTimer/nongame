@@ -21,7 +21,7 @@
       },
       {
         "id": 5,
-        "promptText": "What is something you’re really proud of, but don’t often talk about?"
+        "promptText": "What is something you're really proud of, but don't often talk about?"
       },
       {
         "id": 6,
@@ -37,7 +37,7 @@
       },
       {
         "id": 9,
-        "promptText": "What’s the best way to show someone you care about them?"
+        "promptText": "What's the best way to show someone you care about them?"
       },
       {
         "id": 10,
@@ -45,7 +45,7 @@
       },
       {
         "id": 11,
-        "promptText": "What’s one thing you would never change about yourself?"
+        "promptText": "What's one thing you would never change about yourself?"
       },
       {
         "id": 12,
@@ -61,7 +61,7 @@
       },
       {
         "id": 15,
-        "promptText": "What’s something you’ve always wanted to do but haven’t had the chance to yet?"
+        "promptText": "What's something you've always wanted to do but haven't had the chance to yet?"
       },
       {
         "id": 16,
@@ -93,7 +93,7 @@
       },
       {
         "id": 23,
-        "promptText": "What’s one thing you’ve learned about yourself this year?"
+        "promptText": "What's one thing you've learned about yourself this year?"
       },
       {
         "id": 24,
@@ -105,7 +105,7 @@
       },
       {
         "id": 26,
-        "promptText": "What’s something you believe in that you can’t see or touch?"
+        "promptText": "What's something you believe in that you can't see or touch?"
       },
       {
         "id": 27,
@@ -113,7 +113,7 @@
       },
       {
         "id": 28,
-        "promptText": "What is one mistake you’ve made that you think was important for your growth?"
+        "promptText": "What is one mistake you've made that you think was important for your growth?"
       },
       {
         "id": 29,
@@ -129,7 +129,7 @@
       },
       {
         "id": 32,
-        "promptText": "Do you think there’s such a thing as a perfect person? Why or why not?"
+        "promptText": "Do you think there's such a thing as a perfect person? Why or why not?"
       },
       {
         "id": 33,
@@ -137,15 +137,15 @@
       },
       {
         "id": 34,
-        "promptText": "What’s something that always makes you feel better, no matter what’s going on?"
+        "promptText": "What's something that always makes you feel better, no matter what's going on?"
       },
       {
         "id": 35,
-        "promptText": "What is the most important lesson you’ve learned in life so far?"
+        "promptText": "What is the most important lesson you've learned in life so far?"
       },
       {
         "id": 36,
-        "promptText": "What’s the greatest challenge you’ve overcome, and how did it change you?"
+        "promptText": "What's the greatest challenge you've overcome, and how did it change you?"
       },
       {
         "id": 37,
@@ -157,7 +157,7 @@
       },
       {
         "id": 39,
-        "promptText": "What’s something you’ve always wanted to ask but never have?"
+        "promptText": "What's something you've always wanted to ask but never have?"
       },
       {
         "id": 40,
@@ -175,7 +175,7 @@
       },
       {
         "id": 42,
-        "promptText": "What’s your favorite thing to do on a rainy day?"
+        "promptText": "What's your favorite thing to do on a rainy day?"
       },
       {
         "id": 43,
@@ -183,7 +183,7 @@
       },
       {
         "id": 44,
-        "promptText": "What’s the best gift you’ve ever received?"
+        "promptText": "What's the best gift you've ever received?"
       },
       {
         "id": 45,
@@ -191,11 +191,11 @@
       },
       {
         "id": 46,
-        "promptText": "What’s your favorite family tradition?"
+        "promptText": "What's your favorite family tradition?"
       },
       {
         "id": 47,
-        "promptText": "What’s one thing you’re really good at?"
+        "promptText": "What's one thing you're really good at?"
       },
       {
         "id": 48,
@@ -203,7 +203,7 @@
       },
       {
         "id": 49,
-        "promptText": "What’s the coolest thing you’ve ever seen or experienced?"
+        "promptText": "What's the coolest thing you've ever seen or experienced?"
       },
       {
         "id": 50,
@@ -211,7 +211,7 @@
       },
       {
         "id": 51,
-        "promptText": "What’s something that makes you laugh no matter what?"
+        "promptText": "What's something that makes you laugh no matter what?"
       },
       {
         "id": 52,
@@ -219,15 +219,15 @@
       },
       {
         "id": 53,
-        "promptText": "What’s the most adventurous thing you’ve ever done?"
+        "promptText": "What's the most adventurous thing you've ever done?"
       },
       {
         "id": 54,
-        "promptText": "What’s your favorite season, and why?"
+        "promptText": "What's your favorite season, and why?"
       },
       {
         "id": 55,
-        "promptText": "What’s one thing on your bucket list?"
+        "promptText": "What's one thing on your bucket list?"
       },
       {
         "id": 56,
@@ -235,7 +235,7 @@
       },
       {
         "id": 57,
-        "promptText": "What’s your favorite book, movie, or TV show?"
+        "promptText": "What's your favorite book, movie, or TV show?"
       },
       {
         "id": 58,
@@ -243,7 +243,7 @@
       },
       {
         "id": 59,
-        "promptText": "What’s one talent or skill you wish you had?"
+        "promptText": "What's one talent or skill you wish you had?"
       },
       {
         "id": 60,
@@ -255,7 +255,7 @@
       },
       {
         "id": 62,
-        "promptText": "What’s one thing that always cheers you up when you’re feeling down?"
+        "promptText": "What's one thing that always cheers you up when you're feeling down?"
       },
       {
         "id": 63,
@@ -263,7 +263,7 @@
       },
       {
         "id": 64,
-        "promptText": "What’s your favorite way to spend time with family or friends?"
+        "promptText": "What's your favorite way to spend time with family or friends?"
       },
       {
         "id": 65,
@@ -271,7 +271,7 @@
       },
       {
         "id": 66,
-        "promptText": "What’s one hobby you’ve always wanted to try but never have?"
+        "promptText": "What's one hobby you've always wanted to try but never have?"
       },
       {
         "id": 67,
@@ -279,7 +279,7 @@
       },
       {
         "id": 68,
-        "promptText": "What’s something small that makes a big difference in your day?"
+        "promptText": "What's something small that makes a big difference in your day?"
       },
       {
         "id": 69,
@@ -291,7 +291,7 @@
       },
       {
         "id": 71,
-        "promptText": "What’s one thing you’ve always wanted to do but are too scared to try?"
+        "promptText": "What's one thing you've always wanted to do but are too scared to try?"
       },
       {
         "id": 72,
@@ -299,7 +299,7 @@
       },
       {
         "id": 73,
-        "promptText": "What’s the funniest thing that’s ever happened to you?"
+        "promptText": "What's the funniest thing that's ever happened to you?"
       },
       {
         "id": 74,
@@ -307,7 +307,7 @@
       },
       {
         "id": 75,
-        "promptText": "What’s your go-to comfort food when you’re feeling down?"
+        "promptText": "What's your go-to comfort food when you're feeling down?"
       },
       {
         "id": 76,
@@ -319,7 +319,7 @@
       },
       {
         "id": 78,
-        "promptText": "What’s something you think everyone should experience at least once in their life?"
+        "promptText": "What's something you think everyone should experience at least once in their life?"
       },
       {
         "id": 79,
@@ -327,7 +327,7 @@
       },
       {
         "id": 80,
-        "promptText": "What’s your favorite way to relax after a busy day?"
+        "promptText": "What's your favorite way to relax after a busy day?"
       }
     ]
   },
@@ -377,11 +377,11 @@
       },
       {
         "id": 91,
-        "promptText": "What’s something you’ve never told anyone before?"
+        "promptText": "What's something you've never told anyone before?"
       },
       {
         "id": 92,
-        "promptText": "How do you feel when you’re most vulnerable?"
+        "promptText": "How do you feel when you're most vulnerable?"
       },
       {
         "id": 93,
@@ -401,15 +401,15 @@
       },
       {
         "id": 97,
-        "promptText": "What do you need from me when we’re disagreeing?"
+        "promptText": "What do you need from me when we're disagreeing?"
       },
       {
         "id": 98,
-        "promptText": "What’s a hard truth about yourself you’ve come to accept?"
+        "promptText": "What's a hard truth about yourself you've come to accept?"
       },
       {
         "id": 99,
-        "promptText": "How do you think we’ve changed each other?"
+        "promptText": "How do you think we've changed each other?"
       },
       {
         "id": 100,
@@ -421,11 +421,11 @@
       },
       {
         "id": 102,
-        "promptText": "What’s your love language, and how do you like to receive it?"
+        "promptText": "What's your love language, and how do you like to receive it?"
       },
       {
         "id": 103,
-        "promptText": "What’s a moment of intimacy you’ll never forget?"
+        "promptText": "What's a moment of intimacy you'll never forget?"
       },
       {
         "id": 104,
@@ -433,7 +433,7 @@
       },
       {
         "id": 105,
-        "promptText": "What’s something you wish we did more often?"
+        "promptText": "What's something you wish we did more often?"
       },
       {
         "id": 106,
@@ -469,7 +469,7 @@
       },
       {
         "id": 114,
-        "promptText": "What’s the hardest thing for you to express?"
+        "promptText": "What's the hardest thing for you to express?"
       },
       {
         "id": 115,
@@ -485,7 +485,7 @@
       },
       {
         "id": 118,
-        "promptText": "What’s a belief or idea you’ve outgrown?"
+        "promptText": "What's a belief or idea you've outgrown?"
       },
       {
         "id": 119,
@@ -493,11 +493,11 @@
       },
       {
         "id": 120,
-        "promptText": "What’s something about you that most people misunderstand?"
+        "promptText": "What's something about you that most people misunderstand?"
       },
       {
         "id": 121,
-        "promptText": "What’s the most romantic thing someone has ever done for you?"
+        "promptText": "What's the most romantic thing someone has ever done for you?"
       },
       {
         "id": 122,
@@ -517,7 +517,7 @@
       },
       {
         "id": 126,
-        "promptText": "What’s the hardest goodbye you’ve ever had to say?"
+        "promptText": "What's the hardest goodbye you've ever had to say?"
       },
       {
         "id": 127,
@@ -525,19 +525,19 @@
       },
       {
         "id": 128,
-        "promptText": "What’s something you’re still grieving?"
+        "promptText": "What's something you're still grieving?"
       },
       {
         "id": 129,
-        "promptText": "How do you usually cope when you’re hurting?"
+        "promptText": "How do you usually cope when you're hurting?"
       },
       {
         "id": 130,
-        "promptText": "What’s the most difficult choice you’ve ever made?"
+        "promptText": "What's the most difficult choice you've ever made?"
       },
       {
         "id": 131,
-        "promptText": "If fear and money weren’t an issue, what would you do with your life?"
+        "promptText": "If fear and money weren't an issue, what would you do with your life?"
       },
       {
         "id": 132,
@@ -553,19 +553,19 @@
       },
       {
         "id": 135,
-        "promptText": "What’s something you’ve always wanted to try but haven’t yet?"
+        "promptText": "What's something you've always wanted to try but haven't yet?"
       },
       {
         "id": 136,
-        "promptText": "What’s a childhood memory that shaped you?"
+        "promptText": "What's a childhood memory that shaped you?"
       },
       {
         "id": 137,
-        "promptText": "How did your parents’ relationship influence your view on love?"
+        "promptText": "How did your parents' relationship influence your view on love?"
       },
       {
         "id": 138,
-        "promptText": "What kind of parent do you think you’d be?"
+        "promptText": "What kind of parent do you think you'd be?"
       },
       {
         "id": 139,
@@ -591,11 +591,11 @@
       },
       {
         "id": 143,
-        "promptText": "What’s the most ridiculous thing you believed as a child?"
+        "promptText": "What's the most ridiculous thing you believed as a child?"
       },
       {
         "id": 144,
-        "promptText": "What’s a toy you always wanted but never got?"
+        "promptText": "What's a toy you always wanted but never got?"
       },
       {
         "id": 145,
@@ -619,7 +619,7 @@
       },
       {
         "id": 150,
-        "promptText": "What’s the weirdest food you’d try on a trip?"
+        "promptText": "What's the weirdest food you'd try on a trip?"
       },
       {
         "id": 151,
@@ -627,19 +627,19 @@
       },
       {
         "id": 152,
-        "promptText": "What’s the cheesiest pickup line that might actually work on you?"
+        "promptText": "What's the cheesiest pickup line that might actually work on you?"
       },
       {
         "id": 153,
-        "promptText": "Who’s more likely to survive a zombie apocalypse—me or you?"
+        "promptText": "Who's more likely to survive a zombie apocalypse—me or you?"
       },
       {
         "id": 154,
-        "promptText": "What’s something I do that makes you laugh, even when you’re mad?"
+        "promptText": "What's something I do that makes you laugh, even when you're mad?"
       },
       {
         "id": 155,
-        "promptText": "What’s our “couple name” if we were a celebrity duo?"
+        "promptText": "What's our “couple name” if we were a celebrity duo?"
       },
       {
         "id": 156,
@@ -651,7 +651,7 @@
       },
       {
         "id": 158,
-        "promptText": "What reality TV show do you think we’d crush as a team?"
+        "promptText": "What reality TV show do you think we'd crush as a team?"
       },
       {
         "id": 159,
@@ -663,7 +663,7 @@
       },
       {
         "id": 161,
-        "promptText": "Which celebrity couple do you think we’re most like?"
+        "promptText": "Which celebrity couple do you think we're most like?"
       },
       {
         "id": 162,
@@ -675,7 +675,7 @@
       },
       {
         "id": 164,
-        "promptText": "What’s the weirdest dream you’ve ever had?"
+        "promptText": "What's the weirdest dream you've ever had?"
       },
       {
         "id": 165,
@@ -683,7 +683,7 @@
       },
       {
         "id": 166,
-        "promptText": "What’s your go-to dance move when no one’s watching?"
+        "promptText": "What's your go-to dance move when no one's watching?"
       },
       {
         "id": 167,
@@ -703,11 +703,11 @@
       },
       {
         "id": 171,
-        "promptText": "Who’s more likely to spoil a pet—you or me?"
+        "promptText": "Who's more likely to spoil a pet—you or me?"
       },
       {
         "id": 172,
-        "promptText": "What’s the strangest food combination you actually enjoy?"
+        "promptText": "What's the strangest food combination you actually enjoy?"
       },
       {
         "id": 173,
@@ -719,7 +719,7 @@
       },
       {
         "id": 175,
-        "promptText": "What’s your ultimate guilty pleasure snack?"
+        "promptText": "What's your ultimate guilty pleasure snack?"
       },
       {
         "id": 176,
@@ -751,7 +751,7 @@
       },
       {
         "id": 183,
-        "promptText": "What’s your “fake” job if someone asked you to make one up on the spot?"
+        "promptText": "What's your “fake” job if someone asked you to make one up on the spot?"
       }
     ]
   },
@@ -805,7 +805,7 @@
       },
       {
         "id": 195,
-        "promptText": "What’s something you're afraid to share with others, but feel safe sharing now?"
+        "promptText": "What's something you're afraid to share with others, but feel safe sharing now?"
       },
       {
         "id": 196,
@@ -841,7 +841,7 @@
       },
       {
         "id": 204,
-        "promptText": "What is a dream you have that you haven’t shared with anyone yet?"
+        "promptText": "What is a dream you have that you haven't shared with anyone yet?"
       },
       {
         "id": 205,
@@ -853,7 +853,7 @@
       },
       {
         "id": 207,
-        "promptText": "What’s something you’ve always wanted to learn or try, but haven’t yet?"
+        "promptText": "What's something you've always wanted to learn or try, but haven't yet?"
       },
       {
         "id": 208,
@@ -907,7 +907,7 @@
     "prompts": [
       {
         "id": 219,
-        "promptText": "What’s your all-time favorite movie or TV show?"
+        "promptText": "What's your all-time favorite movie or TV show?"
       },
       {
         "id": 220,
@@ -915,7 +915,7 @@
       },
       {
         "id": 221,
-        "promptText": "What’s your favorite family vacation spot?"
+        "promptText": "What's your favorite family vacation spot?"
       },
       {
         "id": 222,
@@ -923,7 +923,7 @@
       },
       {
         "id": 223,
-        "promptText": "What’s your favorite thing to do on a lazy day?"
+        "promptText": "What's your favorite thing to do on a lazy day?"
       },
       {
         "id": 224,
@@ -951,7 +951,7 @@
       },
       {
         "id": 230,
-        "promptText": "If you won the lottery tomorrow, what’s the first thing you’d buy?"
+        "promptText": "If you won the lottery tomorrow, what's the first thing you'd buy?"
       },
       {
         "id": 231,
@@ -967,15 +967,15 @@
       },
       {
         "id": 234,
-        "promptText": "What’s one thing you love doing that no one else in the family does?"
+        "promptText": "What's one thing you love doing that no one else in the family does?"
       },
       {
         "id": 235,
-        "promptText": "What’s your go-to karaoke song?"
+        "promptText": "What's your go-to karaoke song?"
       },
       {
         "id": 236,
-        "promptText": "What’s the best book you’ve read recently?"
+        "promptText": "What's the best book you've read recently?"
       },
       {
         "id": 237,
@@ -991,7 +991,7 @@
       },
       {
         "id": 240,
-        "promptText": "What’s the most embarrassing thing that’s ever happened to you?"
+        "promptText": "What's the most embarrassing thing that's ever happened to you?"
       },
       {
         "id": 241,
@@ -1003,7 +1003,7 @@
       },
       {
         "id": 243,
-        "promptText": "What’s the weirdest food you’ve ever eaten and liked?"
+        "promptText": "What's the weirdest food you've ever eaten and liked?"
       },
       {
         "id": 244,
@@ -1011,7 +1011,7 @@
       },
       {
         "id": 245,
-        "promptText": "If you could invent something that doesn’t exist yet, what would it be?"
+        "promptText": "If you could invent something that doesn't exist yet, what would it be?"
       },
       {
         "id": 246,
@@ -1027,7 +1027,7 @@
       },
       {
         "id": 249,
-        "promptText": "What’s your earliest childhood memory?"
+        "promptText": "What's your earliest childhood memory?"
       },
       {
         "id": 250,
@@ -1035,15 +1035,15 @@
       },
       {
         "id": 251,
-        "promptText": "What’s the best prank you’ve ever pulled off?"
+        "promptText": "What's the best prank you've ever pulled off?"
       },
       {
         "id": 252,
-        "promptText": "What’s the silliest thing you used to believe when you were a kid?"
+        "promptText": "What's the silliest thing you used to believe when you were a kid?"
       },
       {
         "id": 253,
-        "promptText": "What’s the most memorable birthday or family celebration you’ve had?"
+        "promptText": "What's the most memorable birthday or family celebration you've had?"
       },
       {
         "id": 254,
@@ -1105,7 +1105,7 @@
       },
       {
         "id": 267,
-        "promptText": "Do you think we’re all connected in some way? How could we be connected?"
+        "promptText": "Do you think we're all connected in some way? How could we be connected?"
       },
       {
         "id": 268,
@@ -1133,7 +1133,7 @@
       },
       {
         "id": 274,
-        "promptText": "What do you think would happen if people stopped worrying about who’s “right” and just listened to each other more?"
+        "promptText": "What do you think would happen if people stopped worrying about who's “right” and just listened to each other more?"
       },
       {
         "id": 275,
@@ -1153,7 +1153,7 @@
       },
       {
         "id": 279,
-        "promptText": "If we didn’t have any rules, what do you think would happen?"
+        "promptText": "If we didn't have any rules, what do you think would happen?"
       },
       {
         "id": 280,
@@ -1165,7 +1165,7 @@
       },
       {
         "id": 282,
-        "promptText": "How do you know what’s real and what’s just in your imagination?"
+        "promptText": "How do you know what's real and what's just in your imagination?"
       },
       {
         "id": 283,
@@ -1173,11 +1173,11 @@
       },
       {
         "id": 284,
-        "promptText": "Why do you think people sometimes don’t get along, even when they don’t want to fight?"
+        "promptText": "Why do you think people sometimes don't get along, even when they don't want to fight?"
       },
       {
         "id": 285,
-        "promptText": "If we could all understand each other’s feelings without talking, what would the world be like?"
+        "promptText": "If we could all understand each other's feelings without talking, what would the world be like?"
       },
       {
         "id": 286,
@@ -1185,7 +1185,7 @@
       },
       {
         "id": 287,
-        "promptText": "Do you think we’re all connected to nature in some way? How do we show that connection?"
+        "promptText": "Do you think we're all connected to nature in some way? How do we show that connection?"
       },
       {
         "id": 288,
@@ -1193,7 +1193,7 @@
       },
       {
         "id": 289,
-        "promptText": "What do you think it would feel like to be in someone else’s shoes for a day?"
+        "promptText": "What do you think it would feel like to be in someone else's shoes for a day?"
       },
       {
         "id": 290,
@@ -1201,7 +1201,7 @@
       },
       {
         "id": 291,
-        "promptText": "What makes something beautiful? Can anything be beautiful, or do we need to decide what’s beautiful?"
+        "promptText": "What makes something beautiful? Can anything be beautiful, or do we need to decide what's beautiful?"
       },
       {
         "id": 292,
@@ -1259,11 +1259,11 @@
       },
       {
         "id": 304,
-        "promptText": "What’s the most interesting thing you’ve learned this year?"
+        "promptText": "What's the most interesting thing you've learned this year?"
       },
       {
         "id": 305,
-        "promptText": "What’s your favorite book or movie and why do you like it?"
+        "promptText": "What's your favorite book or movie and why do you like it?"
       },
       {
         "id": 306,
@@ -1271,7 +1271,7 @@
       },
       {
         "id": 307,
-        "promptText": "What’s your favorite thing about your best friend?"
+        "promptText": "What's your favorite thing about your best friend?"
       },
       {
         "id": 308,
@@ -1283,7 +1283,7 @@
       },
       {
         "id": 310,
-        "promptText": "What’s the coolest thing you’ve ever made or built?"
+        "promptText": "What's the coolest thing you've ever made or built?"
       },
       {
         "id": 311,
@@ -1291,7 +1291,7 @@
       },
       {
         "id": 312,
-        "promptText": "What’s your favorite thing to do outside?"
+        "promptText": "What's your favorite thing to do outside?"
       },
       {
         "id": 313,
@@ -1303,7 +1303,7 @@
       },
       {
         "id": 315,
-        "promptText": "What’s your favorite song to sing or dance to?"
+        "promptText": "What's your favorite song to sing or dance to?"
       },
       {
         "id": 316,
@@ -1311,7 +1311,7 @@
       },
       {
         "id": 317,
-        "promptText": "What’s something you’re really good at?"
+        "promptText": "What's something you're really good at?"
       },
       {
         "id": 318,
@@ -1319,11 +1319,11 @@
       },
       {
         "id": 319,
-        "promptText": "What’s your favorite thing to do with your family?"
+        "promptText": "What's your favorite thing to do with your family?"
       },
       {
         "id": 320,
-        "promptText": "What’s the best thing you’ve ever won?"
+        "promptText": "What's the best thing you've ever won?"
       },
       {
         "id": 321,
@@ -1345,7 +1345,7 @@
     "prompts": [
       {
         "id": 324,
-        "promptText": "What’s your favorite meal or dish to cook or eat?"
+        "promptText": "What's your favorite meal or dish to cook or eat?"
       },
       {
         "id": 325,
@@ -1353,11 +1353,11 @@
       },
       {
         "id": 326,
-        "promptText": "What’s your favorite movie or TV show that never gets old?"
+        "promptText": "What's your favorite movie or TV show that never gets old?"
       },
       {
         "id": 327,
-        "promptText": "What’s the best book you’ve ever read?"
+        "promptText": "What's the best book you've ever read?"
       },
       {
         "id": 328,
@@ -1369,7 +1369,7 @@
       },
       {
         "id": 330,
-        "promptText": "What’s a song that always brings back memories for you?"
+        "promptText": "What's a song that always brings back memories for you?"
       },
       {
         "id": 331,
@@ -1377,7 +1377,7 @@
       },
       {
         "id": 332,
-        "promptText": "Can you remember your favorite vacation or trip you’ve ever taken?"
+        "promptText": "Can you remember your favorite vacation or trip you've ever taken?"
       },
       {
         "id": 333,
@@ -1393,7 +1393,7 @@
       },
       {
         "id": 336,
-        "promptText": "If you won the lottery today, what’s the first thing you would buy or do?"
+        "promptText": "If you won the lottery today, what's the first thing you would buy or do?"
       },
       {
         "id": 337,
@@ -1409,15 +1409,15 @@
       },
       {
         "id": 340,
-        "promptText": "What’s something you’ve always wanted to try but never did?"
+        "promptText": "What's something you've always wanted to try but never did?"
       },
       {
         "id": 341,
-        "promptText": "What’s the most adventurous thing you’ve ever done?"
+        "promptText": "What's the most adventurous thing you've ever done?"
       },
       {
         "id": 342,
-        "promptText": "What’s a fun fact about you that most people don’t know?"
+        "promptText": "What's a fun fact about you that most people don't know?"
       },
       {
         "id": 343,
@@ -1425,11 +1425,11 @@
       },
       {
         "id": 344,
-        "promptText": "What’s the best way to spend a rainy day?"
+        "promptText": "What's the best way to spend a rainy day?"
       },
       {
         "id": 345,
-        "promptText": "What’s your favorite way to relax after a busy day?"
+        "promptText": "What's your favorite way to relax after a busy day?"
       },
       {
         "id": 346,
@@ -1441,7 +1441,7 @@
       },
       {
         "id": 348,
-        "promptText": "What’s your favorite thing to do with family or friends?"
+        "promptText": "What's your favorite thing to do with family or friends?"
       },
       {
         "id": 349,
@@ -1449,7 +1449,7 @@
       },
       {
         "id": 350,
-        "promptText": "What’s the funniest thing that has happened to you recently?"
+        "promptText": "What's the funniest thing that has happened to you recently?"
       },
       {
         "id": 351,
@@ -1457,7 +1457,7 @@
       },
       {
         "id": 352,
-        "promptText": "What’s the best prank or joke you’ve ever pulled off or seen?"
+        "promptText": "What's the best prank or joke you've ever pulled off or seen?"
       },
       {
         "id": 353,
@@ -1465,11 +1465,11 @@
       },
       {
         "id": 354,
-        "promptText": "What’s the most surprising piece of technology you’ve seen in your lifetime?"
+        "promptText": "What's the most surprising piece of technology you've seen in your lifetime?"
       },
       {
         "id": 355,
-        "promptText": "What’s your favorite app or website to visit?"
+        "promptText": "What's your favorite app or website to visit?"
       },
       {
         "id": 356,
@@ -1477,7 +1477,7 @@
       },
       {
         "id": 357,
-        "promptText": "What’s something about technology today that you never imagined would happen when you were younger?"
+        "promptText": "What's something about technology today that you never imagined would happen when you were younger?"
       },
       {
         "id": 358,
@@ -1485,27 +1485,27 @@
       },
       {
         "id": 359,
-        "promptText": "What’s one of the happiest moments of your life?"
+        "promptText": "What's one of the happiest moments of your life?"
       },
       {
         "id": 360,
-        "promptText": "What’s a piece of advice you’d give your younger self?"
+        "promptText": "What's a piece of advice you'd give your younger self?"
       },
       {
         "id": 361,
-        "promptText": "What’s one thing you’re really proud of in your life?"
+        "promptText": "What's one thing you're really proud of in your life?"
       },
       {
         "id": 362,
-        "promptText": "What’s something that always makes you laugh?"
+        "promptText": "What's something that always makes you laugh?"
       },
       {
         "id": 363,
-        "promptText": "What’s one thing that’s always guaranteed to brighten your day?"
+        "promptText": "What's one thing that's always guaranteed to brighten your day?"
       },
       {
         "id": 364,
-        "promptText": "What’s your favorite dessert or treat?"
+        "promptText": "What's your favorite dessert or treat?"
       },
       {
         "id": 365,
@@ -1517,7 +1517,7 @@
       },
       {
         "id": 367,
-        "promptText": "What’s the best restaurant you’ve ever been to, and what did you order?"
+        "promptText": "What's the best restaurant you've ever been to, and what did you order?"
       },
       {
         "id": 368,
@@ -1541,7 +1541,7 @@
       },
       {
         "id": 373,
-        "promptText": "What’s a dream you’ve had for years but haven’t yet had the chance to fulfill?"
+        "promptText": "What's a dream you've had for years but haven't yet had the chance to fulfill?"
       }
     ]
   },
@@ -1559,7 +1559,7 @@
       },
       {
         "id": 376,
-        "promptText": "What are the biggest changes you’ve seen in the world during your lifetime?"
+        "promptText": "What are the biggest changes you've seen in the world during your lifetime?"
       },
       {
         "id": 377,
@@ -1571,15 +1571,15 @@
       },
       {
         "id": 379,
-        "promptText": "What’s the best piece of relationship advice you’ve ever received or given?"
+        "promptText": "What's the best piece of relationship advice you've ever received or given?"
       },
       {
         "id": 380,
-        "promptText": "How did you meet the love of your life, and what’s one memory that stands out about them?"
+        "promptText": "How did you meet the love of your life, and what's one memory that stands out about them?"
       },
       {
         "id": 381,
-        "promptText": "What has been the most important lesson you’ve learned from your family or loved ones?"
+        "promptText": "What has been the most important lesson you've learned from your family or loved ones?"
       },
       {
         "id": 382,
@@ -1591,11 +1591,11 @@
       },
       {
         "id": 384,
-        "promptText": "What was the most challenging obstacle you’ve had to overcome, and how did you manage it?"
+        "promptText": "What was the most challenging obstacle you've had to overcome, and how did you manage it?"
       },
       {
         "id": 385,
-        "promptText": "When you’ve faced hard times, what helped you stay hopeful or strong?"
+        "promptText": "When you've faced hard times, what helped you stay hopeful or strong?"
       },
       {
         "id": 386,
@@ -1607,11 +1607,11 @@
       },
       {
         "id": 388,
-        "promptText": "What are some of the most difficult decisions you’ve had to make in life?"
+        "promptText": "What are some of the most difficult decisions you've had to make in life?"
       },
       {
         "id": 389,
-        "promptText": "What’s one family tradition or value that you hope gets passed down for generations?"
+        "promptText": "What's one family tradition or value that you hope gets passed down for generations?"
       },
       {
         "id": 390,
@@ -1623,7 +1623,7 @@
       },
       {
         "id": 392,
-        "promptText": "What’s one memory you treasure most from your childhood or raising your own children?"
+        "promptText": "What's one memory you treasure most from your childhood or raising your own children?"
       },
       {
         "id": 393,
@@ -1635,7 +1635,7 @@
       },
       {
         "id": 395,
-        "promptText": "What is something you’ve always believed but feel differently about now?"
+        "promptText": "What is something you've always believed but feel differently about now?"
       },
       {
         "id": 396,
@@ -1671,7 +1671,7 @@
       },
       {
         "id": 404,
-        "promptText": "What is something you’ve learned about yourself over the years that you didn’t know when you were younger?"
+        "promptText": "What is something you've learned about yourself over the years that you didn't know when you were younger?"
       },
       {
         "id": 405,
@@ -1683,11 +1683,11 @@
       },
       {
         "id": 407,
-        "promptText": "What is a personal accomplishment you never thought you’d achieve but did?"
+        "promptText": "What is a personal accomplishment you never thought you'd achieve but did?"
       },
       {
         "id": 408,
-        "promptText": "How do you cope with aging, and what has helped you stay content as you’ve grown older?"
+        "promptText": "How do you cope with aging, and what has helped you stay content as you've grown older?"
       },
       {
         "id": 409,
@@ -1699,11 +1699,11 @@
       },
       {
         "id": 411,
-        "promptText": "What’s the most profound spiritual experience you’ve had in your lifetime?"
+        "promptText": "What's the most profound spiritual experience you've had in your lifetime?"
       },
       {
         "id": 412,
-        "promptText": "Do you believe in an afterlife? If so, what do you think it’s like?"
+        "promptText": "Do you believe in an afterlife? If so, what do you think it's like?"
       },
       {
         "id": 413,
@@ -1711,7 +1711,7 @@
       },
       {
         "id": 414,
-        "promptText": "What’s the most fun or adventurous thing you’ve ever done?"
+        "promptText": "What's the most fun or adventurous thing you've ever done?"
       },
       {
         "id": 415,
@@ -1727,7 +1727,7 @@
       },
       {
         "id": 418,
-        "promptText": "What’s the most surprising thing you’ve learned about life that you never expected?"
+        "promptText": "What's the most surprising thing you've learned about life that you never expected?"
       },
       {
         "id": 419,
@@ -1781,11 +1781,11 @@
       },
       {
         "id": 430,
-        "promptText": "What’s one thing on your bucket list you really want to do?"
+        "promptText": "What's one thing on your bucket list you really want to do?"
       },
       {
         "id": 431,
-        "promptText": "What’s the most embarrassing thing that’s ever happened to you?"
+        "promptText": "What's the most embarrassing thing that's ever happened to you?"
       },
       {
         "id": 432,
@@ -1793,7 +1793,7 @@
       },
       {
         "id": 433,
-        "promptText": "What’s your go-to song when you need a mood boost?"
+        "promptText": "What's your go-to song when you need a mood boost?"
       },
       {
         "id": 434,
@@ -1805,15 +1805,15 @@
       },
       {
         "id": 436,
-        "promptText": "What’s the weirdest food you’ve ever tried and liked?"
+        "promptText": "What's the weirdest food you've ever tried and liked?"
       },
       {
         "id": 437,
-        "promptText": "Who’s someone you really look up to and why?"
+        "promptText": "Who's someone you really look up to and why?"
       },
       {
         "id": 438,
-        "promptText": "What’s the craziest dream or goal you have for your future?"
+        "promptText": "What's the craziest dream or goal you have for your future?"
       },
       {
         "id": 439,
@@ -1821,7 +1821,7 @@
       },
       {
         "id": 440,
-        "promptText": "What’s your favorite social media platform and why?"
+        "promptText": "What's your favorite social media platform and why?"
       },
       {
         "id": 441,
@@ -1829,7 +1829,7 @@
       },
       {
         "id": 442,
-        "promptText": "What’s the best piece of advice you’ve ever received?"
+        "promptText": "What's the best piece of advice you've ever received?"
       },
       {
         "id": 443,
@@ -1841,11 +1841,11 @@
       },
       {
         "id": 445,
-        "promptText": "What’s one app you can’t live without?"
+        "promptText": "What's one app you can't live without?"
       },
       {
         "id": 446,
-        "promptText": "What’s something you’ve learned recently that surprised you?"
+        "promptText": "What's something you've learned recently that surprised you?"
       },
       {
         "id": 447,
@@ -1853,7 +1853,7 @@
       },
       {
         "id": 448,
-        "promptText": "What’s your go-to comfort food after a tough day?"
+        "promptText": "What's your go-to comfort food after a tough day?"
       },
       {
         "id": 449,
@@ -1861,7 +1861,7 @@
       },
       {
         "id": 450,
-        "promptText": "What’s one thing you wish adults understood about being a teen?"
+        "promptText": "What's one thing you wish adults understood about being a teen?"
       },
       {
         "id": 451,
@@ -1869,7 +1869,7 @@
       },
       {
         "id": 452,
-        "promptText": "What’s something you’ve always wanted to try but haven’t yet?"
+        "promptText": "What's something you've always wanted to try but haven't yet?"
       },
       {
         "id": 453,
@@ -1877,7 +1877,7 @@
       },
       {
         "id": 454,
-        "promptText": "What’s a hobby or skill you’d love to learn but never had the chance?"
+        "promptText": "What's a hobby or skill you'd love to learn but never had the chance?"
       },
       {
         "id": 455,
@@ -1885,19 +1885,19 @@
       },
       {
         "id": 456,
-        "promptText": "What’s the most memorable vacation you’ve ever been on?"
+        "promptText": "What's the most memorable vacation you've ever been on?"
       },
       {
         "id": 457,
-        "promptText": "What’s your favorite thing to do when you’re alone and bored?"
+        "promptText": "What's your favorite thing to do when you're alone and bored?"
       },
       {
         "id": 458,
-        "promptText": "What’s one trend you’ve seen that you just don’t understand?"
+        "promptText": "What's one trend you've seen that you just don't understand?"
       },
       {
         "id": 459,
-        "promptText": "What’s the most recent show you binge-watched and loved?"
+        "promptText": "What's the most recent show you binge-watched and loved?"
       },
       {
         "id": 460,
@@ -1909,7 +1909,7 @@
       },
       {
         "id": 462,
-        "promptText": "What’s the last song you had stuck in your head?"
+        "promptText": "What's the last song you had stuck in your head?"
       },
       {
         "id": 463,
@@ -1917,7 +1917,7 @@
       },
       {
         "id": 464,
-        "promptText": "What’s the best vacation spot you’ve visited or want to visit?"
+        "promptText": "What's the best vacation spot you've visited or want to visit?"
       },
       {
         "id": 465,
@@ -1925,7 +1925,7 @@
       },
       {
         "id": 466,
-        "promptText": "What’s your guilty pleasure TV show or movie?"
+        "promptText": "What's your guilty pleasure TV show or movie?"
       },
       {
         "id": 467,
@@ -1933,7 +1933,7 @@
       },
       {
         "id": 468,
-        "promptText": "What’s the craziest or funniest thing that’s ever happened at school?"
+        "promptText": "What's the craziest or funniest thing that's ever happened at school?"
       }
     ]
   },
@@ -1947,7 +1947,7 @@
       },
       {
         "id": 470,
-        "promptText": "What does it mean to be truly happy, and do you think it’s possible to achieve that kind of happiness?"
+        "promptText": "What does it mean to be truly happy, and do you think it's possible to achieve that kind of happiness?"
       },
       {
         "id": 471,
@@ -1955,7 +1955,7 @@
       },
       {
         "id": 472,
-        "promptText": "What is something about yourself you’re still trying to understand?"
+        "promptText": "What is something about yourself you're still trying to understand?"
       },
       {
         "id": 473,
@@ -1979,7 +1979,7 @@
       },
       {
         "id": 478,
-        "promptText": "What’s the difference between being alone and being lonely?"
+        "promptText": "What's the difference between being alone and being lonely?"
       },
       {
         "id": 479,
@@ -2007,7 +2007,7 @@
       },
       {
         "id": 485,
-        "promptText": "How do you define success? Is it personal, or is it shaped by society’s standards?"
+        "promptText": "How do you define success? Is it personal, or is it shaped by society's standards?"
       },
       {
         "id": 486,
@@ -2035,7 +2035,7 @@
       },
       {
         "id": 493,
-        "promptText": "When you’re facing a difficult situation, what do you remind yourself of to stay strong?"
+        "promptText": "When you're facing a difficult situation, what do you remind yourself of to stay strong?"
       },
       {
         "id": 494,
@@ -2059,7 +2059,7 @@
       },
       {
         "id": 499,
-        "promptText": "What would you do if you knew you couldn’t fail?"
+        "promptText": "What would you do if you knew you couldn't fail?"
       },
       {
         "id": 500,
@@ -2071,7 +2071,7 @@
       },
       {
         "id": 502,
-        "promptText": "If money and time weren’t an issue, what would you spend your days doing?"
+        "promptText": "If money and time weren't an issue, what would you spend your days doing?"
       },
       {
         "id": 503,
@@ -2113,7 +2113,7 @@
       },
       {
         "id": 511,
-        "promptText": "What’s something most people don’t understand about military life?"
+        "promptText": "What's something most people don't understand about military life?"
       },
       {
         "id": 512,
@@ -2157,7 +2157,7 @@
       },
       {
         "id": 522,
-        "promptText": "What’s a funny or uplifting story from your time in the military?"
+        "promptText": "What's a funny or uplifting story from your time in the military?"
       },
       {
         "id": 523,

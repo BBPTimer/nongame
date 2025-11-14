@@ -1,5 +1,5 @@
 import { use, useEffect } from "react";
-import { Route, BrowserRouter as Router, Routes } from "react-router";
+import { Navigate, Route, BrowserRouter as Router, Routes } from "react-router";
 import CustomDeck from "./components/CustomDeck";
 import Header from "./components/Header";
 import Instructions from "./components/Instructions";
@@ -19,9 +19,10 @@ function App() {
       <Router>
         <Header />
         <Routes>
+          <Route path="/" element={<Main />} />
           <Route path="/instructions" element={<Instructions />} />
           <Route path="/custom" element={<CustomDeck />} />
-          <Route path="*" element={<Main />} />
+          <Route path="*" element={<Navigate to="/" />} />
         </Routes>
       </Router>
       <br />
